@@ -55,7 +55,7 @@ const ProjectsSection: React.FC = () => {
             style={{
               fontSize: 'clamp(3.5rem, 6vw, 5.5rem)',
               fontFamily: 'Cormorant Garamond, Playfair Display, serif',
-              fontWeight: 300,
+              fontWeight: 600,
               letterSpacing: '0.02em',
               lineHeight: '1.1',
               color: '#1F1F1F',
@@ -68,12 +68,11 @@ const ProjectsSection: React.FC = () => {
             className="max-w-4xl mx-auto"
             style={{
               fontSize: 'clamp(1.1rem, 2.2vw, 1.3rem)',
-              fontFamily: 'Cormorant Garamond, Playfair Display, serif',
-              fontWeight: 300,
+              fontFamily: 'Lato, sans-serif',
+              fontWeight: 400,
               letterSpacing: '0.02em',
               lineHeight: '1.8',
-              color: '#4A5568',
-              fontStyle: 'italic'
+              color: '#4A5568'
             }}
           >
             A selection of strategic consulting projects across various industries.

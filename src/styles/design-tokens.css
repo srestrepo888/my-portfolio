@@ -11,20 +11,16 @@
   --font-small: clamp(14px, 1.6vw, 16px);
   --font-meta: clamp(12px, 1.4vw, 14px);
 
-  /* Sophisticated Font Weights */
-  --weight-thin: 100;
-  --weight-light: 200;
-  --weight-regular: 300;
-  --weight-medium: 400;
-  --weight-semibold: 500;
-  --weight-bold: 600;
-  --weight-black: 700;
+  /* Elevated Editorial Font Weights */
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
 
-  /* Ultra-Luxurious Font Families */
+  /* Elevated Editorial Font Families */
   --font-primary: 'Cormorant Garamond', 'Playfair Display', 'Times New Roman', serif;
-  --font-secondary: 'Cormorant', 'Playfair Display', 'Times New Roman', serif;
-  --font-accent: 'Cormorant Upright', 'Playfair Display', serif;
-  --font-body: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+  --font-body: 'Lato', 'Helvetica Neue', 'Arial', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
 
   /* Ultra-Luxurious Color System - Strict Brand Adherence */

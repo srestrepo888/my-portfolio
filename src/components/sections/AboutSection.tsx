@@ -61,7 +61,7 @@ const AboutSection: React.FC = () => {
               style={{
                 fontSize: 'clamp(3rem, 5vw, 4.5rem)',
                 fontFamily: 'Cormorant Garamond, Playfair Display, serif',
-                fontWeight: 300,
+                fontWeight: 600,
                 letterSpacing: '0.02em',
                 lineHeight: '1.1',
                 color: '#1F1F1F',
@@ -75,22 +75,22 @@ const AboutSection: React.FC = () => {
               <p 
                 style={{
                   fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                  fontFamily: 'Cormorant Garamond, Playfair Display, serif',
-                  fontWeight: 300,
+                  fontFamily: 'Lato, sans-serif',
+                  fontWeight: 400,
                   letterSpacing: '0.02em',
                   lineHeight: '1.8',
                   color: '#4A5568'
                 }}
               >
-                I believe the most compelling stories begin with <span style={{ color: '#1F1F1F', fontWeight: 500, fontStyle: 'italic' }}>curiosity</span>—a 
+                I believe the most compelling stories begin with <span style={{ color: '#1F1F1F', fontWeight: 600, fontStyle: 'italic' }}>curiosity</span>—a 
                 spark that has carried me across continents, blending diverse perspectives from anthropology to business, from innovation to experience design, and from emerging technologies to business transformation.
               </p>
               
               <p 
                 style={{
                   fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                  fontFamily: 'Cormorant Garamond, Playfair Display, serif',
-                  fontWeight: 300,
+                  fontFamily: 'Lato, sans-serif',
+                  fontWeight: 400,
                   letterSpacing: '0.02em',
                   lineHeight: '1.8',
                   color: '#4A5568'
@@ -102,8 +102,8 @@ const AboutSection: React.FC = () => {
               <p 
                 style={{
                   fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                  fontFamily: 'Cormorant Garamond, Playfair Display, serif',
-                  fontWeight: 300,
+                  fontFamily: 'Lato, sans-serif',
+                  fontWeight: 400,
                   letterSpacing: '0.02em',
                   lineHeight: '1.8',
                   color: '#4A5568'
@@ -115,8 +115,8 @@ const AboutSection: React.FC = () => {
               <p 
                 style={{
                   fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                  fontFamily: 'Cormorant Garamond, Playfair Display, serif',
-                  fontWeight: 300,
+                  fontFamily: 'Lato, sans-serif',
+                  fontWeight: 400,
                   letterSpacing: '0.02em',
                   lineHeight: '1.8',
                   color: '#4A5568'
@@ -128,8 +128,8 @@ const AboutSection: React.FC = () => {
               <p 
                 style={{
                   fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                  fontFamily: 'Cormorant Garamond, Playfair Display, serif',
-                  fontWeight: 300,
+                  fontFamily: 'Lato, sans-serif',
+                  fontWeight: 400,
                   letterSpacing: '0.02em',
                   lineHeight: '1.8',
                   color: '#4A5568'
@@ -155,7 +155,7 @@ const AboutSection: React.FC = () => {
                   style={{
                     fontSize: 'clamp(1.1rem, 2.2vw, 1.3rem)',
                     fontFamily: 'Cormorant Garamond, Playfair Display, serif',
-                    fontWeight: 300,
+                    fontWeight: 500,
                     letterSpacing: '0.03em',
                     lineHeight: '1.7',
                     color: '#1F1F1F',

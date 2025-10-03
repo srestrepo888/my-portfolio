@@ -55,9 +55,9 @@ const HeroSection: React.FC = () => {
           <motion.div 
             className="text-2xl" 
             style={{ 
-              fontFamily: 'Didot, Playfair Display, serif',
+              fontFamily: 'Cormorant Garamond, Playfair Display, serif',
               color: '#4A5568',
-              fontWeight: 300,
+              fontWeight: 500,
               letterSpacing: '0.02em'
             }}
             whileHover={{ scale: 1.02 }}
@@ -68,20 +68,20 @@ const HeroSection: React.FC = () => {
           {/* Refined Navigation */}
           <div className="hidden md:flex items-center gap-10">
             <a href="#home" className="text-xs uppercase tracking-wider text-gray-600 hover:text-gray-800 transition-all duration-300" 
-               style={{ fontFamily: 'Lato, Montserrat, Open Sans, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Home</a>
+               style={{ fontFamily: 'Lato, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Home</a>
             <a href="#about" className="text-xs uppercase tracking-wider text-gray-600 hover:text-gray-800 transition-all duration-300" 
-               style={{ fontFamily: 'Lato, Montserrat, Open Sans, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>About</a>
+               style={{ fontFamily: 'Lato, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>About</a>
             <a href="#projects" className="text-xs uppercase tracking-wider text-gray-600 hover:text-gray-800 transition-all duration-300" 
-               style={{ fontFamily: 'Lato, Montserrat, Open Sans, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Projects</a>
+               style={{ fontFamily: 'Lato, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Projects</a>
             <a href="#experience" className="text-xs uppercase tracking-wider text-gray-600 hover:text-gray-800 transition-all duration-300" 
-               style={{ fontFamily: 'Lato, Montserrat, Open Sans, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Experience</a>
+               style={{ fontFamily: 'Lato, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Experience</a>
             <a href="#services" className="text-xs uppercase tracking-wider text-gray-600 hover:text-gray-800 transition-all duration-300" 
-               style={{ fontFamily: 'Lato, Montserrat, Open Sans, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Services</a>
+               style={{ fontFamily: 'Lato, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Services</a>
             <motion.button 
               className="px-8 py-3 text-xs uppercase tracking-wider text-white rounded-full transition-all duration-500"
               style={{ 
                 background: 'linear-gradient(135deg, #4A5568 0%, #2D3748 100%)',
-                fontFamily: 'Lato, Montserrat, Open Sans, sans-serif',
+                fontFamily: 'Lato, sans-serif',
                 letterSpacing: '0.1em',
                 fontWeight: 500,
                 boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)'
@@ -142,14 +142,13 @@ const HeroSection: React.FC = () => {
                   className="block"
                   style={{
                     fontSize: 'clamp(5rem, 10vw, 9rem)',
-                    fontFamily: 'Playfair Display, Didot, Bodoni, serif',
-                    fontWeight: 300,
+                    fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+                    fontWeight: 600,
                     letterSpacing: '0.05em',
                     lineHeight: '0.85',
                     color: '#FF5A5A',
                     textTransform: 'uppercase',
-                    fontStyle: 'italic',
-                    fontVariationSettings: '"wght" 300, "opsz" 72'
+                    fontStyle: 'italic'
                   }}
                 >
                   EXPERIENCE
@@ -161,8 +160,8 @@ const HeroSection: React.FC = () => {
                   className="block mt-4"
                   style={{
                     fontSize: 'clamp(4rem, 8vw, 7rem)',
-                    fontFamily: 'Cormorant Garamond, Libre Baskerville, EB Garamond, serif',
-                    fontWeight: 400,
+                    fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+                    fontWeight: 500,
                     letterSpacing: '0.08em',
                     lineHeight: '0.9',
                     color: '#1F1F1F',
@@ -181,12 +180,11 @@ const HeroSection: React.FC = () => {
                 className="mt-12 max-w-3xl mx-auto"
                 style={{
                   fontSize: 'clamp(1.1rem, 2.2vw, 1.4rem)',
-                  fontFamily: 'Cormorant Garamond, Playfair Display, serif',
-                  fontWeight: 300,
-                  letterSpacing: '0.03em',
-                  lineHeight: '1.7',
-                  color: '#4A5568',
-                  fontStyle: 'italic'
+                  fontFamily: 'Lato, sans-serif',
+                  fontWeight: 400,
+                  letterSpacing: '0.02em',
+                  lineHeight: '1.6',
+                  color: '#4A5568'
                 }}
               >
                 Crafting extraordinary digital experiences through visionary design and unparalleled architectural expertise.
@@ -218,7 +216,7 @@ const HeroSection: React.FC = () => {
                   style={{
                     background: 'linear-gradient(135deg, #FF5A5A 0%, #FF4040 100%)',
                     borderRadius: '0px',
-                    fontFamily: 'Cormorant Upright, Playfair Display, serif',
+                    fontFamily: 'Lato, sans-serif',
                     fontSize: '16px',
                     letterSpacing: '0.15em',
                     textTransform: 'uppercase',
@@ -249,7 +247,7 @@ const HeroSection: React.FC = () => {
                     backgroundColor: 'transparent',
                     border: '2px solid #1F1F1F',
                     borderRadius: '0px',
-                    fontFamily: 'Cormorant Upright, Playfair Display, serif',
+                    fontFamily: 'Lato, sans-serif',
                     fontSize: '16px',
                     letterSpacing: '0.15em',
                     textTransform: 'uppercase',

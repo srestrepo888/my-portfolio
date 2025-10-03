@@ -378,6 +378,178 @@
       opacity: 0.4;
     }
   }
+
+  /* Award-Winning Service Icons */
+  .service-icon {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+  }
+
+  .service-icon-base {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 90, 90, 0.2), rgba(255, 182, 193, 0.3));
+    transition: all 0.3s ease;
+  }
+
+  .service-icon-core {
+    position: absolute;
+    inset: 8px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #FF5A5A, #FFB3B3);
+    transition: all 0.3s ease;
+  }
+
+  .service-icon-element {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .service-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 182, 193, 0.2);
+    border-radius: 24px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+
+  .service-card:hover {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 90, 90, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-card:hover::before {
+    opacity: 1;
+  }
+
+  .service-number {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF5A5A, #FFB3B3);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 90, 90, 0.3);
+  }
+
+  .service-highlight {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    background: rgba(255, 182, 193, 0.2);
+    color: #FF5A5A;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .service-highlight:hover {
+    background: rgba(255, 182, 193, 0.3);
+    transform: scale(1.05);
+  }
+
+  /* Life-like icon animations */
+  .icon-pulse {
+    animation: icon-pulse 2s ease-in-out infinite;
+  }
+
+  .icon-rotate {
+    animation: icon-rotate 3s linear infinite;
+  }
+
+  .icon-bounce {
+    animation: icon-bounce 1.8s ease-in-out infinite;
+  }
+
+  .icon-scale {
+    animation: icon-scale 2.5s ease-in-out infinite;
+  }
+
+  @keyframes icon-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes icon-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes icon-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes icon-scale {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+  /* Sophisticated hover effects */
+  .service-card-hover {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card-hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .service-card-hover:hover::after {
+    left: 100%;
+  }
 }
 
 @layer utilities {

@@ -15,6 +15,7 @@ type Transition = {
 interface AnimatedSectionProps {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
   animation?: 'fadeIn' | 'slideUp' | 'slideIn' | 'scale' | 'custom';
   delay?: number;
   duration?: number;
@@ -29,6 +30,7 @@ interface AnimatedSectionProps {
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   children,
   className = '',
+  style,
   animation = 'fadeIn',
   delay = 0,
   duration = 0.8,
@@ -78,6 +80,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
       ref={ref}
       id={id}
       className={className}
+      style={style}
       variants={variants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}

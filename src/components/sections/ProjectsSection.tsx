@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
+import ImageOptimizer from '@/components/ui/ImageOptimizer';
 import { projects } from '@/data/projects';
 
 const ProjectsSection: React.FC = () => {
@@ -97,10 +98,13 @@ const ProjectsSection: React.FC = () => {
                 {/* Project Image */}
                 <div className="relative order-2 lg:order-1">
                   <div className="relative rounded-[30px] overflow-hidden shadow-2xl aspect-[4/3] bg-white">
-                    <img
+                    <ImageOptimizer
                       src={filteredProjects[currentProject].heroImage}
                       alt={`${filteredProjects[currentProject].title} project showcase`}
-                      className="w-full h-full object-cover"
+                      aspectRatio="4/3"
+                      priority={currentProject === 0}
+                      quality={90}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                     />
                     {/* Project Logo/Badge */}
                     <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">

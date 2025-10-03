@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/common/Navigation';
 import Footer from '@/components/common/Footer';
+import ImageOptimizer from '@/components/ui/ImageOptimizer';
 import { projects, Project } from '@/data/projects';
 
 interface ProjectPageProps {
@@ -82,10 +83,13 @@ export default function ProjectPage({ project }: ProjectPageProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-6xl mx-auto rounded-[40px] overflow-hidden shadow-2xl aspect-[16/9]"
             >
-              <img
+              <ImageOptimizer
                 src={project.heroImage}
                 alt={`${project.title} - ${project.subtitle}`}
-                className="w-full h-full object-cover"
+                aspectRatio="16/9"
+                priority
+                quality={90}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
               />
             </motion.div>
           </div>
@@ -190,12 +194,15 @@ export default function ProjectPage({ project }: ProjectPageProps) {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg"
+                    className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group"
                   >
-                    <img
+                    <ImageOptimizer
                       src={image}
                       alt={`${project.title} gallery image ${index + 1}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      aspectRatio="4/3"
+                      quality={85}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="group-hover:scale-105 transition-transform duration-300"
                     />
                   </motion.div>
                 ))}

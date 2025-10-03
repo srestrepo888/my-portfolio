@@ -101,95 +101,94 @@ const HeroSection: React.FC = () => {
         </div>
 
         <div className="container mx-auto px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            {/* Left Content */}
+          <div className="text-center">
+            {/* Clean, Elegant Typography */}
             <motion.div 
-              initial={{ opacity: 0, x: -60 }}
-              animate={{ opacity: mounted ? 1 : 0, x: mounted ? 0 : -60 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
               transition={{ duration: 1.2, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="relative"
+              className="relative max-w-4xl mx-auto"
             >
-              {/* Sophisticated Typography */}
-              <div className="relative">
-                <motion.span
+              <h1 className="relative">
+                <motion.span 
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: mounted ? 0.1 : 0, y: mounted ? 0 : 20 }}
-                  transition={{ duration: 1, delay: 0.5 }}
-                  className="absolute -top-8 -left-4 text-9xl font-thin"
+                  animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                  className="block"
                   style={{ 
-                    fontFamily: 'Didot, serif',
-                    color: '#E5E7EB',
-                    zIndex: -1
+                    fontSize: 'clamp(4rem, 8vw, 7rem)',
+                    fontFamily: 'Didot, Playfair Display, serif',
+                    fontWeight: 300,
+                    letterSpacing: '0.02em',
+                    lineHeight: '0.9',
+                    color: '#F26B75',
+                    textTransform: 'uppercase'
                   }}
                 >
-                  01
+                  Experience
                 </motion.span>
-                
-                <h1 className="relative">
-                  <motion.span 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
-                    transition={{ duration: 1, delay: 0.4 }}
-                    className="block"
-                    style={{ 
-                      fontSize: 'clamp(3.5rem, 7vw, 6rem)',
-                      fontFamily: 'Didot, Playfair Display, serif',
-                      fontWeight: 300,
-                      letterSpacing: '0.02em',
-                      lineHeight: '0.95',
-                      color: '#F26B75',
-                      textTransform: 'uppercase'
-                    }}
-                  >
-                    Experience
-                  </motion.span>
-                  <motion.span 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    className="block mt-2"
-                    style={{ 
-                      fontSize: 'clamp(3rem, 6vw, 5rem)',
-                      fontFamily: 'Inter, sans-serif',
-                      fontWeight: 200,
-                      letterSpacing: '0.15em',
-                      lineHeight: '1',
-                      color: '#4A5568',
-                      textTransform: 'uppercase'
-                    }}
-                  >
-                    Architect
-                  </motion.span>
-                </h1>
-
-                {/* Decorative Line */}
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: mounted ? 1 : 0 }}
-                  transition={{ duration: 1, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className="my-8 origin-left"
-                  style={{
-                    width: '80px',
-                    height: '1px',
-                    background: 'linear-gradient(90deg, #F26B75 0%, transparent 100%)'
+                <motion.span 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                  className="block mt-2"
+                  style={{ 
+                    fontSize: 'clamp(3.5rem, 7vw, 6rem)',
+                    fontFamily: 'Inter, sans-serif',
+                    fontWeight: 200,
+                    letterSpacing: '0.15em',
+                    lineHeight: '1',
+                    color: '#4A5568',
+                    textTransform: 'uppercase'
                   }}
-                />
-              </div>
+                >
+                  Architect
+                </motion.span>
+              </h1>
+
+              {/* Elegant Subtitle */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
+                transition={{ duration: 1, delay: 0.7 }}
+                className="mt-8 text-lg text-gray-600 max-w-2xl mx-auto"
+                style={{ 
+                  fontFamily: 'Inter, sans-serif',
+                  fontWeight: 300,
+                  letterSpacing: '0.02em',
+                  lineHeight: '1.6'
+                }}
+              >
+                Transforming visions into exceptional digital experiences through strategic design and innovative thinking.
+              </motion.p>
+
+              {/* Decorative Line */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: mounted ? 1 : 0 }}
+                transition={{ duration: 1, delay: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="my-12 mx-auto origin-center"
+                style={{
+                  width: '100px',
+                  height: '1px',
+                  background: 'linear-gradient(90deg, transparent 0%, #F26B75 50%, transparent 100%)'
+                }}
+              />
           
               {/* CTA Buttons */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
-                transition={{ duration: 1, delay: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="flex gap-4 mt-8"
+                transition={{ duration: 1, delay: 1.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="flex gap-6 justify-center mt-8"
               >
                 <motion.button 
-                  className="group relative px-10 py-4 overflow-hidden"
+                  className="group relative px-12 py-4 overflow-hidden"
                   style={{ 
                     background: 'linear-gradient(135deg, #F26B75 0%, #E91E63 100%)',
                     borderRadius: '2px',
                     fontFamily: 'Inter, sans-serif',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
                     color: 'white',
@@ -212,13 +211,13 @@ const HeroSection: React.FC = () => {
                 </motion.button>
                 
                 <motion.button 
-                  className="group px-10 py-4 relative"
+                  className="group px-12 py-4 relative"
                   style={{ 
                     backgroundColor: 'transparent',
                     border: '1px solid #D1D5DB',
                     borderRadius: '2px',
                     fontFamily: 'Inter, sans-serif',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
                     color: '#6B7280',
@@ -233,87 +232,6 @@ const HeroSection: React.FC = () => {
                   About Me
                 </motion.button>
               </motion.div>
-            </motion.div>
-        
-            {/* Right Content - Hero Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              animate={{ opacity: mounted ? 1 : 0, x: mounted ? 0 : 60 }}
-              transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-              style={{ y }}
-              className="relative"
-            >
-              <div className="relative">
-                {/* Image Frame with Gradient */}
-                <motion.div
-                  initial={{ scale: 0.9 }}
-                  animate={{ scale: mounted ? 1 : 0.9 }}
-                  transition={{ duration: 1.5, delay: 0.6 }}
-                  className="relative overflow-hidden"
-                  style={{
-                    borderRadius: '200px 200px 200px 200px',
-                    boxShadow: '0 50px 100px -20px rgba(0, 0, 0, 0.15)',
-                    background: 'linear-gradient(135deg, #F8F8F8 0%, #FFFFFF 100%)'
-                  }}
-                >
-                  <div
-                    className="relative w-full"
-                    style={{
-                      paddingBottom: '120%',
-                      background: 'linear-gradient(135deg, rgba(242,107,117,0.1) 0%, rgba(74,85,104,0.05) 100%)'
-                    }}
-                  >
-                    <img
-                      src="/images/hero-portrait.svg"
-                      alt="Silvana Restrepo"
-                      className="absolute inset-0 w-full h-full object-cover"
-                      style={{
-                        filter: 'contrast(1.1) brightness(1.05)',
-                        opacity: mounted ? 1 : 0,
-                        transition: 'opacity 1s ease-in-out'
-                      }}
-                    />
-                  </div>
-                </motion.div>
-
-                {/* Floating Design Elements */}
-                <motion.div
-                  animate={{ 
-                    y: [0, -10, 0],
-                    rotate: [0, 5, 0]
-                  }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute -top-10 -right-10 w-20 h-20"
-                  style={{
-                    background: 'linear-gradient(135deg, #F26B75 0%, #E91E63 100%)',
-                    borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
-                    opacity: 0.1
-                  }}
-                />
-                
-                <motion.div
-                  animate={{ 
-                    y: [0, 10, 0],
-                    rotate: [0, -5, 0]
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1
-                  }}
-                  className="absolute -bottom-8 -left-8 w-16 h-16"
-                  style={{
-                    background: 'linear-gradient(135deg, #4A5568 0%, #2D3748 100%)',
-                    borderRadius: '70% 30% 30% 70% / 70% 70% 30% 30%',
-                    opacity: 0.08
-                  }}
-                />
-              </div>
             </motion.div>
           </div>
         </div>

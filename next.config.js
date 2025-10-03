@@ -5,6 +5,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/my-portfolio' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/my-portfolio' : '',
   images: {
     domains: ['localhost'],
     formats: ['image/webp', 'image/avif'],
@@ -13,6 +16,7 @@ const nextConfig = {
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    unoptimized: true,
   },
   swcMinify: true,
   compress: true,

@@ -64,13 +64,13 @@ const HeroSection: React.FC = () => {
               <span 
                 className="block font-bold bg-gradient-to-r from-accent to-accent-hover bg-clip-text text-transparent"
               >
-                EXPERIENCE
+                "Experience"
               </span>
               <span 
                 className="block font-bold"
                 style={{ color: 'var(--color-primary)' }}
               >
-                ARCHITECT
+                "Architect"
               </span>
             </motion.h1>
             

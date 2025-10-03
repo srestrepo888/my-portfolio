@@ -29,19 +29,29 @@ const AboutSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="text-section-title font-serif text-primary-dark mb-8">
-              About me
+              About Me
             </h2>
             
             <div className="space-y-6 text-body-lg text-primary-gray">
               <p>
                 I believe the most compelling stories begin with <span className="text-primary-dark font-medium">curiosity</span>—a 
-                spark that has carried me across continents blending perspectives from anthropology to 
-                business, innovation to experience design.
+                spark that has carried me across continents, blending diverse perspectives from anthropology to business, from innovation to experience design, and from emerging technologies to business transformation.
               </p>
               
               <p>
-                At my core, I am an <span className="text-primary-dark font-medium">architect of invisible systems</span>, 
-                designing experiences that touch the human soul.
+                I have embarked on projects ranging from wellness movements to creating AI-driven platforms that empower developers worldwide.
+              </p>
+
+              <p>
+                Each endeavour brings me closer to my mission: connecting strategic business goals with the essence of the <span className="text-primary-dark font-medium">#human perspective</span>.
+              </p>
+
+              <p>
+                Weather leading teams in retail innovation or pioneering Experience design for global brands, my passion remains: to reveal what lies beneath and transform it into tangible expansion.
+              </p>
+
+              <p>
+                Welcome to my world—where strategy meets soul, and design becomes the universal language of possibility.
               </p>
 
               <motion.div
@@ -51,17 +61,10 @@ const AboutSection: React.FC = () => {
                 className="bg-white/50 backdrop-blur-sm rounded-card p-6 border-l-4 border-primary-coral"
               >
                 <p className="text-body italic text-primary-dark">
-                  "The art of MY CRAFT lies in listening to the unspoken, 
-                  seeing the invisible, and touching the intangible essence of 
-                  human desire."
+                  "The art of MY CRAFT lies in listening to the unspoken, seeing the invisible, and touching the intangible essence of human desire."
                 </p>
                 <p className="text-sm text-primary-gray mt-3">— SILVANA</p>
               </motion.div>
-
-              <p>
-                For millennials and influencers, AI-driven experiences 
-                enhance self-expression and influence through technology.
-              </p>
             </div>
           </motion.div>
 

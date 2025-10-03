@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
-import ImageOptimizer from '@/components/ui/ImageOptimizer';
+import dynamic from 'next/dynamic';
 import { projects } from '@/data/projects';
+
+const MagneticButton = dynamic(() => import('@/components/effects/MagneticButton'), { ssr: false });
 
 const ProjectsSection: React.FC = () => {
   const { ref, inView } = useInView({
@@ -11,221 +13,352 @@ const ProjectsSection: React.FC = () => {
     triggerOnce: true
   });
 
-  const [selectedFilter, setSelectedFilter] = useState('ALL WORK');
   const [currentProject, setCurrentProject] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 2000], [0, -100]);
 
-  const filters = [
-    'ALL WORK',
-    'EXPERIENCE DESIGN',
-    'PRODUCT STRATEGY',
-    'SERVICE DESIGN',
-    'USER RESEARCH',
-    'DESIGN OPS',
-    'DIGITAL TRANSFORMATION'
-  ];
+  useEffect(() => {
+    if (isAutoPlaying) {
+      const interval = setInterval(() => {
+        setCurrentProject((prev) => (prev + 1) % projects.length);
+      }, 6000);
+      return () => clearInterval(interval);
+    }
+  }, [isAutoPlaying]);
 
-  const filteredProjects = selectedFilter === 'ALL WORK' 
-    ? projects 
-    : projects.filter(project => 
-        project.practices.some(practice => 
-          practice.toUpperCase() === selectedFilter
-        )
-      );
-
-  const nextProject = () => {
-    setCurrentProject((prev) => (prev + 1) % filteredProjects.length);
-  };
-
-  const prevProject = () => {
-    setCurrentProject((prev) => (prev - 1 + filteredProjects.length) % filteredProjects.length);
+  const handleProjectChange = (index: number) => {
+    setCurrentProject(index);
+    setIsAutoPlaying(false);
   };
 
   return (
-    <section id="projects" className="section-padding bg-gradient-to-b from-background-cream to-background-pink">
-      <div className="container-custom">
+    <section 
+      id="projects" 
+      className="relative min-h-screen py-24 overflow-hidden"
+      style={{
+        backgroundColor: '#FDF6F0'
+      }}
+    >
+      {/* Cinematic Background */}
+      <motion.div 
+        className="absolute inset-0"
+        style={{ y }}
+      >
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(180deg, 
+              #FDF6F0 0%, 
+              rgba(253, 246, 240, 0.95) 50%, 
+              rgba(255, 251, 248, 0.98) 100%)`
+          }}
+        />
+      </motion.div>
+
+      <div className="container mx-auto px-8 lg:px-16 relative z-10">
+        {/* Section Title */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-20"
         >
           <h2 
-            className="mb-8"
+            className="mb-4"
             style={{
-              fontSize: 'clamp(3.5rem, 6vw, 5.5rem)',
-              fontFamily: 'Cormorant Garamond, Playfair Display, serif',
-              fontWeight: 600,
-              letterSpacing: '0.02em',
-              lineHeight: '1.1',
-              color: '#1F1F1F',
-              fontStyle: 'italic'
+              fontSize: 'clamp(3.5rem, 7vw, 5rem)',
+              fontFamily: 'Georgia, serif',
+              fontWeight: 300,
+              letterSpacing: '0.05em',
+              lineHeight: '1',
+              color: '#F26B75'
             }}
           >
-            Projects
+            Selected Work
           </h2>
-          <p 
-            className="max-w-4xl mx-auto"
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={inView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mx-auto"
             style={{
-              fontSize: 'clamp(1.1rem, 2.2vw, 1.3rem)',
-              fontFamily: 'Lato, sans-serif',
-              fontWeight: 400,
-              letterSpacing: '0.02em',
-              lineHeight: '1.8',
-              color: '#4A5568'
+              width: '80px',
+              height: '1px',
+              background: 'linear-gradient(90deg, transparent, #F26B75, transparent)'
             }}
-          >
-            A selection of strategic consulting projects across various industries.
-          </p>
+          />
         </motion.div>
 
-        {/* Filter Tags */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-wrap gap-3 justify-center mb-12"
-        >
-          {filters.map((filter) => (
-            <button
-              key={filter}
-              onClick={() => {
-                setSelectedFilter(filter);
-                setCurrentProject(0);
-              }}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                selectedFilter === filter
-                  ? 'bg-primary-coral text-white'
-                  : 'bg-white text-primary-gray hover:bg-primary-coral/10'
-              }`}
-            >
-              {filter}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Projects Carousel */}
+        {/* Cinematic Carousel */}
         <div className="relative">
           <AnimatePresence mode="wait">
-            {filteredProjects.length > 0 && (
-              <motion.div
-                key={currentProject}
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.5 }}
-                className="grid lg:grid-cols-2 gap-12 items-center"
-              >
-                {/* Project Image */}
-                <div className="relative order-2 lg:order-1">
-                  <div className="relative rounded-[30px] overflow-hidden shadow-2xl aspect-[4/3] bg-white">
-                    <ImageOptimizer
-                      src={filteredProjects[currentProject].heroImage}
-                      alt={`${filteredProjects[currentProject].title} project showcase`}
-                      aspectRatio="4/3"
-                      priority={currentProject === 0}
-                      quality={90}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
-                    />
-                    {/* Project Logo/Badge */}
-                    <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
-                      <span className="text-sm font-medium text-primary-dark">
-                        {filteredProjects[currentProject].client}
+            <motion.div
+              key={currentProject}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              className="relative"
+            >
+              {/* Main Project Display - Cinematic View */}
+              <div className="relative rounded-lg overflow-hidden" style={{ height: '70vh', minHeight: '500px' }}>
+                {/* Video/Image Background */}
+                <div className="absolute inset-0">
+                  <motion.div
+                    initial={{ scale: 1.1 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 6, ease: "easeOut" }}
+                    className="relative w-full h-full"
+                  >
+                    {projects[currentProject].video ? (
+                      <video
+                        ref={videoRef}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                        style={{ filter: 'brightness(0.7)' }}
+                      >
+                        <source src={projects[currentProject].video} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img
+                        src={projects[currentProject].heroImage}
+                        alt={projects[currentProject].title}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        style={{ filter: 'brightness(0.7)' }}
+                      />
+                    )}
+                  </motion.div>
+
+                  {/* Gradient Overlay */}
+                  <div 
+                    className="absolute inset-0"
+                    style={{
+                      background: `linear-gradient(to right, 
+                        rgba(0, 0, 0, 0.6) 0%, 
+                        rgba(0, 0, 0, 0.3) 50%, 
+                        transparent 100%)`
+                    }}
+                  />
+                </div>
+
+                {/* Project Content Overlay */}
+                <div className="relative z-10 h-full flex items-center px-8 lg:px-16">
+                  <div className="max-w-2xl">
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.2 }}
+                    >
+                      {/* Project Number */}
+                      <span 
+                        style={{
+                          fontSize: '14px',
+                          fontFamily: 'Inter, sans-serif',
+                          color: '#F26B75',
+                          letterSpacing: '0.2em',
+                          textTransform: 'uppercase',
+                          fontWeight: 500
+                        }}
+                      >
+                        {String(currentProject + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
                       </span>
-                    </div>
+
+                      {/* Client Name */}
+                      <h3 
+                        className="mt-4 mb-2"
+                        style={{
+                          fontSize: '16px',
+                          fontFamily: 'Inter, sans-serif',
+                          color: 'white',
+                          letterSpacing: '0.15em',
+                          textTransform: 'uppercase',
+                          fontWeight: 400,
+                          opacity: 0.9
+                        }}
+                      >
+                        {projects[currentProject].client}
+                      </h3>
+
+                      {/* Project Title */}
+                      <h2 
+                        className="mb-6"
+                        style={{
+                          fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                          fontFamily: 'Georgia, serif',
+                          color: 'white',
+                          fontWeight: 300,
+                          lineHeight: '1.1',
+                          letterSpacing: '0.02em'
+                        }}
+                      >
+                        {projects[currentProject].title}
+                      </h2>
+
+                      {/* Project Description */}
+                      <p 
+                        className="mb-8"
+                        style={{
+                          fontSize: '18px',
+                          fontFamily: 'Inter, sans-serif',
+                          color: 'white',
+                          lineHeight: '1.6',
+                          fontWeight: 300,
+                          opacity: 0.9
+                        }}
+                      >
+                        {projects[currentProject].subtitle}
+                      </p>
+
+                      {/* Timeline Info */}
+                      <div className="flex gap-8 mb-10">
+                        <div>
+                          <p style={{ fontSize: '12px', color: 'white', opacity: 0.6, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                            Timeline
+                          </p>
+                          <p style={{ fontSize: '16px', color: 'white', fontWeight: 400 }}>
+                            {projects[currentProject].duration}
+                          </p>
+                        </div>
+                        <div>
+                          <p style={{ fontSize: '12px', color: 'white', opacity: 0.6, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                            Role
+                          </p>
+                          <p style={{ fontSize: '16px', color: 'white', fontWeight: 400 }}>
+                            {projects[currentProject].role}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* View Project Button */}
+                      <MagneticButton>
+                        <Link href={`/projects/${projects[currentProject].id}`}>
+                          <motion.button 
+                            className="px-10 py-4"
+                            style={{
+                              backgroundColor: '#F26B75',
+                              color: 'white',
+                              fontFamily: 'Inter, sans-serif',
+                              fontSize: '13px',
+                              letterSpacing: '0.15em',
+                              textTransform: 'uppercase',
+                              fontWeight: 600,
+                              borderRadius: '2px'
+                            }}
+                            whileHover={{ 
+                              backgroundColor: '#E85D67',
+                              y: -2
+                            }}
+                          >
+                            View Case Study
+                          </motion.button>
+                        </Link>
+                      </MagneticButton>
+                    </motion.div>
                   </div>
                 </div>
+              </div>
 
-                {/* Project Info */}
-                <div className="order-1 lg:order-2">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                  >
-                    <h3 className="text-subsection font-serif text-primary-dark mb-4">
-                      {filteredProjects[currentProject].title}
-                    </h3>
-                    <p className="text-body-lg text-primary-gray mb-6">
-                      {filteredProjects[currentProject].subtitle}
-                    </p>
-
-                    <div className="flex flex-wrap gap-4 mb-6 text-sm">
-                      <span className="text-primary-coral">{filteredProjects[currentProject].year}</span>
-                      <span className="text-primary-gray">•</span>
-                      <span className="text-primary-gray">{filteredProjects[currentProject].client}</span>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {filteredProjects[currentProject].practices.map((practice) => (
-                        <span
-                          key={practice}
-                          className="px-3 py-1 bg-white/50 backdrop-blur-sm rounded-full text-sm text-primary-dark"
-                        >
-                          {practice}
-                        </span>
-                      ))}
-                    </div>
-
-                    <p className="text-body text-primary-gray mb-8 line-clamp-3">
-                      {filteredProjects[currentProject].context}
-                    </p>
-
-                    <Link
-                      href={`/projects/${filteredProjects[currentProject].id}`}
-                      className="inline-flex items-center gap-2 text-primary-coral font-medium hover:gap-4 transition-all duration-300"
+              {/* Timeline Navigation - Cinematic Progress */}
+              <div className="mt-12">
+                <div className="flex gap-2">
+                  {projects.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleProjectChange(index)}
+                      className="flex-1 relative h-1 overflow-hidden"
+                      style={{
+                        backgroundColor: 'rgba(75, 85, 99, 0.1)'
+                      }}
                     >
-                      <span>Explore Project</span>
-                      <span>→</span>
-                    </Link>
-                  </motion.div>
+                      <motion.div
+                        className="absolute inset-0"
+                        initial={{ scaleX: 0 }}
+                        animate={{ 
+                          scaleX: currentProject === index ? 1 : 0,
+                          backgroundColor: currentProject === index ? '#F26B75' : 'transparent'
+                        }}
+                        transition={{ 
+                          duration: currentProject === index && isAutoPlaying ? 6 : 0.3,
+                          ease: "linear"
+                        }}
+                        style={{ transformOrigin: 'left' }}
+                      />
+                    </button>
+                  ))}
                 </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
 
-          {/* Navigation Buttons */}
-          {filteredProjects.length > 1 && (
-            <>
-              <button
-                onClick={prevProject}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full lg:-translate-x-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300"
-              >
-                <span className="text-primary-dark">←</span>
-              </button>
-              <button
-                onClick={nextProject}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full lg:translate-x-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300"
-              >
-                <span className="text-primary-dark">→</span>
-              </button>
-            </>
-          )}
+                {/* Project Titles for Navigation */}
+                <div className="flex justify-between mt-4">
+                  {projects.map((project, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleProjectChange(index)}
+                      className={`text-xs uppercase tracking-wider transition-all ${
+                        currentProject === index ? 'opacity-100' : 'opacity-40 hover:opacity-70'
+                      }`}
+                      style={{
+                        fontFamily: 'Inter, sans-serif',
+                        color: '#6B7280',
+                        letterSpacing: '0.1em',
+                        fontWeight: 500
+                      }}
+                    >
+                      {project.client}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        {/* Dots Indicator */}
-        {filteredProjects.length > 1 && (
-          <div className="flex justify-center gap-2 mt-8">
-            {filteredProjects.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentProject(index)}
-                className={`dot-indicator ${index === currentProject ? 'active' : ''}`}
-              />
-            ))}
-          </div>
-        )}
-
-        {/* View Live Site Button */}
+        {/* Project Grid Preview - Secondary View */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-12"
+          initial={{ opacity: 0, y: 40 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-32 grid grid-cols-2 md:grid-cols-3 gap-6"
         >
-          <Link href="/projects" className="btn-secondary">
-            View All Projects
-          </Link>
+          {projects.slice(0, 6).map((project, index) => (
+            <motion.div
+              key={project.id}
+              whileHover={{ y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="relative group cursor-pointer"
+              onClick={() => handleProjectChange(index)}
+            >
+              <div 
+                className="relative overflow-hidden"
+                style={{
+                  borderRadius: '2px',
+                  aspectRatio: '4/3'
+                }}
+              >
+                <img
+                  src={project.heroImage}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div 
+                  className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                />
+                <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-xs uppercase tracking-wider mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    {project.client}
+                  </p>
+                  <p className="text-sm" style={{ fontFamily: 'Georgia, serif' }}>
+                    {project.title}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

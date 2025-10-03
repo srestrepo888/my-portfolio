@@ -1,7 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import Image from 'next/image';
 
 const AboutSection: React.FC = () => {
   const { ref, inView } = useInView({
@@ -9,242 +8,365 @@ const AboutSection: React.FC = () => {
     triggerOnce: true
   });
 
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, -50]);
+  const opacity = useTransform(scrollY, [0, 800], [0.15, 0.08]);
+
   return (
     <section 
       id="about" 
-      className="relative section-padding overflow-hidden"
+      className="relative min-h-screen py-24 overflow-hidden"
       style={{
-        background: `
-          radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.15) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(255, 218, 185, 0.15) 0%, transparent 50%),
-          radial-gradient(circle at 40% 40%, rgba(255, 228, 196, 0.1) 0%, transparent 50%),
-          linear-gradient(135deg, #FFF8F5 0%, #FFF0E6 50%, #FFE4E4 100%)
-        `,
-        backgroundSize: '100% 100%, 100% 100%, 100% 100%, 100% 100%'
+        backgroundColor: '#FDF6F0'
       }}
     >
-      {/* Personal Branding Texture Overlay */}
-      <div 
+      {/* Organic Photo Integration - Flows with Personal Texture */}
+      <motion.div 
         className="absolute inset-0"
-        style={{
-          backgroundImage: `
-            radial-gradient(circle at 25% 25%, rgba(255, 182, 193, 0.08) 0%, transparent 25%),
-            radial-gradient(circle at 75% 75%, rgba(255, 218, 185, 0.08) 0%, transparent 25%),
-            radial-gradient(circle at 50% 50%, rgba(255, 228, 196, 0.05) 0%, transparent 25%)
-          `,
-          backgroundSize: '200px 200px, 300px 300px, 150px 150px',
-          opacity: 0.3
-        }}
-      />
+        style={{ y }}
+      >
+        {/* Photo as Natural Background Texture - NOT in container */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/silvana-portrait.jpg"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={{
+              opacity: 0.12,
+              filter: 'contrast(1.05) saturate(0.9) blur(0.5px)',
+              transform: 'scale(1.2)',
+              maskImage: `linear-gradient(to bottom, 
+                transparent 0%, 
+                black 20%, 
+                black 50%, 
+                transparent 90%)`,
+              WebkitMaskImage: `linear-gradient(to bottom, 
+                transparent 0%, 
+                black 20%, 
+                black 50%, 
+                transparent 90%)`
+            }}
+          />
+        </div>
+
+        {/* Personal Texture Overlay - Organic Flow */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(ellipse at 30% 20%, rgba(242, 107, 117, 0.08) 0%, transparent 40%),
+              radial-gradient(ellipse at 70% 60%, rgba(255, 218, 185, 0.06) 0%, transparent 40%),
+              radial-gradient(ellipse at 50% 50%, rgba(253, 246, 240, 0.9) 30%, rgba(253, 246, 240, 0.95) 70%)
+            `,
+            mixBlendMode: 'normal'
+          }}
+        />
+      </motion.div>
       
-      <div className="container-custom relative z-10">
+      {/* Content Layer */}
+      <div className="container mx-auto px-8 lg:px-16 relative z-10">
         {/* Section Number */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
+          animate={inView ? { opacity: 0.5 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-right mb-8"
+          className="text-center mb-16"
         >
-          <span className="text-accent text-sm font-medium">01</span>
+          <span 
+            style={{
+              fontSize: '120px',
+              fontFamily: 'Georgia, serif',
+              color: '#E5E7EB',
+              fontWeight: 100,
+              opacity: 0.3
+            }}
+          >
+            01
+          </span>
         </motion.div>
 
-        <div ref={ref} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh] lg:min-h-[80vh]">
-          {/* Text Content */}
+        <div ref={ref} className="max-w-5xl mx-auto">
+          {/* Clean Typography - Main Focus */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative z-20"
+            initial={{ opacity: 0, y: 40 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-center mb-16"
           >
             <h2 
-              className="mb-12"
+              className="mb-8"
               style={{
-                fontSize: 'clamp(3rem, 5vw, 4.5rem)',
-                fontFamily: 'Cormorant Garamond, Playfair Display, serif',
-                fontWeight: 600,
-                letterSpacing: '0.02em',
-                lineHeight: '1.1',
-                color: '#1F1F1F',
-                fontStyle: 'italic'
+                fontSize: 'clamp(3.5rem, 7vw, 5rem)',
+                fontFamily: 'Georgia, serif',
+                fontWeight: 300,
+                letterSpacing: '0.05em',
+                lineHeight: '1',
+                color: '#F26B75'
               }}
             >
               About Me
             </h2>
             
-            <div className="space-y-8">
-              <p 
-                style={{
-                  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                  fontFamily: 'Lato, sans-serif',
-                  fontWeight: 400,
-                  letterSpacing: '0.02em',
-                  lineHeight: '1.8',
-                  color: '#4A5568'
-                }}
-              >
-                I believe the most compelling stories begin with <span style={{ color: '#1F1F1F', fontWeight: 600, fontStyle: 'italic' }}>curiosity</span>—a 
-                spark that has carried me across continents, blending diverse perspectives from anthropology to business, from innovation to experience design, and from emerging technologies to business transformation.
-              </p>
-              
-              <p 
-                style={{
-                  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                  fontFamily: 'Lato, sans-serif',
-                  fontWeight: 400,
-                  letterSpacing: '0.02em',
-                  lineHeight: '1.8',
-                  color: '#4A5568'
-                }}
-              >
-                I have embarked on projects ranging from wellness movements to creating AI-driven platforms that empower developers worldwide.
-              </p>
+            {/* Decorative Line */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={inView ? { scaleX: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="mx-auto"
+              style={{
+                width: '80px',
+                height: '1px',
+                background: 'linear-gradient(90deg, transparent, #F26B75, transparent)'
+              }}
+            />
+          </motion.div>
+          
+          {/* Text Content - Flowing Naturally */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="space-y-8 relative"
+          >
+            <p 
+              className="max-w-3xl mx-auto text-center"
+              style={{
+                fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 300,
+                letterSpacing: '0.02em',
+                lineHeight: '1.8',
+                color: '#4A5568'
+              }}
+            >
+              I believe the most compelling stories begin with <span style={{ color: '#F26B75', fontWeight: 500 }}>curiosity</span>—a 
+              spark that has carried me across continents, blending diverse perspectives from anthropology to business, from innovation to experience design, and from emerging technologies to business transformation.
+            </p>
+            
+            <p 
+              className="max-w-3xl mx-auto text-center"
+              style={{
+                fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 300,
+                letterSpacing: '0.02em',
+                lineHeight: '1.8',
+                color: '#4A5568'
+              }}
+            >
+              I have embarked on projects ranging from wellness movements to creating AI-driven platforms that empower developers worldwide.
+            </p>
 
+            <p 
+              className="max-w-3xl mx-auto text-center"
+              style={{
+                fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 300,
+                letterSpacing: '0.02em',
+                lineHeight: '1.8',
+                color: '#4A5568'
+              }}
+            >
+              Each endeavour brings me closer to my mission: connecting strategic business goals with the essence of the <span style={{ color: '#F26B75', fontWeight: 500 }}>#human perspective</span>.
+            </p>
+
+            <p 
+              className="max-w-3xl mx-auto text-center"
+              style={{
+                fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 300,
+                letterSpacing: '0.02em',
+                lineHeight: '1.8',
+                color: '#4A5568'
+              }}
+            >
+              Whether leading teams in retail innovation or pioneering Experience design for global brands, my passion remains: to reveal what lies beneath and transform it into tangible expansion.
+            </p>
+
+            <p 
+              className="max-w-3xl mx-auto text-center"
+              style={{
+                fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 300,
+                letterSpacing: '0.02em',
+                lineHeight: '1.8',
+                color: '#4A5568'
+              }}
+            >
+              Welcome to my world—where strategy meets soul, and design becomes the universal language of possibility.
+            </p>
+
+            {/* Elegant Quote - Organic Integration */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative max-w-2xl mx-auto mt-16 text-center"
+            >
+              <span 
+                className="absolute -top-8 left-0 opacity-20"
+                style={{
+                  fontSize: '120px',
+                  fontFamily: 'Georgia, serif',
+                  color: '#F26B75',
+                  lineHeight: 1
+                }}
+              >
+                "
+              </span>
               <p 
                 style={{
-                  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                  fontFamily: 'Lato, sans-serif',
-                  fontWeight: 400,
+                  fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
+                  fontFamily: 'Georgia, serif',
+                  fontWeight: 300,
                   letterSpacing: '0.02em',
-                  lineHeight: '1.8',
-                  color: '#4A5568'
+                  lineHeight: '1.6',
+                  color: '#4A5568',
+                  fontStyle: 'italic',
+                  position: 'relative',
+                  zIndex: 1
                 }}
               >
-                Each endeavour brings me closer to my mission: connecting strategic business goals with the essence of the <span style={{ color: '#1F1F1F', fontWeight: 500, fontStyle: 'italic' }}>#human perspective</span>.
+                The art of MY CRAFT lies in listening to the unspoken, seeing the invisible, and touching the intangible essence of human desire.
               </p>
-
               <p 
+                className="mt-6"
                 style={{
-                  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                  fontFamily: 'Lato, sans-serif',
-                  fontWeight: 400,
-                  letterSpacing: '0.02em',
-                  lineHeight: '1.8',
-                  color: '#4A5568'
+                  fontSize: '14px',
+                  fontFamily: 'Inter, sans-serif',
+                  color: '#9CA3AF',
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase'
                 }}
               >
-                Whether leading teams in retail innovation or pioneering Experience design for global brands, my passion remains: to reveal what lies beneath and transform it into tangible expansion.
+                — Silvana
               </p>
-
-              <p 
-                style={{
-                  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                  fontFamily: 'Lato, sans-serif',
-                  fontWeight: 400,
-                  letterSpacing: '0.02em',
-                  lineHeight: '1.8',
-                  color: '#4A5568'
-                }}
-              >
-                Welcome to my world—where strategy meets soul, and design becomes the universal language of possibility.
-              </p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="relative p-6"
-                style={{
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255, 182, 193, 0.2)',
-                  borderRadius: '24px',
-                  borderLeft: '4px solid #FF5A5A'
-                }}
-              >
-                <p 
-                  style={{
-                    fontSize: 'clamp(1.1rem, 2.2vw, 1.3rem)',
-                    fontFamily: 'Cormorant Garamond, Playfair Display, serif',
-                    fontWeight: 500,
-                    letterSpacing: '0.03em',
-                    lineHeight: '1.7',
-                    color: '#1F1F1F',
-                    fontStyle: 'italic'
-                  }}
-                >
-                  "The art of MY CRAFT lies in listening to the unspoken, seeing the invisible, and touching the intangible essence of human desire."
-                </p>
-                <p className="text-small text-primary-gray mt-3">— SILVANA</p>
-              </motion.div>
-            </div>
+            </motion.div>
           </motion.div>
 
-          {/* Flowing Portrait Image */}
+          {/* Journey Highlights - Organic Flow */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, x: 30 }}
-            animate={inView ? { opacity: 1, scale: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative h-[500px] sm:h-[600px] lg:h-[700px] order-first lg:order-last"
+            initial={{ opacity: 0, y: 40 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
           >
-            {/* Flowing Background Elements */}
-            <div className="absolute inset-0">
-              {/* Soft gradient orbs that flow with the image */}
-              <div 
-                className="absolute -top-4 sm:-top-8 -right-4 sm:-right-8 w-24 sm:w-32 h-24 sm:h-32 rounded-full opacity-20"
+            <div>
+              <h3 
                 style={{
-                  background: 'radial-gradient(circle, rgba(255, 182, 193, 0.4) 0%, transparent 70%)',
-                  filter: 'blur(15px) sm:blur(20px)'
+                  fontSize: '48px',
+                  fontFamily: 'Georgia, serif',
+                  color: '#F26B75',
+                  fontWeight: 300,
+                  marginBottom: '8px'
                 }}
-              />
-              <div 
-                className="absolute -bottom-4 sm:-bottom-8 -left-4 sm:-left-8 w-32 sm:w-40 h-32 sm:h-40 rounded-full opacity-15"
+              >
+                15+
+              </h3>
+              <p 
                 style={{
-                  background: 'radial-gradient(circle, rgba(255, 218, 185, 0.4) 0%, transparent 70%)',
-                  filter: 'blur(20px) sm:blur(25px)'
+                  fontSize: '14px',
+                  fontFamily: 'Inter, sans-serif',
+                  color: '#6B7280',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase'
                 }}
-              />
-              <div 
-                className="absolute top-1/2 -right-2 sm:-right-4 w-16 sm:w-24 h-16 sm:h-24 rounded-full opacity-10"
-                style={{
-                  background: 'radial-gradient(circle, rgba(255, 228, 196, 0.5) 0%, transparent 70%)',
-                  filter: 'blur(10px) sm:blur(15px)'
-                }}
-              />
+              >
+                Years of Experience
+              </p>
             </div>
-
-            {/* Main Portrait Container - No white background, flows with texture */}
-            <div className="relative w-full h-full">
-              {/* Portrait Image */}
-              <div className="flowing-image w-full h-full">
-                <Image
-                  src="/images/silvana-portrait.jpg"
-                  alt="Silvana Restrepo - Portrait"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                />
-              </div>
-
-              {/* Floating accent elements */}
-              <motion.div
-                animate={{ 
-                  y: [0, -10, 0],
-                  rotate: [0, 2, 0]
+            
+            <div>
+              <h3 
+                style={{
+                  fontSize: '48px',
+                  fontFamily: 'Georgia, serif',
+                  color: '#F26B75',
+                  fontWeight: 300,
+                  marginBottom: '8px'
                 }}
-                transition={{ 
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
+              >
+                50+
+              </h3>
+              <p 
+                style={{
+                  fontSize: '14px',
+                  fontFamily: 'Inter, sans-serif',
+                  color: '#6B7280',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase'
                 }}
-                className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-4 sm:w-6 h-4 sm:h-6 bg-accent rounded-full opacity-60"
-              />
-              <motion.div
-                animate={{ 
-                  y: [0, 8, 0],
-                  rotate: [0, -1, 0]
+              >
+                Global Projects
+              </p>
+            </div>
+            
+            <div>
+              <h3 
+                style={{
+                  fontSize: '48px',
+                  fontFamily: 'Georgia, serif',
+                  color: '#F26B75',
+                  fontWeight: 300,
+                  marginBottom: '8px'
                 }}
-                transition={{ 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1
+              >
+                3
+              </h3>
+              <p 
+                style={{
+                  fontSize: '14px',
+                  fontFamily: 'Inter, sans-serif',
+                  color: '#6B7280',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase'
                 }}
-                className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 w-3 sm:w-4 h-3 sm:h-4 bg-accent-light rounded-full opacity-40"
-              />
+              >
+                Continents
+              </p>
             </div>
           </motion.div>
         </div>
       </div>
+
+      {/* Floating Organic Elements */}
+      <motion.div
+        animate={{ 
+          y: [0, -20, 0],
+          opacity: [0.1, 0.2, 0.1]
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        className="absolute top-20 right-10 w-32 h-32"
+        style={{
+          background: 'radial-gradient(circle, rgba(242, 107, 117, 0.1) 0%, transparent 70%)',
+          filter: 'blur(40px)'
+        }}
+      />
+      
+      <motion.div
+        animate={{ 
+          y: [0, 20, 0],
+          opacity: [0.08, 0.15, 0.08]
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2
+        }}
+        className="absolute bottom-20 left-10 w-40 h-40"
+        style={{
+          background: 'radial-gradient(circle, rgba(255, 218, 185, 0.1) 0%, transparent 70%)',
+          filter: 'blur(50px)'
+        }}
+      />
     </section>
   );
 };

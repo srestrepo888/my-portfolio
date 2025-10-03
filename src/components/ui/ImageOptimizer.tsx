@@ -10,6 +10,7 @@ interface ImageOptimizerProps {
   aspectRatio?: string;
   priority?: boolean;
   className?: string;
+  style?: React.CSSProperties;
   objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
   placeholder?: 'blur' | 'empty';
   blurDataURL?: string;
@@ -25,6 +26,7 @@ const ImageOptimizer: React.FC<ImageOptimizerProps> = ({
   aspectRatio = '16/10',
   priority = false,
   className = '',
+  style,
   objectFit = 'cover',
   placeholder = 'blur',
   blurDataURL,
@@ -93,6 +95,7 @@ const ImageOptimizer: React.FC<ImageOptimizerProps> = ({
             objectFit,
             width: '100%',
             height: '100%',
+            ...style
           }}
           onLoad={handleLoadingComplete}
           onError={handleError}
@@ -108,7 +111,10 @@ const ImageOptimizer: React.FC<ImageOptimizerProps> = ({
           placeholder={placeholder}
           blurDataURL={blurDataURL || defaultBlurDataURL}
           sizes={sizes}
-          style={{ objectFit }}
+          style={{ 
+            objectFit,
+            ...style
+          }}
           onLoad={handleLoadingComplete}
           onError={handleError}
           className={`transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}

@@ -20,12 +20,13 @@
   /* Color System - Brand Identity */
   --color-background: #FFF8F5; /* Warm peach - personal branding texture */
   --color-surface: #FFFFFF;
-  --color-primary: #1F1F1F; /* Near black for text */
+  --color-primary: #6B7280; /* Middle gray for text */
+  --color-primary-dark: #374151; /* Darker gray for headings */
   --color-secondary: #4A5568; /* Readable gray */
   --color-tertiary: #718096; /* Lighter gray */
-  --color-accent: #FF5A5A; /* Vibrant coral */
-  --color-accent-hover: #FF4040;
-  --color-accent-light: #FFB3B3; /* Light pink */
+  --color-accent: #F26B75; /* Updated accent color */
+  --color-accent-hover: #E91E63;
+  --color-accent-light: #F8BBD9; /* Light pink */
   --color-gradient-start: #FFF8F3;
   --color-gradient-end: #FFE4E4;
 

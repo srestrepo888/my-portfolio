@@ -14,6 +14,9 @@ export interface Project {
   context: string;
   scope: string[];
   impact: string[];
+  video?: string;
+  duration?: string;
+  role?: string;
   testimonial?: {
     quote: string;
     author: string;
@@ -28,6 +31,8 @@ export const projects: Project[] = [
     subtitle: "The First-of-Its-Kind Collective Saudi Wellness Experience Platform",
     client: "Kayanee, a PIF Company",
     year: "2022",
+    duration: "6 months",
+    role: "Experience Architect",
     industry: "Health & Wellness",
     practices: ["Experience Design", "Service Design", "Product Strategy"],
     location: "Saudi Arabia",
@@ -61,6 +66,8 @@ export const projects: Project[] = [
     subtitle: "Transforming static code into dynamic knowledge",
     client: "Globant X",
     year: "2020",
+    duration: "8 months",
+    role: "Experience Architect",
     industry: "AI Software Development",
     practices: ["Service Design", "User Research", "Product Strategy"],
     location: "Worldwide",

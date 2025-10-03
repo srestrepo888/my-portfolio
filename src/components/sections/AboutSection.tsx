@@ -12,10 +12,30 @@ const AboutSection: React.FC = () => {
   return (
     <section 
       id="about" 
-      className="relative section-padding overflow-hidden bg-brand-texture"
+      className="relative section-padding overflow-hidden"
+      style={{
+        background: `
+          radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255, 218, 185, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(255, 228, 196, 0.1) 0%, transparent 50%),
+          linear-gradient(135deg, #FFF8F5 0%, #FFF0E6 50%, #FFE4E4 100%)
+        `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%, 100% 100%'
+      }}
     >
       {/* Personal Branding Texture Overlay */}
-      <div className="absolute inset-0 bg-brand-texture-overlay" />
+      <div 
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 25% 25%, rgba(255, 182, 193, 0.08) 0%, transparent 25%),
+            radial-gradient(circle at 75% 75%, rgba(255, 218, 185, 0.08) 0%, transparent 25%),
+            radial-gradient(circle at 50% 50%, rgba(255, 228, 196, 0.05) 0%, transparent 25%)
+          `,
+          backgroundSize: '200px 200px, 300px 300px, 150px 150px',
+          opacity: 0.3
+        }}
+      />
       
       <div className="container-custom relative z-10">
         {/* Section Number */}
@@ -121,10 +141,11 @@ const AboutSection: React.FC = () => {
               {/* Portrait Image */}
               <div className="flowing-image w-full h-full">
                 <Image
-                  src="/images/hero-portrait.svg"
+                  src="/images/silvana-portrait.jpg"
                   alt="Silvana Restrepo - Portrait"
                   fill
                   className="object-cover object-center"
+                  priority
                 />
               </div>
 

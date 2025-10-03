@@ -56,29 +56,85 @@ const AboutSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative z-20"
           >
-            <h2 className="text-display font-serif text-primary-dark mb-8">
+            <h2 
+              className="mb-12"
+              style={{
+                fontSize: 'clamp(3rem, 5vw, 4.5rem)',
+                fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+                fontWeight: 300,
+                letterSpacing: '0.02em',
+                lineHeight: '1.1',
+                color: '#1F1F1F',
+                fontStyle: 'italic'
+              }}
+            >
               About Me
             </h2>
             
-            <div className="space-y-6 text-body text-primary-gray">
-              <p>
-                I believe the most compelling stories begin with <span className="text-primary-dark font-medium">curiosity</span>—a 
+            <div className="space-y-8">
+              <p 
+                style={{
+                  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                  fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+                  fontWeight: 300,
+                  letterSpacing: '0.02em',
+                  lineHeight: '1.8',
+                  color: '#4A5568'
+                }}
+              >
+                I believe the most compelling stories begin with <span style={{ color: '#1F1F1F', fontWeight: 500, fontStyle: 'italic' }}>curiosity</span>—a 
                 spark that has carried me across continents, blending diverse perspectives from anthropology to business, from innovation to experience design, and from emerging technologies to business transformation.
               </p>
               
-              <p>
+              <p 
+                style={{
+                  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                  fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+                  fontWeight: 300,
+                  letterSpacing: '0.02em',
+                  lineHeight: '1.8',
+                  color: '#4A5568'
+                }}
+              >
                 I have embarked on projects ranging from wellness movements to creating AI-driven platforms that empower developers worldwide.
               </p>
 
-              <p>
-                Each endeavour brings me closer to my mission: connecting strategic business goals with the essence of the <span className="text-primary-dark font-medium">#human perspective</span>.
+              <p 
+                style={{
+                  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                  fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+                  fontWeight: 300,
+                  letterSpacing: '0.02em',
+                  lineHeight: '1.8',
+                  color: '#4A5568'
+                }}
+              >
+                Each endeavour brings me closer to my mission: connecting strategic business goals with the essence of the <span style={{ color: '#1F1F1F', fontWeight: 500, fontStyle: 'italic' }}>#human perspective</span>.
               </p>
 
-              <p>
-                Weather leading teams in retail innovation or pioneering Experience design for global brands, my passion remains: to reveal what lies beneath and transform it into tangible expansion.
+              <p 
+                style={{
+                  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                  fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+                  fontWeight: 300,
+                  letterSpacing: '0.02em',
+                  lineHeight: '1.8',
+                  color: '#4A5568'
+                }}
+              >
+                Whether leading teams in retail innovation or pioneering Experience design for global brands, my passion remains: to reveal what lies beneath and transform it into tangible expansion.
               </p>
 
-              <p>
+              <p 
+                style={{
+                  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                  fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+                  fontWeight: 300,
+                  letterSpacing: '0.02em',
+                  lineHeight: '1.8',
+                  color: '#4A5568'
+                }}
+              >
                 Welcome to my world—where strategy meets soul, and design becomes the universal language of possibility.
               </p>
 
@@ -95,7 +151,17 @@ const AboutSection: React.FC = () => {
                   borderLeft: '4px solid #FF5A5A'
                 }}
               >
-                <p className="text-body italic text-primary-dark">
+                <p 
+                  style={{
+                    fontSize: 'clamp(1.1rem, 2.2vw, 1.3rem)',
+                    fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+                    fontWeight: 300,
+                    letterSpacing: '0.03em',
+                    lineHeight: '1.7',
+                    color: '#1F1F1F',
+                    fontStyle: 'italic'
+                  }}
+                >
                   "The art of MY CRAFT lies in listening to the unspoken, seeing the invisible, and touching the intangible essence of human desire."
                 </p>
                 <p className="text-small text-primary-gray mt-3">— SILVANA</p>

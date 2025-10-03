@@ -50,10 +50,32 @@ const ProjectsSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-section-title font-serif text-primary-dark mb-4">
+          <h2 
+            className="mb-8"
+            style={{
+              fontSize: 'clamp(3.5rem, 6vw, 5.5rem)',
+              fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+              fontWeight: 300,
+              letterSpacing: '0.02em',
+              lineHeight: '1.1',
+              color: '#1F1F1F',
+              fontStyle: 'italic'
+            }}
+          >
             Projects
           </h2>
-          <p className="text-body-lg text-primary-gray">
+          <p 
+            className="max-w-4xl mx-auto"
+            style={{
+              fontSize: 'clamp(1.1rem, 2.2vw, 1.3rem)',
+              fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+              fontWeight: 300,
+              letterSpacing: '0.02em',
+              lineHeight: '1.8',
+              color: '#4A5568',
+              fontStyle: 'italic'
+            }}
+          >
             A selection of strategic consulting projects across various industries.
           </p>
         </motion.div>

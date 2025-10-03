@@ -124,9 +124,10 @@ const CustomCursor: React.FC = () => {
         <div
           className={`rounded-full ${
             isHovering ? 'w-10 h-10' : 'w-5 h-5'
-          } bg-accent transition-all duration-300`}
+          } transition-all duration-300`}
           style={{
-            backgroundColor: 'var(--color-accent)',
+            backgroundColor: '#FF5A5A', // Brand accent color
+            boxShadow: isHovering ? '0 0 20px rgba(255, 90, 90, 0.3)' : '0 0 10px rgba(255, 90, 90, 0.2)',
           }}
         />
       </motion.div>
@@ -148,7 +149,7 @@ const CustomCursor: React.FC = () => {
         <div
           className="w-1 h-1 rounded-full"
           style={{
-            backgroundColor: 'var(--color-accent)',
+            backgroundColor: '#FF5A5A', // Brand accent color
           }}
         />
       </motion.div>

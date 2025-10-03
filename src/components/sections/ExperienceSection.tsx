@@ -101,10 +101,32 @@ const ExperienceSection: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <h2 className="text-display font-serif text-primary-dark mb-6">
+            <h2 
+              className="mb-8"
+              style={{
+                fontSize: 'clamp(3.5rem, 6vw, 5.5rem)',
+                fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+                fontWeight: 300,
+                letterSpacing: '0.02em',
+                lineHeight: '1.1',
+                color: '#1F1F1F',
+                fontStyle: 'italic'
+              }}
+            >
               My Experience
             </h2>
-            <p className="text-body text-primary-gray max-w-3xl mx-auto leading-relaxed">
+            <p 
+              className="max-w-4xl mx-auto"
+              style={{
+                fontSize: 'clamp(1.1rem, 2.2vw, 1.3rem)',
+                fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+                fontWeight: 300,
+                letterSpacing: '0.02em',
+                lineHeight: '1.8',
+                color: '#4A5568',
+                fontStyle: 'italic'
+              }}
+            >
               Some of the hats I have worn over more than 20 years of non-stop, continuous upscaling, reinventing, evolving, and reimagining business, brands, and teams.
             </p>
           </motion.div>

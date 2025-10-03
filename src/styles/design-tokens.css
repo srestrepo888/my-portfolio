@@ -1,36 +1,53 @@
-/* Design Tokens - Portfolio Design System */
-/* Based on Portfolio Guidelines 100% Adherence */
+/* Design Tokens - Ultra-Luxurious Portfolio Design System */
+/* Award-Winning Typography & Color System */
 
 :root {
-  /* Typography Scale - Fluid Responsive */
-  --font-hero: clamp(48px, 7vw, 80px);
-  --font-display: clamp(40px, 5vw, 56px);
-  --font-title: clamp(28px, 3.5vw, 40px);
-  --font-heading: clamp(20px, 2.5vw, 28px);
-  --font-body: clamp(15px, 1.8vw, 18px);
-  --font-small: clamp(13px, 1.4vw, 14px);
-  --font-meta: clamp(11px, 1.2vw, 12px);
+  /* Ultra-Luxurious Typography Scale */
+  --font-hero: clamp(64px, 9vw, 120px);
+  --font-display: clamp(48px, 7vw, 88px);
+  --font-title: clamp(32px, 4.5vw, 56px);
+  --font-heading: clamp(24px, 3.5vw, 40px);
+  --font-body: clamp(16px, 2vw, 20px);
+  --font-small: clamp(14px, 1.6vw, 16px);
+  --font-meta: clamp(12px, 1.4vw, 14px);
 
-  /* Font Weights - Consistent Hierarchy */
-  --weight-light: 300;
-  --weight-regular: 400;
-  --weight-medium: 500;
-  --weight-semibold: 600;
+  /* Sophisticated Font Weights */
+  --weight-thin: 100;
+  --weight-light: 200;
+  --weight-regular: 300;
+  --weight-medium: 400;
+  --weight-semibold: 500;
+  --weight-bold: 600;
+  --weight-black: 700;
 
-  /* Color System - Brand Identity */
+  /* Ultra-Luxurious Font Families */
+  --font-primary: 'Cormorant Garamond', 'Playfair Display', 'Times New Roman', serif;
+  --font-secondary: 'Cormorant', 'Playfair Display', 'Times New Roman', serif;
+  --font-accent: 'Cormorant Upright', 'Playfair Display', serif;
+  --font-body: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
+
+  /* Ultra-Luxurious Color System - Strict Brand Adherence */
   --color-background: #FFF8F5; /* Warm peach - personal branding texture */
   --color-surface: #FFFFFF;
-  --color-primary: #6B7280; /* Middle gray for text */
-  --color-primary-dark: #374151; /* Darker gray for headings */
+  --color-primary: #1F1F1F; /* Near black for text - sophisticated */
+  --color-primary-dark: #0F0F0F; /* Deep black for headings */
   --color-secondary: #4A5568; /* Readable gray */
   --color-tertiary: #718096; /* Lighter gray */
-  --color-accent: #F26B75; /* Updated accent color */
-  --color-accent-hover: #E91E63;
-  --color-accent-light: #F8BBD9; /* Light pink */
-  --color-contrast: #FA706B; /* New contrast color */
+  --color-accent: #FF5A5A; /* Vibrant coral - primary accent */
+  --color-accent-hover: #FF4040; /* Darker coral on hover */
+  --color-accent-light: #FFB3B3; /* Light pink */
+  --color-contrast: #FA706B; /* Contrast color */
   --color-vanilla-off: #FDF6F0; /* Vanilla off background */
   --color-gradient-start: #FFF8F3;
   --color-gradient-end: #FFE4E4;
+  
+  /* Sophisticated Text Colors */
+  --color-text-primary: #1F1F1F;
+  --color-text-secondary: #4A5568;
+  --color-text-tertiary: #718096;
+  --color-text-accent: #FF5A5A;
+  --color-text-light: #9CA3AF;
 
   /* Spacing System - 8px Grid */
   --space-xs: 8px;

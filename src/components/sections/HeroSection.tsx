@@ -110,35 +110,36 @@ const HeroSection: React.FC = () => {
               className="relative max-w-4xl mx-auto"
             >
               <h1 className="relative">
-                <motion.span 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
-                  transition={{ duration: 1, delay: 0.4 }}
+                <motion.span
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
+                  transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
                   className="block"
-                  style={{ 
-                    fontSize: 'clamp(4rem, 8vw, 7rem)',
-                    fontFamily: 'Didot, Playfair Display, serif',
+                  style={{
+                    fontSize: 'clamp(5rem, 10vw, 9rem)',
+                    fontFamily: 'Cormorant Garamond, Playfair Display, serif',
                     fontWeight: 300,
-                    letterSpacing: '0.02em',
-                    lineHeight: '0.9',
-                    color: '#F26B75',
-                    textTransform: 'uppercase'
+                    letterSpacing: '0.05em',
+                    lineHeight: '0.85',
+                    color: '#FF5A5A',
+                    textTransform: 'uppercase',
+                    fontStyle: 'italic'
                   }}
                 >
                   Experience
                 </motion.span>
-                <motion.span 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
-                  transition={{ duration: 1, delay: 0.5 }}
-                  className="block mt-2"
-                  style={{ 
-                    fontSize: 'clamp(3.5rem, 7vw, 6rem)',
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 200,
-                    letterSpacing: '0.15em',
-                    lineHeight: '1',
-                    color: '#4A5568',
+                <motion.span
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
+                  transition={{ duration: 1.2, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  className="block mt-4"
+                  style={{
+                    fontSize: 'clamp(4rem, 8vw, 7rem)',
+                    fontFamily: 'Cormorant, Playfair Display, serif',
+                    fontWeight: 400,
+                    letterSpacing: '0.08em',
+                    lineHeight: '0.9',
+                    color: '#1F1F1F',
                     textTransform: 'uppercase'
                   }}
                 >
@@ -146,86 +147,95 @@ const HeroSection: React.FC = () => {
                 </motion.span>
               </h1>
 
-              {/* Elegant Subtitle */}
+              {/* Ultra-Luxurious Subtitle */}
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
-                transition={{ duration: 1, delay: 0.7 }}
-                className="mt-8 text-lg text-gray-600 max-w-2xl mx-auto"
-                style={{ 
-                  fontFamily: 'Inter, sans-serif',
+                initial={{ opacity: 0, y: 25 }}
+                animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 25 }}
+                transition={{ duration: 1.4, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="mt-12 max-w-3xl mx-auto"
+                style={{
+                  fontSize: 'clamp(1.1rem, 2.2vw, 1.4rem)',
+                  fontFamily: 'Cormorant Garamond, Playfair Display, serif',
                   fontWeight: 300,
-                  letterSpacing: '0.02em',
-                  lineHeight: '1.6'
+                  letterSpacing: '0.03em',
+                  lineHeight: '1.7',
+                  color: '#4A5568',
+                  fontStyle: 'italic'
                 }}
               >
-                Transforming visions into exceptional digital experiences through strategic design and innovative thinking.
+                Crafting extraordinary digital experiences through visionary design and unparalleled architectural expertise.
               </motion.p>
 
-              {/* Decorative Line */}
+              {/* Sophisticated Decorative Element */}
               <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: mounted ? 1 : 0 }}
-                transition={{ duration: 1, delay: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="my-12 mx-auto origin-center"
+                initial={{ scaleX: 0, opacity: 0 }}
+                animate={{ scaleX: mounted ? 1 : 0, opacity: mounted ? 1 : 0 }}
+                transition={{ duration: 1.6, delay: 1.0, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="my-16 mx-auto origin-center"
                 style={{
-                  width: '100px',
-                  height: '1px',
-                  background: 'linear-gradient(90deg, transparent 0%, #F26B75 50%, transparent 100%)'
+                  width: '120px',
+                  height: '2px',
+                  background: 'linear-gradient(90deg, transparent 0%, #FF5A5A 30%, #FF4040 50%, #FF5A5A 70%, transparent 100%)',
+                  borderRadius: '1px'
                 }}
               />
           
-              {/* CTA Buttons */}
+              {/* Ultra-Luxurious CTA Buttons */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
-                transition={{ duration: 1, delay: 1.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="flex gap-6 justify-center mt-8"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 40 }}
+                transition={{ duration: 1.6, delay: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="flex gap-8 justify-center mt-12"
               >
-                <motion.button 
-                  className="group relative px-12 py-4 overflow-hidden"
-                  style={{ 
-                    background: 'linear-gradient(135deg, #F26B75 0%, #E91E63 100%)',
-                    borderRadius: '2px',
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '14px',
-                    letterSpacing: '0.1em',
+                <motion.button
+                  className="group relative px-16 py-5 overflow-hidden"
+                  style={{
+                    background: 'linear-gradient(135deg, #FF5A5A 0%, #FF4040 100%)',
+                    borderRadius: '0px',
+                    fontFamily: 'Cormorant Upright, Playfair Display, serif',
+                    fontSize: '16px',
+                    letterSpacing: '0.15em',
                     textTransform: 'uppercase',
                     color: 'white',
                     fontWeight: 500,
-                    boxShadow: '0 10px 30px rgba(242, 107, 117, 0.2)'
+                    boxShadow: '0 15px 40px rgba(255, 90, 90, 0.25)',
+                    border: '1px solid rgba(255, 90, 90, 0.2)'
                   }}
-                  whileHover={{ 
-                    y: -2,
-                    boxShadow: '0 15px 40px rgba(242, 107, 117, 0.3)'
+                  whileHover={{
+                    y: -3,
+                    boxShadow: '0 20px 50px rgba(255, 90, 90, 0.35)',
+                    scale: 1.02
                   }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <span className="relative z-10">View My Work</span>
                   <motion.div
-                    className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10"
+                    className="absolute inset-0 bg-white opacity-0 group-hover:opacity-15"
                     initial={{ scale: 0 }}
                     whileHover={{ scale: 1 }}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
                   />
                 </motion.button>
-                
-                <motion.button 
-                  className="group px-12 py-4 relative"
-                  style={{ 
+
+                <motion.button
+                  className="group px-16 py-5 relative"
+                  style={{
                     backgroundColor: 'transparent',
-                    border: '1px solid #D1D5DB',
-                    borderRadius: '2px',
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '14px',
-                    letterSpacing: '0.1em',
+                    border: '2px solid #1F1F1F',
+                    borderRadius: '0px',
+                    fontFamily: 'Cormorant Upright, Playfair Display, serif',
+                    fontSize: '16px',
+                    letterSpacing: '0.15em',
                     textTransform: 'uppercase',
-                    color: '#6B7280',
-                    fontWeight: 500
+                    color: '#1F1F1F',
+                    fontWeight: 500,
+                    transition: 'all 0.4s ease'
                   }}
-                  whileHover={{ 
-                    borderColor: '#9CA3AF',
-                    y: -2
+                  whileHover={{
+                    borderColor: '#FF5A5A',
+                    color: '#FF5A5A',
+                    y: -3,
+                    scale: 1.02
                   }}
                   whileTap={{ scale: 0.98 }}
                 >

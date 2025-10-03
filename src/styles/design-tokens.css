@@ -1,0 +1,77 @@
+/* Design Tokens - Portfolio Design System */
+/* Based on Portfolio Guidelines 100% Adherence */
+
+:root {
+  /* Typography Scale - Fluid Responsive */
+  --font-hero: clamp(48px, 7vw, 80px);
+  --font-display: clamp(40px, 5vw, 56px);
+  --font-title: clamp(28px, 3.5vw, 40px);
+  --font-heading: clamp(20px, 2.5vw, 28px);
+  --font-body: clamp(15px, 1.8vw, 18px);
+  --font-small: clamp(13px, 1.4vw, 14px);
+  --font-meta: clamp(11px, 1.2vw, 12px);
+
+  /* Font Weights - Consistent Hierarchy */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  /* Color System - Brand Identity */
+  --color-background: #FFF8F5; /* Warm peach - personal branding texture */
+  --color-surface: #FFFFFF;
+  --color-primary: #1F1F1F; /* Near black for text */
+  --color-secondary: #4A5568; /* Readable gray */
+  --color-tertiary: #718096; /* Lighter gray */
+  --color-accent: #FF5A5A; /* Vibrant coral */
+  --color-accent-hover: #FF4040;
+  --color-accent-light: #FFB3B3; /* Light pink */
+  --color-gradient-start: #FFF8F3;
+  --color-gradient-end: #FFE4E4;
+
+  /* Spacing System - 8px Grid */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-section: clamp(64px, 10vh, 100px); /* Reduced from 120px */
+  --space-component: 32px; /* Tightened from 40-60px */
+
+  /* Animation Timings */
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 800ms;
+  --easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Layout */
+  --max-width: 1440px;
+  --content-width: 1200px;
+  --reading-width: 680px; /* 75 characters */
+
+  /* Borders & Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.16);
+
+  /* Z-index Scale */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-popover: 500;
+  --z-tooltip: 600;
+  --z-cursor: 9999;
+}

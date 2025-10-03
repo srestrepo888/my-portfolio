@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="533" viewBox="0 0 400 533" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="533" fill="#FFF8F5"/>
+  <rect x="50" y="66" width="300" height="400" rx="150" fill="#FFE4E4"/>
+  <circle cx="200" cy="200" r="60" fill="#FF5A5A" opacity="0.3"/>
+  <text x="200" y="350" font-family="Inter, sans-serif" font-size="16" fill="#4A5568" text-anchor="middle">Silvana Restrepo</text>
+  <text x="200" y="375" font-family="Inter, sans-serif" font-size="14" fill="#718096" text-anchor="middle">Experience Architect</text>
+</svg>

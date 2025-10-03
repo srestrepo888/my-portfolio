@@ -27,6 +27,8 @@
   --color-accent: #F26B75; /* Updated accent color */
   --color-accent-hover: #E91E63;
   --color-accent-light: #F8BBD9; /* Light pink */
+  --color-contrast: #FA706B; /* New contrast color */
+  --color-vanilla-off: #FDF6F0; /* Vanilla off background */
   --color-gradient-start: #FFF8F3;
   --color-gradient-end: #FFE4E4;
 

@@ -12,24 +12,24 @@ const HeroSection: React.FC = () => {
   return (
     <section 
       className="min-h-screen relative flex items-center justify-center overflow-hidden"
-      style={{ backgroundColor: '#FFF8F5' }}
+      style={{ backgroundColor: 'var(--color-vanilla-off)' }}
     >
-      {/* Subtle Background Portrait */}
+      {/* High Opacity Background Portrait */}
       <div className="absolute inset-0">
         <ImageOptimizer
           src="/images/hero-portrait.svg"
           alt="Silvana Restrepo - Experience Architect"
-          className="w-full h-full object-cover opacity-10"
+          className="w-full h-full object-cover opacity-60"
           style={{ 
-            filter: 'blur(2px)',
-            transform: 'scale(1.05)'
+            filter: 'blur(1px)',
+            transform: 'scale(1.02)'
           }}
         />
       </div>
 
       {/* Subtle Background Circle */}
       <div 
-        className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-96 h-96 rounded-full opacity-5"
+        className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-96 h-96 rounded-full opacity-8"
         style={{ 
           background: 'linear-gradient(135deg, #F26B75, #F8BBD9)',
           filter: 'blur(40px)'
@@ -80,7 +80,7 @@ const HeroSection: React.FC = () => {
           >
             <div 
               className="w-2 h-2 rounded-full"
-              style={{ backgroundColor: '#F26B75' }}
+              style={{ backgroundColor: 'var(--color-contrast)' }}
             />
             <div 
               className="w-2 h-2 rounded-full -ml-1"
@@ -135,7 +135,7 @@ const HeroSection: React.FC = () => {
       >
         <motion.div 
           className="w-2 h-2 rounded-full"
-          style={{ backgroundColor: '#F26B75' }}
+          style={{ backgroundColor: 'var(--color-contrast)' }}
           animate={{ y: [0, 10, 0] }}
           transition={{ 
             duration: 2,

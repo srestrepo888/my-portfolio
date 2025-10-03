@@ -12,29 +12,20 @@ const HeroSection: React.FC = () => {
   return (
     <section 
       className="min-h-screen relative flex items-center justify-center overflow-hidden"
-      style={{ backgroundColor: 'var(--color-vanilla-off)' }}
+      style={{ backgroundColor: '#FDF6F0' }}
     >
-      {/* High Opacity Background Portrait */}
+      {/* Subtle Background Portrait */}
       <div className="absolute inset-0">
         <ImageOptimizer
           src="/images/hero-portrait.svg"
           alt="Silvana Restrepo - Experience Architect"
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-20"
           style={{ 
-            filter: 'blur(1px)',
-            transform: 'scale(1.02)'
+            filter: 'blur(2px)',
+            transform: 'scale(1.05)'
           }}
         />
       </div>
-
-      {/* Subtle Background Circle */}
-      <div 
-        className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-96 h-96 rounded-full opacity-8"
-        style={{ 
-          background: 'linear-gradient(135deg, #F26B75, #F8BBD9)',
-          filter: 'blur(40px)'
-        }}
-      />
 
       {/* Main Content */}
       <div className="relative z-10 text-center">
@@ -47,7 +38,7 @@ const HeroSection: React.FC = () => {
           <h1 
             className="font-serif leading-tight"
             style={{ 
-              fontSize: 'clamp(5rem, 15vw, 10rem)',
+              fontSize: 'clamp(3rem, 8vw, 6rem)',
               fontWeight: 700
             }}
           >
@@ -55,7 +46,7 @@ const HeroSection: React.FC = () => {
               className="block"
               style={{ 
                 color: '#F26B75',
-                fontSize: '1.3em' // 30% bigger than ARCHITECT
+                fontSize: '1.2em'
               }}
             >
               EXPERIENCE
@@ -63,7 +54,7 @@ const HeroSection: React.FC = () => {
             <span 
               className="block"
               style={{ 
-                color: '#6B7280', // Middle gray
+                color: '#6B7280',
                 fontSize: '1em'
               }}
             >
@@ -71,7 +62,7 @@ const HeroSection: React.FC = () => {
             </span>
           </h1>
           
-          {/* Subtle Delicate Element */}
+          {/* Subtle Delicate Element - Two overlapping dots */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: mounted ? 1 : 0, scale: mounted ? 1 : 0.8 }}
@@ -80,11 +71,11 @@ const HeroSection: React.FC = () => {
           >
             <div 
               className="w-2 h-2 rounded-full"
-              style={{ backgroundColor: 'var(--color-contrast)' }}
+              style={{ backgroundColor: '#F26B75' }}
             />
             <div 
               className="w-2 h-2 rounded-full -ml-1"
-              style={{ backgroundColor: '#60A5FA' }}
+              style={{ backgroundColor: '#F26B75' }}
             />
           </motion.div>
         </motion.div>
@@ -135,7 +126,7 @@ const HeroSection: React.FC = () => {
       >
         <motion.div 
           className="w-2 h-2 rounded-full"
-          style={{ backgroundColor: 'var(--color-contrast)' }}
+          style={{ backgroundColor: '#F26B75' }}
           animate={{ y: [0, 10, 0] }}
           transition={{ 
             duration: 2,

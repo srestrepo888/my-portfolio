@@ -69,7 +69,7 @@ const ExperienceSection: React.FC = () => {
     }
   ];
 
-  const categories = [...new Set(experienceData.map(exp => exp.category))];
+  const categories = Array.from(new Set(experienceData.map(exp => exp.category)));
 
   return (
     <section 

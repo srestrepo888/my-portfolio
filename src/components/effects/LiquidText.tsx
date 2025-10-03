@@ -54,7 +54,7 @@ const LiquidText: React.FC<LiquidTextProps> = ({ text, className, style, delay =
       }
     });
 
-    const handleMouseEnter = (e: MouseEvent) => {
+    const handleMouseEnter = (e: Event) => {
       const letter = e.target as HTMLElement;
       gsap.to(letter, {
         scale: 1.2,
@@ -64,7 +64,7 @@ const LiquidText: React.FC<LiquidTextProps> = ({ text, className, style, delay =
       });
     };
 
-    const handleMouseLeave = (e: MouseEvent) => {
+    const handleMouseLeave = (e: Event) => {
       const letter = e.target as HTMLElement;
       gsap.to(letter, {
         scale: 1,

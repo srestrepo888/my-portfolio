@@ -35,8 +35,8 @@ export const projects: Project[] = [
     heroImage: "/images/projects/kayanee/hero-kayanee.jpeg",
     secondaryImage: "/images/projects/kayanee/secundary-kayanee.jpeg",
     galleryImages: [
-      "/images/projects/kayanee/screens-vsco.jpeg",
-      "/images/projects/kayanee/screenshot-1.png"
+      "/images/projects/kayanee/Screens-VSCO.jpeg",
+      "/images/projects/kayanee/Screenshot 2024-11-15 at 10.42.42.png"
     ],
     context: "For centuries, wellness has been a deeply personal journey rooted in culture and tradition. In Saudi Arabia, Kayanee represents a revolutionary movement in women's health and empowerment. It transforms wellness from isolated practices into an integrated ecosystem of self-care.",
     scope: [
@@ -62,9 +62,9 @@ export const projects: Project[] = [
     heroImage: "/images/projects/augoor/photo-main-carrusel.jpeg",
     secondaryImage: "/images/projects/augoor/hero-2.png",
     galleryImages: [
-      "/images/projects/augoor/screenshot-1.png",
-      "/images/projects/augoor/screenshot-2.png",
-      "/images/projects/augoor/screenshot-3.png"
+      "/images/projects/augoor/Screenshot 2025-04-15 at 13.33.51.png",
+      "/images/projects/augoor/Screenshot 2025-04-15 at 13.34.12.png",
+      "/images/projects/augoor/Screenshot 2025-04-15 at 13.34.27.png"
     ],
     context: "Navigating complex codebases remains software development's greatest challenge. Augoor emerged from Globant X's pioneering AI incubator. It transforms static repositories into dynamic, navigable knowledge systems.",
     scope: [
@@ -93,11 +93,12 @@ export const projects: Project[] = [
     practices: ["Design Ops", "Design Systems", "Service Design"],
     location: "United States",
     webpage: "https://us-vision.jjcustomerconnect.com",
-    heroImage: "/images/projects/j&j/hero-j&j.jpeg",
-    secondaryImage: "/images/projects/j&j/secundary-jjpeg.jpeg",
+    heroImage: "/images/projects/chime-care/hero-j&j.jpeg",
+    secondaryImage: "/images/projects/chime-care/secundary-jjpeg.jpeg",
     galleryImages: [
-      "/images/projects/j&j/screenshot-1.jpeg",
-      "/images/projects/j&j/screenshot-2.png"
+      "/images/projects/chime-care/Screenshot 2025-03-06 at 171139-VSCO.jpeg",
+      "/images/projects/chime-care/Screenshot 2025-04-15 at 13.23.31.png",
+      "/images/projects/chime-care/Secundary Image-VSCO.jpeg"
     ],
     context: "Precision defines ophthalmic surgery where every decision affects patient vision outcomes. CHiME Care serves as an intelligent support system for practitioners. It transforms complex surgical workflows into guided, confident procedures.",
     scope: [
@@ -129,9 +130,10 @@ export const projects: Project[] = [
     heroImage: "/images/projects/nomade/main-hero-carrusel.jpeg",
     secondaryImage: "/images/projects/nomade/secundary-hero.jpeg",
     galleryImages: [
-      "/images/projects/nomade/screenshot-1.png",
-      "/images/projects/nomade/screenshot-2.png",
-      "/images/projects/nomade/screenshot-3.jpeg"
+      "/images/projects/nomade/Screenshot 2024-11-15 at 15.21.56.png",
+      "/images/projects/nomade/Screenshot 2025-04-15 at 13.46.25.png",
+      "/images/projects/nomade/Screenshot 2025-04-15 at 13.57.49.png",
+      "/images/projects/nomade/Screenshot 2025-04-15 at 14.08.50.png"
     ],
     context: "Nomade Hotels blend luxury with nature in Riviera Maya's pristine landscapes. The challenge demanded preserving personal, ritualistic experiences within digital transformation. We crafted technology that enhances rather than replaces human connection.",
     scope: [
@@ -163,8 +165,8 @@ export const projects: Project[] = [
     heroImage: "/images/projects/danone/main-hero-carrusel.jpeg",
     secondaryImage: "/images/projects/danone/secundary-hero.png",
     galleryImages: [
-      "/images/projects/danone/screenshot-1.png",
-      "/images/projects/danone/screenshot-2.png",
+      "/images/projects/danone/Screenshot 2025-04-15 at 14.01.55.png",
+      "/images/projects/danone/Screenshot 2025-04-15 at 14.03.20.png",
       "/images/projects/danone/secundary-danone.jpeg"
     ],
     context: "Food and beverage pricing demands intelligence and adaptability in volatile markets. Danone required transformation from reactive to predictive pricing models. We architected systems that anticipate rather than follow market dynamics.",
@@ -197,9 +199,9 @@ export const projects: Project[] = [
     heroImage: "/images/projects/parques-reunidos/hero-parque-reunidos.png",
     secondaryImage: "/images/projects/parques-reunidos/secundary-image.jpeg",
     galleryImages: [
-      "/images/projects/parques-reunidos/envisioning-digital.png",
-      "/images/projects/parques-reunidos/envisioning-dynamic.png",
-      "/images/projects/parques-reunidos/project-envisioning.png"
+      "/images/projects/parques-reunidos/Envisioning for Digital Planning and Booking.png",
+      "/images/projects/parques-reunidos/Envisioning for Dynamic Booking.png",
+      "/images/projects/parques-reunidos/Project Envisioning Customer Journey Unfied .png"
     ],
     context: "Parques Reunidos operates seventy entertainment venues across three continents. Portfolio diversity created complexity across six sales channels and seven product categories. Unified systems became essential for coordinated growth strategy.",
     scope: [

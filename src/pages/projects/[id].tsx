@@ -80,9 +80,13 @@ export default function ProjectPage({ project }: ProjectPageProps) {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="max-w-6xl mx-auto rounded-[40px] overflow-hidden shadow-2xl aspect-[16/9] bg-gradient-to-br from-background-cream to-background-pink flex items-center justify-center"
+              className="max-w-6xl mx-auto rounded-[40px] overflow-hidden shadow-2xl aspect-[16/9]"
             >
-              <p className="text-primary-gray">Hero Image Placeholder</p>
+              <img
+                src={project.heroImage}
+                alt={`${project.title} - ${project.subtitle}`}
+                className="w-full h-full object-cover"
+              />
             </motion.div>
           </div>
         </section>
@@ -179,16 +183,20 @@ export default function ProjectPage({ project }: ProjectPageProps) {
                 Project Gallery
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {project.galleryImages.map((_, index) => (
+                {project.galleryImages.map((image, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="aspect-[4/3] bg-gradient-to-br from-background-cream to-background-pink rounded-2xl flex items-center justify-center shadow-lg"
+                    className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg"
                   >
-                    <p className="text-primary-gray">Gallery Image {index + 1}</p>
+                    <img
+                      src={image}
+                      alt={`${project.title} gallery image ${index + 1}`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </motion.div>
                 ))}
               </div>

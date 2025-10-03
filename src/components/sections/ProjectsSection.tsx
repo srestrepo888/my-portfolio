@@ -97,9 +97,11 @@ const ProjectsSection: React.FC = () => {
                 {/* Project Image */}
                 <div className="relative order-2 lg:order-1">
                   <div className="relative rounded-[30px] overflow-hidden shadow-2xl aspect-[4/3] bg-white">
-                    <div className="w-full h-full bg-gradient-to-br from-background-cream to-background-pink flex items-center justify-center">
-                      <p className="text-primary-gray">Project Image</p>
-                    </div>
+                    <img
+                      src={filteredProjects[currentProject].heroImage}
+                      alt={`${filteredProjects[currentProject].title} project showcase`}
+                      className="w-full h-full object-cover"
+                    />
                     {/* Project Logo/Badge */}
                     <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
                       <span className="text-sm font-medium text-primary-dark">

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
 
 const HeroSection: React.FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -14,16 +15,40 @@ const HeroSection: React.FC = () => {
   return (
     <section 
       className="min-h-screen relative overflow-hidden"
-      style={{ 
-        background: 'linear-gradient(135deg, #FDF6F0 0%, #FEFEFE 40%, #FDF6F0 100%)'
-      }}
     >
+      {/* Full-width Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/silvana-portrait.jpg"
+          alt="Silvana Restrepo - Experience Architect"
+          fill
+          priority
+          className="object-cover object-center"
+          style={{ zIndex: 1 }}
+        />
+        {/* Light cream overlay with 70-80% opacity */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'rgba(255, 248, 245, 0.75)',
+            zIndex: 2
+          }}
+        />
+        {/* Smooth gradient overlay to soften top and bottom */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(255, 248, 245, 0.9) 0%, rgba(255, 248, 245, 0.7) 20%, rgba(255, 248, 245, 0.7) 80%, rgba(255, 248, 245, 0.9) 100%)',
+            zIndex: 3
+          }}
+        />
+      </div>
       {/* Sophisticated Header */}
       <motion.header 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : -20 }}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="absolute top-0 left-0 right-0 z-20 px-12 py-10"
+        className="absolute top-0 left-0 right-0 z-30 px-12 py-10"
       >
         <nav className="max-w-screen-2xl mx-auto flex justify-between items-center">
           {/* Elegant Logo */}
@@ -42,21 +67,21 @@ const HeroSection: React.FC = () => {
           
           {/* Refined Navigation */}
           <div className="hidden md:flex items-center gap-10">
-            <a href="#home" className="text-xs uppercase tracking-wider text-gray-500 hover:text-gray-700 transition-all duration-300" 
-               style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Home</a>
-            <a href="#about" className="text-xs uppercase tracking-wider text-gray-500 hover:text-gray-700 transition-all duration-300" 
-               style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>About</a>
-            <a href="#projects" className="text-xs uppercase tracking-wider text-gray-500 hover:text-gray-700 transition-all duration-300" 
-               style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Projects</a>
-            <a href="#experience" className="text-xs uppercase tracking-wider text-gray-500 hover:text-gray-700 transition-all duration-300" 
-               style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Experience</a>
-            <a href="#services" className="text-xs uppercase tracking-wider text-gray-500 hover:text-gray-700 transition-all duration-300" 
-               style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Services</a>
+            <a href="#home" className="text-xs uppercase tracking-wider text-gray-600 hover:text-gray-800 transition-all duration-300" 
+               style={{ fontFamily: 'Lato, Montserrat, Open Sans, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Home</a>
+            <a href="#about" className="text-xs uppercase tracking-wider text-gray-600 hover:text-gray-800 transition-all duration-300" 
+               style={{ fontFamily: 'Lato, Montserrat, Open Sans, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>About</a>
+            <a href="#projects" className="text-xs uppercase tracking-wider text-gray-600 hover:text-gray-800 transition-all duration-300" 
+               style={{ fontFamily: 'Lato, Montserrat, Open Sans, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Projects</a>
+            <a href="#experience" className="text-xs uppercase tracking-wider text-gray-600 hover:text-gray-800 transition-all duration-300" 
+               style={{ fontFamily: 'Lato, Montserrat, Open Sans, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Experience</a>
+            <a href="#services" className="text-xs uppercase tracking-wider text-gray-600 hover:text-gray-800 transition-all duration-300" 
+               style={{ fontFamily: 'Lato, Montserrat, Open Sans, sans-serif', letterSpacing: '0.1em', fontWeight: 400 }}>Services</a>
             <motion.button 
               className="px-8 py-3 text-xs uppercase tracking-wider text-white rounded-full transition-all duration-500"
               style={{ 
                 background: 'linear-gradient(135deg, #4A5568 0%, #2D3748 100%)',
-                fontFamily: 'Inter, sans-serif',
+                fontFamily: 'Lato, Montserrat, Open Sans, sans-serif',
                 letterSpacing: '0.1em',
                 fontWeight: 500,
                 boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)'
@@ -100,7 +125,7 @@ const HeroSection: React.FC = () => {
           />
         </div>
 
-        <div className="container mx-auto px-12 relative z-10">
+        <div className="container mx-auto px-12 relative z-20">
           <div className="text-center">
             {/* Clean, Elegant Typography */}
             <motion.div 
@@ -117,16 +142,17 @@ const HeroSection: React.FC = () => {
                   className="block"
                   style={{
                     fontSize: 'clamp(5rem, 10vw, 9rem)',
-                    fontFamily: 'Cormorant Garamond, Playfair Display, serif',
+                    fontFamily: 'Playfair Display, Didot, Bodoni, serif',
                     fontWeight: 300,
                     letterSpacing: '0.05em',
                     lineHeight: '0.85',
                     color: '#FF5A5A',
                     textTransform: 'uppercase',
-                    fontStyle: 'italic'
+                    fontStyle: 'italic',
+                    fontVariationSettings: '"wght" 300, "opsz" 72'
                   }}
                 >
-                  Experience
+                  EXPERIENCE
                 </motion.span>
                 <motion.span
                   initial={{ opacity: 0, y: 30 }}
@@ -135,7 +161,7 @@ const HeroSection: React.FC = () => {
                   className="block mt-4"
                   style={{
                     fontSize: 'clamp(4rem, 8vw, 7rem)',
-                    fontFamily: 'Cormorant, Playfair Display, serif',
+                    fontFamily: 'Cormorant Garamond, Libre Baskerville, EB Garamond, serif',
                     fontWeight: 400,
                     letterSpacing: '0.08em',
                     lineHeight: '0.9',
@@ -143,7 +169,7 @@ const HeroSection: React.FC = () => {
                     textTransform: 'uppercase'
                   }}
                 >
-                  Architect
+                  ARCHITECT
                 </motion.span>
               </h1>
 

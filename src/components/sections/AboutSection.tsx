@@ -210,32 +210,22 @@ const AboutSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="relative h-96 lg:h-[500px]"
             >
-              {/* Floating Photo - No Container, Truly Floating */}
-              <motion.div
-                className="absolute inset-0"
-                animate={{
-                  y: [0, -20, 10, 0],
-                  x: [0, 15, -8, 0],
-                  rotate: [0, 2, -1, 0],
-                  scale: [1, 1.03, 0.97, 1]
-                }}
-                transition={{
-                  duration: 15,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                whileHover={{ 
-                  scale: 1.08,
-                  rotate: 3,
-                  y: -10,
-                  transition: { duration: 0.8, ease: "easeOut" }
-                }}
-                style={{
-                  filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
-                  maskImage: `radial-gradient(ellipse 85% 95% at 50% 50%, black 70%, transparent 90%)`,
-                  WebkitMaskImage: `radial-gradient(ellipse 85% 95% at 50% 50%, black 70%, transparent 90%)`
-                }}
-              >
+                   {/* Elegant Static Photo */}
+                   <motion.div
+                     className="absolute inset-0"
+                     initial={{ opacity: 0, scale: 0.9 }}
+                     animate={{ opacity: 1, scale: 1 }}
+                     transition={{ duration: 0.8, delay: 0.5 }}
+                     whileHover={{ 
+                       scale: 1.02,
+                       transition: { duration: 0.3, ease: "easeOut" }
+                     }}
+                     style={{
+                       filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
+                       maskImage: `radial-gradient(ellipse 85% 95% at 50% 50%, black 70%, transparent 90%)`,
+                       WebkitMaskImage: `radial-gradient(ellipse 85% 95% at 50% 50%, black 70%, transparent 90%)`
+                     }}
+                   >
                 <Image
                   src="/images/silvana-portrait.jpg"
                   alt="Silvana Restrepo - Experience Architect"
@@ -248,153 +238,81 @@ const AboutSection: React.FC = () => {
                 />
               </motion.div>
 
-              {/* Floating Organic Brand Elements Around Photo */}
-              <motion.div
-                animate={{
-                  y: [0, -25, 12, 0],
-                  x: [0, 20, -10, 0],
-                  rotate: [0, 180, 360, 0],
-                  opacity: [0.3, 0.6, 0.4, 0.3]
-                }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="absolute top-4 right-4 w-24 h-24"
-                style={{
-                  background: 'radial-gradient(circle, rgba(242, 107, 117, 0.15), transparent)',
-                  borderRadius: '50%',
-                  filter: 'blur(4px)'
-                }}
-              />
+                   {/* Elegant Static Brand Elements Around Photo */}
+                   <div
+                     className="absolute top-4 right-4 w-24 h-24"
+                     style={{
+                       background: 'radial-gradient(circle, rgba(242, 107, 117, 0.15), transparent)',
+                       borderRadius: '50%',
+                       filter: 'blur(4px)',
+                       opacity: 0.4
+                     }}
+                   />
 
-              <motion.div
-                animate={{
-                  y: [0, 30, -15, 0],
-                  x: [0, -25, 12, 0],
-                  scale: [0.8, 1.3, 0.9, 0.8],
-                  opacity: [0.2, 0.5, 0.3, 0.2]
-                }}
-                transition={{
-                  duration: 25,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 7
-                }}
-                className="absolute bottom-8 left-8 w-20 h-20"
-                style={{
-                  background: 'linear-gradient(45deg, rgba(255, 218, 185, 0.2), rgba(242, 107, 117, 0.1))',
-                  borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
-                  filter: 'blur(3px)'
-                }}
-              />
+                   <div
+                     className="absolute bottom-8 left-8 w-20 h-20"
+                     style={{
+                       background: 'linear-gradient(45deg, rgba(255, 218, 185, 0.2), rgba(242, 107, 117, 0.1))',
+                       borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
+                       filter: 'blur(3px)',
+                       opacity: 0.3
+                     }}
+                   />
 
-              {/* Flowing Brand Lines Around Photo */}
-              <motion.div
-                animate={{
-                  x: [0, 40, -25, 0],
-                  y: [0, -20, 12, 0],
-                  rotate: [0, 3, -2, 0],
-                  opacity: [0.15, 0.4, 0.2, 0.15]
-                }}
-                transition={{
-                  duration: 30,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="absolute top-1/4 left-2 w-40 h-px"
-                style={{
-                  background: 'linear-gradient(90deg, transparent, rgba(242, 107, 117, 0.5), transparent)',
-                  transform: 'rotate(-20deg)'
-                }}
-              />
+                   {/* Elegant Static Brand Lines Around Photo */}
+                   <div
+                     className="absolute top-1/4 left-2 w-40 h-px"
+                     style={{
+                       background: 'linear-gradient(90deg, transparent, rgba(242, 107, 117, 0.5), transparent)',
+                       transform: 'rotate(-20deg)',
+                       opacity: 0.2
+                     }}
+                   />
 
-              <motion.div
-                animate={{
-                  x: [0, -35, 20, 0],
-                  y: [0, 25, -15, 0],
-                  rotate: [0, -2, 3, 0],
-                  opacity: [0.12, 0.35, 0.18, 0.12]
-                }}
-                transition={{
-                  duration: 35,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 10
-                }}
-                className="absolute bottom-1/3 right-2 w-36 h-px"
-                style={{
-                  background: 'linear-gradient(90deg, transparent, rgba(255, 218, 185, 0.6), transparent)',
-                  transform: 'rotate(25deg)'
-                }}
-              />
+                   <div
+                     className="absolute bottom-1/3 right-2 w-36 h-px"
+                     style={{
+                       background: 'linear-gradient(90deg, transparent, rgba(255, 218, 185, 0.6), transparent)',
+                       transform: 'rotate(25deg)',
+                       opacity: 0.15
+                     }}
+                   />
 
-              {/* Additional Floating Elements */}
-              <motion.div
-                animate={{
-                  y: [0, -15, 8, 0],
-                  x: [0, 12, -6, 0],
-                  scale: [1, 1.1, 0.9, 1],
-                  opacity: [0.1, 0.3, 0.15, 0.1]
-                }}
-                transition={{
-                  duration: 18,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 3
-                }}
-                className="absolute top-1/2 right-1/4 w-16 h-16"
-                style={{
-                  background: 'conic-gradient(from 45deg, rgba(242, 107, 117, 0.1), rgba(255, 218, 185, 0.08), rgba(242, 107, 117, 0.1))',
-                  borderRadius: '50%',
-                  filter: 'blur(2px)'
-                }}
-              />
+                   {/* Additional Static Elements */}
+                   <div
+                     className="absolute top-1/2 right-1/4 w-16 h-16"
+                     style={{
+                       background: 'conic-gradient(from 45deg, rgba(242, 107, 117, 0.1), rgba(255, 218, 185, 0.08), rgba(242, 107, 117, 0.1))',
+                       borderRadius: '50%',
+                       filter: 'blur(2px)',
+                       opacity: 0.2
+                     }}
+                   />
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Subtle Floating Elements */}
-      <motion.div
-        animate={{ 
-          y: [0, -20, 10, 0],
-          x: [0, 10, -5, 0],
-          opacity: [0.05, 0.15, 0.08, 0.05]
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-        className="absolute top-1/4 right-1/4 w-24 h-24"
-        style={{
-          background: 'radial-gradient(circle, rgba(242, 107, 117, 0.08), transparent)',
-          filter: 'blur(30px)',
-          borderRadius: '50%'
-        }}
-      />
-      
-      <motion.div
-        animate={{ 
-          y: [0, 15, -8, 0],
-          x: [0, -12, 6, 0],
-          opacity: [0.03, 0.12, 0.06, 0.03]
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 5
-        }}
-        className="absolute bottom-1/3 left-1/5 w-32 h-32"
-        style={{
-          background: 'radial-gradient(circle, rgba(255, 218, 185, 0.06), transparent)',
-          filter: 'blur(40px)',
-          borderRadius: '50%'
-        }}
-      />
+           {/* Subtle Static Background Elements */}
+           <div
+             className="absolute top-1/4 right-1/4 w-24 h-24"
+             style={{
+               background: 'radial-gradient(circle, rgba(242, 107, 117, 0.08), transparent)',
+               filter: 'blur(30px)',
+               borderRadius: '50%',
+               opacity: 0.1
+             }}
+           />
+           
+           <div
+             className="absolute bottom-1/3 left-1/5 w-32 h-32"
+             style={{
+               background: 'radial-gradient(circle, rgba(255, 218, 185, 0.06), transparent)',
+               filter: 'blur(40px)',
+               borderRadius: '50%',
+               opacity: 0.08
+             }}
+           />
     </section>
   );
 };

@@ -4,7 +4,6 @@ import dynamic from 'next/dynamic';
 
 const ParticleField = dynamic(() => import('@/components/effects/ParticleField'), { ssr: false });
 const MagneticButton = dynamic(() => import('@/components/effects/MagneticButton'), { ssr: false });
-const LiquidText = dynamic(() => import('@/components/effects/LiquidText'), { ssr: false });
 
 const HeroSection: React.FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -102,74 +101,144 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 1.2, delay: 0.3 }}
           className="text-center relative z-10"
         >
-          {/* Liquid Morphing Typography - The Main Focus */}
+          {/* Ultra-Luxurious Typography Animation - Independent Elegant Movement */}
           <motion.h1 
             className="mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
-            transition={{ duration: 1, delay: 0.4 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: mounted ? 1 : 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {mounted ? (
+            {/* EXPERIENCE - Elegant Serif Animation */}
+            <motion.div
+              className="block"
+              initial={{ 
+                opacity: 0,
+                y: 80,
+                scale: 0.8,
+                rotateX: -45,
+                filter: 'blur(20px)'
+              }}
+              animate={mounted ? { 
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                rotateX: 0,
+                filter: 'blur(0px)'
+              } : {}}
+              transition={{
+                duration: 1.8,
+                delay: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94], // Custom cubic-bezier for luxury
+                type: "spring",
+                stiffness: 50,
+                damping: 15
+              }}
+              style={{ 
+                fontSize: 'clamp(4rem, 9vw, 7rem)',
+                fontFamily: 'Georgia, serif',
+                fontWeight: 300,
+                letterSpacing: '0.08em',
+                lineHeight: '0.9',
+                color: '#F26B75',
+                textTransform: 'uppercase',
+                transformStyle: 'preserve-3d',
+                perspective: '1000px'
+              }}
+              whileHover={{
+                scale: 1.02,
+                y: -5,
+                transition: { duration: 0.4, ease: "easeOut" }
+              }}
+            >
+              EXPERIENCE
+            </motion.div>
+
+            {/* ARCHITECT - Sophisticated Sans-Serif Animation */}
+            <motion.div
+              className="block mt-4"
+              initial={{ 
+                opacity: 0,
+                x: -100,
+                scale: 0.9,
+                rotateY: -30,
+                filter: 'blur(15px)'
+              }}
+              animate={mounted ? { 
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                rotateY: 0,
+                filter: 'blur(0px)'
+              } : {}}
+              transition={{
+                duration: 2.2,
+                delay: 1.2,
+                ease: [0.19, 1, 0.22, 1], // Custom easing for sophistication
+                type: "spring",
+                stiffness: 40,
+                damping: 12
+              }}
+              style={{ 
+                fontSize: 'clamp(3.5rem, 8vw, 6rem)',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 200,
+                letterSpacing: '0.2em',
+                lineHeight: '0.9',
+                color: '#4A5568',
+                textTransform: 'uppercase',
+                transformStyle: 'preserve-3d',
+                perspective: '1000px'
+              }}
+              whileHover={{
+                scale: 1.015,
+                x: 8,
+                transition: { duration: 0.5, ease: "easeOut" }
+              }}
+            >
+              ARCHITECT
+            </motion.div>
+
+            {/* Continuous Subtle Animation - Ultra-Luxurious Floating */}
+            {mounted && (
               <>
-                <LiquidText
-                  text="EXPERIENCE"
-                  className="block"
-                  style={{ 
-                    fontSize: 'clamp(4rem, 9vw, 7rem)',
-                    fontFamily: 'Georgia, serif',
-                    fontWeight: 300,
-                    letterSpacing: '0.08em',
-                    lineHeight: '0.9',
-                    color: '#F26B75',
-                    textTransform: 'uppercase'
+                <motion.div
+                  className="absolute inset-0 pointer-events-none"
+                  animate={{
+                    y: [0, -8, 4, 0],
+                    rotate: [0, 0.5, -0.3, 0],
+                    scale: [1, 1.001, 0.999, 1]
                   }}
-                  delay={0.5}
+                  transition={{
+                    duration: 12,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  style={{
+                    background: 'linear-gradient(45deg, transparent, rgba(242, 107, 117, 0.02), transparent)',
+                    filter: 'blur(1px)',
+                    mixBlendMode: 'multiply'
+                  }}
                 />
-                <LiquidText
-                  text="ARCHITECT"
-                  className="block mt-4"
-                  style={{ 
-                    fontSize: 'clamp(3.5rem, 8vw, 6rem)',
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 200,
-                    letterSpacing: '0.2em',
-                    lineHeight: '0.9',
-                    color: '#4A5568',
-                    textTransform: 'uppercase'
+                
+                <motion.div
+                  className="absolute inset-0 pointer-events-none"
+                  animate={{
+                    y: [0, 6, -4, 0],
+                    rotate: [0, -0.3, 0.4, 0],
+                    scale: [1, 0.999, 1.001, 1]
                   }}
-                  delay={0.7}
+                  transition={{
+                    duration: 15,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 3
+                  }}
+                  style={{
+                    background: 'linear-gradient(-45deg, transparent, rgba(74, 85, 104, 0.02), transparent)',
+                    filter: 'blur(0.5px)',
+                    mixBlendMode: 'multiply'
+                  }}
                 />
-              </>
-            ) : (
-              <>
-                <span 
-                  className="block"
-                  style={{ 
-                    fontSize: 'clamp(4rem, 9vw, 7rem)',
-                    fontFamily: 'Georgia, serif',
-                    fontWeight: 300,
-                    letterSpacing: '0.08em',
-                    lineHeight: '0.9',
-                    color: '#F26B75',
-                    textTransform: 'uppercase'
-                  }}
-                >
-                  Experience
-                </span>
-                <span 
-                  className="block mt-4"
-                  style={{ 
-                    fontSize: 'clamp(3.5rem, 8vw, 6rem)',
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 200,
-                    letterSpacing: '0.2em',
-                    lineHeight: '0.9',
-                    color: '#4A5568',
-                    textTransform: 'uppercase'
-                  }}
-                >
-                  Architect
-                </span>
               </>
             )}
           </motion.h1>

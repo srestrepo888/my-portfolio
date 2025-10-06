@@ -40,8 +40,14 @@ const Navigation: React.FC = () => {
       <div className="max-w-[1200px] mx-auto px-6 flex justify-between items-center">
         <Link 
           href="/" 
-          className="font-serif text-heading font-bold touchable transition-all duration-300 hover:scale-105"
-          style={{ color: 'var(--color-primary)' }}
+          className="font-serif text-heading touchable transition-all duration-300 hover:scale-105"
+          style={{ 
+            color: 'var(--color-primary)',
+            fontWeight: 400,
+            fontFamily: 'Cormorant Garamond, serif',
+            fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+            letterSpacing: '0.02em'
+          }}
         >
           Silvana Restrepo
         </Link>
@@ -57,10 +63,14 @@ const Navigation: React.FC = () => {
             >
               <Link
                 href={item.href}
-                className="touchable font-medium transition-all duration-300 hover:scale-105 px-2 py-1"
+                className="touchable transition-all duration-300 hover:scale-105 px-2 py-1"
                 style={{ 
                   color: 'var(--color-primary)',
-                  fontSize: 'var(--font-body)'
+                  fontSize: 'clamp(0.9rem, 1.5vw, 1rem)',
+                  fontFamily: 'Lato, sans-serif',
+                  fontWeight: 300,
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = 'var(--color-accent)';
@@ -74,10 +84,15 @@ const Navigation: React.FC = () => {
             </motion.div>
           ))}
           <motion.button 
-            className="touchable ml-4 px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:scale-105 min-h-[44px]"
+            className="touchable ml-4 px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-105 min-h-[44px]"
             style={{ 
               backgroundColor: 'var(--color-accent)',
-              color: 'var(--color-background)'
+              color: 'var(--color-background)',
+              fontFamily: 'Lato, sans-serif',
+              fontWeight: 300,
+              fontSize: 'clamp(0.85rem, 1.2vw, 0.9rem)',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase'
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -147,10 +162,14 @@ const Navigation: React.FC = () => {
                     <Link
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block py-3 font-medium transition-colors duration-300 min-h-[44px]"
+                      className="block py-3 transition-colors duration-300 min-h-[44px]"
                       style={{ 
                         color: 'var(--color-primary)',
-                        fontSize: 'var(--font-body)'
+                        fontSize: 'clamp(0.9rem, 1.5vw, 1rem)',
+                        fontFamily: 'Lato, sans-serif',
+                        fontWeight: 300,
+                        letterSpacing: '0.05em',
+                        textTransform: 'uppercase'
                       }}
                       onTouchStart={(e) => {
                         e.currentTarget.style.color = 'var(--color-accent)';
@@ -164,10 +183,15 @@ const Navigation: React.FC = () => {
                   </motion.div>
                 ))}
                 <motion.button 
-                  className="mt-4 px-6 py-3 rounded-full font-medium transition-all duration-300 min-h-[44px]"
+                  className="mt-4 px-6 py-3 rounded-full transition-all duration-300 min-h-[44px]"
                   style={{ 
                     backgroundColor: 'var(--color-accent)',
-                    color: 'var(--color-background)'
+                    color: 'var(--color-background)',
+                    fontFamily: 'Lato, sans-serif',
+                    fontWeight: 300,
+                    fontSize: 'clamp(0.85rem, 1.2vw, 0.9rem)',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase'
                   }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}

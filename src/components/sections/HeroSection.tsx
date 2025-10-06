@@ -93,63 +93,6 @@ const HeroSection: React.FC = () => {
       {/* Subtle Particle System */}
       {mounted && <ParticleField />}
 
-      {/* Clean, Minimal Navigation */}
-      <motion.header 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : -20 }}
-        transition={{ duration: 1, delay: 0.2 }}
-        className="absolute top-0 left-0 right-0 z-30 px-8 lg:px-16 py-8"
-      >
-        <nav className="max-w-screen-2xl mx-auto flex justify-between items-center">
-          <motion.div 
-            className="text-2xl lg:text-3xl cursor-pointer"
-            style={{ 
-              fontFamily: 'Georgia, serif',
-              color: '#6B7280',
-              fontWeight: 400,
-              letterSpacing: '-0.01em'
-            }}
-          >
-            Silvana
-          </motion.div>
-          
-          <div className="hidden lg:flex items-center gap-10">
-            {['Home', 'About', 'Projects', 'Experience', 'Services'].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-xs uppercase tracking-wider text-gray-600 hover:text-gray-800 transition-colors duration-300"
-                style={{ 
-                  fontFamily: 'Inter, sans-serif', 
-                  letterSpacing: '0.1em', 
-                  fontWeight: 500 
-                }}
-              >
-                {item}
-              </a>
-            ))}
-            
-            <motion.button 
-              className="px-8 py-3 text-xs uppercase tracking-wider"
-              style={{ 
-                backgroundColor: '#4A5568',
-                color: 'white',
-                fontFamily: 'Inter, sans-serif',
-                letterSpacing: '0.12em',
-                fontWeight: 600,
-                borderRadius: '50px'
-              }}
-              whileHover={{ 
-                scale: 1.05,
-                backgroundColor: '#2D3748'
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Let's Connect
-            </motion.button>
-          </div>
-        </nav>
-      </motion.header>
 
       {/* Main Content - Clean, Centered, Typography-Focused */}
       <div className="relative min-h-screen flex items-center justify-center px-8">
@@ -231,23 +174,6 @@ const HeroSection: React.FC = () => {
             )}
           </motion.h1>
 
-          {/* Subtle Description - Optional */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: mounted ? 0.8 : 0, y: mounted ? 0 : 20 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="max-w-2xl mx-auto mb-12"
-            style={{
-              fontSize: '18px',
-              fontFamily: 'Inter, sans-serif',
-              color: '#6B7280',
-              fontWeight: 300,
-              lineHeight: '1.6',
-              letterSpacing: '0.02em'
-            }}
-          >
-            Transforming business vision into human experiences through strategic design and architectural excellence
-          </motion.p>
 
           {/* Clean CTAs */}
           <motion.div
@@ -264,11 +190,11 @@ const HeroSection: React.FC = () => {
                     style={{ 
                       backgroundColor: '#F26B75',
                       color: 'white',
-                      fontFamily: 'Inter, sans-serif',
-                      fontSize: '14px',
-                      letterSpacing: '0.1em',
+                      fontFamily: 'Lato, sans-serif',
+                      fontSize: 'clamp(0.85rem, 1.2vw, 0.9rem)',
+                      letterSpacing: '0.08em',
                       textTransform: 'uppercase',
-                      fontWeight: 500,
+                      fontWeight: 300,
                       borderRadius: '2px'
                     }}
                     whileHover={{ 
@@ -287,11 +213,11 @@ const HeroSection: React.FC = () => {
                       backgroundColor: 'transparent',
                       border: '1px solid #CBD5E1',
                       color: '#6B7280',
-                      fontFamily: 'Inter, sans-serif',
-                      fontSize: '14px',
-                      letterSpacing: '0.1em',
+                      fontFamily: 'Lato, sans-serif',
+                      fontSize: 'clamp(0.85rem, 1.2vw, 0.9rem)',
+                      letterSpacing: '0.08em',
                       textTransform: 'uppercase',
-                      fontWeight: 500,
+                      fontWeight: 300,
                       borderRadius: '2px'
                     }}
                     whileHover={{ 

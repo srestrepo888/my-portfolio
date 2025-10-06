@@ -72,29 +72,132 @@ const AboutSection: React.FC = () => {
           }}
         />
         
-        {/* Flowing Gradient Lines - Organic Movement */}
+        {/* Floating Personal Branding Elements */}
         <motion.div 
-          className="absolute inset-0 opacity-5"
-          animate={{
-            backgroundPosition: ['0% 0%', '100% 100%'],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            repeatType: 'reverse',
-            ease: 'linear'
-          }}
-          style={{
-            backgroundImage: `repeating-linear-gradient(
-              45deg,
-              transparent,
-              transparent 35px,
-              rgba(242, 107, 117, 0.03) 35px,
-              rgba(242, 107, 117, 0.03) 70px
-            )`,
-            backgroundSize: '200% 200%'
-          }}
-        />
+          className="absolute inset-0"
+          style={{ pointerEvents: 'none' }}
+        >
+          {/* Floating Brand Lines - Elegant Movement */}
+          <motion.div
+            animate={{
+              x: [0, 30, -20, 0],
+              y: [0, -15, 10, 0],
+              rotate: [0, 2, -1, 0],
+              opacity: [0.02, 0.08, 0.03, 0.02]
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute top-1/4 left-1/4 w-96 h-px"
+            style={{
+              background: 'linear-gradient(90deg, transparent, rgba(242, 107, 117, 0.4), transparent)',
+              transform: 'rotate(-15deg)'
+            }}
+          />
+          
+          <motion.div
+            animate={{
+              x: [0, -25, 15, 0],
+              y: [0, 20, -10, 0],
+              rotate: [0, -1, 2, 0],
+              opacity: [0.03, 0.06, 0.02, 0.03]
+            }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 5
+            }}
+            className="absolute top-1/3 right-1/3 w-80 h-px"
+            style={{
+              background: 'linear-gradient(90deg, transparent, rgba(255, 218, 185, 0.5), transparent)',
+              transform: 'rotate(20deg)'
+            }}
+          />
+          
+          <motion.div
+            animate={{
+              x: [0, 20, -30, 0],
+              y: [0, -25, 15, 0],
+              rotate: [0, 1, -2, 0],
+              opacity: [0.02, 0.05, 0.01, 0.02]
+            }}
+            transition={{
+              duration: 35,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 10
+            }}
+            className="absolute bottom-1/3 left-1/5 w-72 h-px"
+            style={{
+              background: 'linear-gradient(90deg, transparent, rgba(242, 107, 117, 0.3), transparent)',
+              transform: 'rotate(-25deg)'
+            }}
+          />
+
+          {/* Floating Geometric Brand Elements */}
+          <motion.div
+            animate={{
+              scale: [1, 1.2, 0.8, 1],
+              rotate: [0, 180, 360, 0],
+              opacity: [0.05, 0.15, 0.08, 0.05]
+            }}
+            transition={{
+              duration: 40,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute top-1/5 right-1/4 w-16 h-16"
+            style={{
+              background: 'radial-gradient(circle, rgba(242, 107, 117, 0.1), transparent)',
+              borderRadius: '50%',
+              filter: 'blur(2px)'
+            }}
+          />
+          
+          <motion.div
+            animate={{
+              scale: [0.8, 1.3, 0.9, 0.8],
+              rotate: [0, -90, 180, 0],
+              opacity: [0.03, 0.12, 0.06, 0.03]
+            }}
+            transition={{
+              duration: 45,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 8
+            }}
+            className="absolute bottom-1/4 right-1/5 w-12 h-12"
+            style={{
+              background: 'linear-gradient(45deg, rgba(255, 218, 185, 0.2), transparent)',
+              transform: 'rotate(45deg)',
+              filter: 'blur(1px)'
+            }}
+          />
+
+          {/* Floating Textural Elements */}
+          <motion.div
+            animate={{
+              x: [0, 40, -20, 0],
+              y: [0, -30, 20, 0],
+              opacity: [0.02, 0.08, 0.03, 0.02]
+            }}
+            transition={{
+              duration: 50,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 15
+            }}
+            className="absolute top-2/3 left-1/3 w-24 h-24"
+            style={{
+              background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F26B75' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3Ccircle cx='50' cy='10' r='1.5'/%3E%3Ccircle cx='10' cy='50' r='1'/%3E%3Ccircle cx='50' cy='50' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundSize: '60px 60px',
+              filter: 'blur(0.5px)'
+            }}
+          />
+        </motion.div>
       </motion.div>
       
       {/* Content Layer */}
@@ -366,39 +469,131 @@ const AboutSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Floating Organic Elements */}
+      {/* Enhanced Floating Personal Branding Elements */}
       <motion.div
         animate={{ 
-          y: [0, -20, 0],
-          opacity: [0.1, 0.2, 0.1]
+          y: [0, -30, 10, 0],
+          x: [0, 15, -10, 0],
+          scale: [1, 1.1, 0.9, 1],
+          opacity: [0.08, 0.25, 0.12, 0.08]
         }}
         transition={{
-          duration: 8,
+          duration: 12,
           repeat: Infinity,
           ease: "easeInOut"
         }}
         className="absolute top-20 right-10 w-32 h-32"
         style={{
-          background: 'radial-gradient(circle, rgba(242, 107, 117, 0.1) 0%, transparent 70%)',
-          filter: 'blur(40px)'
+          background: 'radial-gradient(circle, rgba(242, 107, 117, 0.15) 0%, transparent 70%)',
+          filter: 'blur(40px)',
+          borderRadius: '50%'
         }}
       />
       
       <motion.div
         animate={{ 
-          y: [0, 20, 0],
-          opacity: [0.08, 0.15, 0.08]
+          y: [0, 25, -15, 0],
+          x: [0, -20, 12, 0],
+          scale: [0.8, 1.2, 0.9, 0.8],
+          opacity: [0.06, 0.18, 0.09, 0.06]
         }}
         transition={{
-          duration: 10,
+          duration: 15,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: 2
+          delay: 3
         }}
         className="absolute bottom-20 left-10 w-40 h-40"
         style={{
-          background: 'radial-gradient(circle, rgba(255, 218, 185, 0.1) 0%, transparent 70%)',
-          filter: 'blur(50px)'
+          background: 'radial-gradient(circle, rgba(255, 218, 185, 0.12) 0%, transparent 70%)',
+          filter: 'blur(50px)',
+          borderRadius: '50%'
+        }}
+      />
+
+      {/* Additional Floating Brand Elements */}
+      <motion.div
+        animate={{ 
+          y: [0, -40, 20, 0],
+          x: [0, 25, -15, 0],
+          rotate: [0, 180, 360, 0],
+          opacity: [0.03, 0.12, 0.06, 0.03]
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 7
+        }}
+        className="absolute top-1/2 left-1/6 w-20 h-20"
+        style={{
+          background: 'linear-gradient(45deg, rgba(242, 107, 117, 0.1), rgba(255, 218, 185, 0.08))',
+          borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
+          filter: 'blur(3px)'
+        }}
+      />
+
+      <motion.div
+        animate={{ 
+          y: [0, 35, -20, 0],
+          x: [0, -30, 18, 0],
+          scale: [1, 0.7, 1.3, 1],
+          opacity: [0.04, 0.15, 0.07, 0.04]
+        }}
+        transition={{
+          duration: 18,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 11
+        }}
+        className="absolute bottom-1/3 right-1/6 w-16 h-16"
+        style={{
+          background: 'conic-gradient(from 45deg, rgba(242, 107, 117, 0.08), rgba(255, 218, 185, 0.06), rgba(242, 107, 117, 0.08))',
+          borderRadius: '50%',
+          filter: 'blur(2px)'
+        }}
+      />
+
+      {/* Floating Textural Brand Patterns */}
+      <motion.div
+        animate={{ 
+          y: [0, -25, 15, 0],
+          x: [0, 20, -12, 0],
+          rotate: [0, 90, 180, 0],
+          opacity: [0.02, 0.08, 0.04, 0.02]
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 5
+        }}
+        className="absolute top-1/4 right-1/6 w-28 h-28"
+        style={{
+          background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F26B75' fill-opacity='0.08'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M20 20c0 11.046 8.954 20 20 20V20H20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '40px 40px',
+          filter: 'blur(1px)'
+        }}
+      />
+
+      <motion.div
+        animate={{ 
+          y: [0, 30, -18, 0],
+          x: [0, -22, 14, 0],
+          scale: [0.9, 1.1, 0.8, 0.9],
+          opacity: [0.03, 0.1, 0.05, 0.03]
+        }}
+        transition={{
+          duration: 22,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 9
+        }}
+        className="absolute bottom-1/4 left-1/3 w-24 h-24"
+        style={{
+          background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFDAB9' fill-opacity='0.1'%3E%3Cpolygon points='15,5 25,15 15,25 5,15'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '30px 30px',
+          filter: 'blur(1.5px)'
         }}
       />
     </section>

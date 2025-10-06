@@ -25,7 +25,7 @@ const ExperienceSection: React.FC = () => {
       title: "Experience Architect",
       period: "2020—Present",
       company: "Globant",
-      description: "Orchestrating enterprise-scale digital initiatives for global brands",
+      description: "Leading digital transformation initiatives for global enterprises",
       year: 2020,
       category: "Leadership",
       color: "#FF5A5A",
@@ -36,7 +36,7 @@ const ExperienceSection: React.FC = () => {
       title: "Strategic Design Director",
       period: "2019—2020",
       company: "Centre for Fourth Industrial Revolution",
-      description: "Developing frameworks connecting technologies with governance",
+      description: "Developing frameworks for technology governance",
       year: 2019,
       category: "Strategy",
       color: "#FF5A5A",
@@ -47,7 +47,7 @@ const ExperienceSection: React.FC = () => {
       title: "Strategic Design Director",
       period: "2018—2019",
       company: "Designit (WIPRO)",
-      description: "Leading regional operations to scale market presence",
+      description: "Scaling regional operations and market presence",
       year: 2018,
       category: "Strategy",
       color: "#FF5A5A",
@@ -58,7 +58,7 @@ const ExperienceSection: React.FC = () => {
       title: "Marketing Director",
       period: "2016—2018",
       company: "Grupo Éxito",
-      description: "Transforming retail into experiential ecosystems",
+      description: "Transforming retail through experiential design",
       year: 2016,
       category: "Marketing",
       color: "#FF5A5A",
@@ -69,7 +69,7 @@ const ExperienceSection: React.FC = () => {
       title: "Business Intelligence Manager",
       period: "2013—2016",
       company: "Industrias HACEB",
-      description: "Reengineering market segmentation frameworks",
+      description: "Optimizing market segmentation strategies",
       year: 2013,
       category: "Analytics",
       color: "#FF5A5A",
@@ -80,7 +80,7 @@ const ExperienceSection: React.FC = () => {
       title: "Senior Marketing Analyst",
       period: "2002—2011",
       company: "TIGO-Millicom",
-      description: "Supporting corporate expansion through M&A",
+      description: "Supporting corporate expansion and M&A activities",
       year: 2002,
       category: "Analytics",
       color: "#FF5A5A",
@@ -391,109 +391,6 @@ const ExperienceSection: React.FC = () => {
           </AnimatePresence>
         </div>
 
-        {/* Journey Statistics */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
-        >
-          <div>
-            <h3 
-              style={{
-                fontSize: '36px',
-                fontFamily: 'Cormorant Garamond, serif',
-                color: '#FF5A5A',
-                fontWeight: 300
-              }}
-            >
-              20+
-            </h3>
-            <p 
-              style={{
-                fontSize: '12px',
-                fontFamily: 'Lato, sans-serif',
-                color: '#4A5568',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase'
-              }}
-            >
-              Years Experience
-            </p>
-          </div>
-          
-          <div>
-            <h3 
-              style={{
-                fontSize: '36px',
-                fontFamily: 'Cormorant Garamond, serif',
-                color: '#FF5A5A',
-                fontWeight: 300
-              }}
-            >
-              6
-            </h3>
-            <p 
-              style={{
-                fontSize: '12px',
-                fontFamily: 'Lato, sans-serif',
-                color: '#4A5568',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase'
-              }}
-            >
-              Industries
-            </p>
-          </div>
-          
-          <div>
-            <h3 
-              style={{
-                fontSize: '36px',
-                fontFamily: 'Cormorant Garamond, serif',
-                color: '#FF5A5A',
-                fontWeight: 300
-              }}
-            >
-              50+
-            </h3>
-            <p 
-              style={{
-                fontSize: '12px',
-                fontFamily: 'Lato, sans-serif',
-                color: '#4A5568',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase'
-              }}
-            >
-              Global Brands
-            </p>
-          </div>
-          
-          <div>
-            <h3 
-              style={{
-                fontSize: '36px',
-                fontFamily: 'Cormorant Garamond, serif',
-                color: '#FF5A5A',
-                fontWeight: 300
-              }}
-            >
-              ∞
-            </h3>
-            <p 
-              style={{
-                fontSize: '12px',
-                fontFamily: 'Lato, sans-serif',
-                color: '#4A5568',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase'
-              }}
-            >
-              Possibilities
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

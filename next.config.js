@@ -5,9 +5,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/my-portfolio' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/my-portfolio' : '',
+  // output: 'export', // Removed to enable client-side animations
+  // basePath: process.env.NODE_ENV === 'production' ? '/my-portfolio' : '',
+  // assetPrefix: process.env.NODE_ENV === 'production' ? '/my-portfolio' : '',
   images: {
     domains: ['localhost'],
     formats: ['image/webp', 'image/avif'],
@@ -29,8 +29,6 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Disable build traces to fix micromatch stack overflow
-  outputFileTracing: false,
   async headers() {
     return [
       {

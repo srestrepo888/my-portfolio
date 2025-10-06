@@ -133,15 +133,16 @@ const ProjectsSection: React.FC = () => {
                   <motion.div
                     initial={{ scale: 1.2 }}
                     animate={{ 
-                      scale: 1,
-                      y: parallaxY
+                      scale: 1
+                    }}
+                    style={{ 
+                      y: parallaxY,
+                      willChange: 'transform' 
                     }}
                     transition={{ 
-                      scale: { duration: 8, ease: "easeOut" },
-                      y: { duration: 0 }
+                      scale: { duration: 8, ease: "easeOut" }
                     }}
                     className="relative w-full h-full"
-                    style={{ willChange: 'transform' }}
                   >
                     {projects[currentProject].video ? (
                       <video

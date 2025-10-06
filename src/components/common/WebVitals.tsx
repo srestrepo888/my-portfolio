@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals';
+import { onCLS, onINP, onFCP, onLCP, onTTFB } from 'web-vitals';
 
 const WebVitals = () => {
   useEffect(() => {
@@ -29,11 +29,11 @@ const WebVitals = () => {
     };
 
     // Measure Core Web Vitals
-    getCLS(logWebVital);  // Cumulative Layout Shift
-    getFID(logWebVital);  // First Input Delay
-    getFCP(logWebVital);  // First Contentful Paint
-    getLCP(logWebVital);  // Largest Contentful Paint
-    getTTFB(logWebVital); // Time to First Byte
+    onCLS(logWebVital);  // Cumulative Layout Shift
+    onINP(logWebVital);  // Interaction to Next Paint (replaces FID)
+    onFCP(logWebVital);  // First Contentful Paint
+    onLCP(logWebVital);  // Largest Contentful Paint
+    onTTFB(logWebVital); // Time to First Byte
 
     // Custom performance metrics
     if (typeof window !== 'undefined' && window.performance) {

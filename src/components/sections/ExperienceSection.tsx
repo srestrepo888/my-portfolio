@@ -28,7 +28,7 @@ const ExperienceSection: React.FC = () => {
       description: "Orchestrating enterprise-scale digital initiatives for global brands",
       year: 2020,
       category: "Leadership",
-      color: "#F26B75",
+      color: "#FF5A5A",
       position: { x: 85, y: 20 }
     },
     {
@@ -39,7 +39,7 @@ const ExperienceSection: React.FC = () => {
       description: "Developing frameworks connecting technologies with governance",
       year: 2019,
       category: "Strategy",
-      color: "#FFB6C1",
+      color: "#FF5A5A",
       position: { x: 70, y: 35 }
     },
     {
@@ -50,7 +50,7 @@ const ExperienceSection: React.FC = () => {
       description: "Leading regional operations to scale market presence",
       year: 2018,
       category: "Strategy",
-      color: "#FFA07A",
+      color: "#FF5A5A",
       position: { x: 55, y: 45 }
     },
     {
@@ -61,7 +61,7 @@ const ExperienceSection: React.FC = () => {
       description: "Transforming retail into experiential ecosystems",
       year: 2016,
       category: "Marketing",
-      color: "#FFD700",
+      color: "#FF5A5A",
       position: { x: 40, y: 55 }
     },
     {
@@ -72,7 +72,7 @@ const ExperienceSection: React.FC = () => {
       description: "Reengineering market segmentation frameworks",
       year: 2013,
       category: "Analytics",
-      color: "#98D8C8",
+      color: "#FF5A5A",
       position: { x: 30, y: 70 }
     },
     {
@@ -83,7 +83,7 @@ const ExperienceSection: React.FC = () => {
       description: "Supporting corporate expansion through M&A",
       year: 2002,
       category: "Analytics",
-      color: "#B19CD9",
+      color: "#FF5A5A",
       position: { x: 15, y: 85 }
     }
   ];
@@ -120,19 +120,19 @@ const ExperienceSection: React.FC = () => {
           />
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#B19CD9" />
-              <stop offset="20%" stopColor="#98D8C8" />
-              <stop offset="40%" stopColor="#FFD700" />
-              <stop offset="60%" stopColor="#FFA07A" />
-              <stop offset="80%" stopColor="#FFB6C1" />
-              <stop offset="100%" stopColor="#F26B75" />
+              <stop offset="0%" stopColor="#FF5A5A" />
+              <stop offset="20%" stopColor="#FF5A5A" />
+              <stop offset="40%" stopColor="#FF5A5A" />
+              <stop offset="60%" stopColor="#FF5A5A" />
+              <stop offset="80%" stopColor="#FF5A5A" />
+              <stop offset="100%" stopColor="#FF5A5A" />
             </linearGradient>
           </defs>
           
           {/* Moving particle along path */}
           <motion.circle
             r="0.5"
-            fill="#F26B75"
+            fill="#FF5A5A"
             opacity="0.6"
             animate={{
               offsetDistance: `${journeyProgress}%`
@@ -170,14 +170,15 @@ const ExperienceSection: React.FC = () => {
             className="mb-4"
             style={{
               fontSize: 'clamp(3.5rem, 7vw, 5rem)',
-              fontFamily: 'Georgia, serif',
-              fontWeight: 300,
+              fontFamily: 'Cormorant Garamond, serif',
+              fontWeight: 600,
+              fontStyle: 'italic',
               letterSpacing: '0.05em',
               lineHeight: '1',
-              color: '#F26B75'
+              color: '#FF5A5A'
             }}
           >
-            Professional Journey
+            My Experience
           </h2>
           
           <motion.div
@@ -188,7 +189,7 @@ const ExperienceSection: React.FC = () => {
             style={{
               width: '80px',
               height: '1px',
-              background: 'linear-gradient(90deg, transparent, #F26B75, transparent)'
+              background: 'linear-gradient(90deg, transparent, #FF5A5A, transparent)'
             }}
           />
           
@@ -196,14 +197,14 @@ const ExperienceSection: React.FC = () => {
             className="max-w-3xl mx-auto"
             style={{
               fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
-              fontFamily: 'Inter, sans-serif',
-              fontWeight: 300,
+              fontFamily: 'Lato, sans-serif',
+              fontWeight: 400,
               letterSpacing: '0.02em',
               lineHeight: '1.8',
-              color: '#6B7280'
+              color: '#4A5568'
             }}
           >
-            An explorable timeline of transformation and growth
+            A journey through strategic design and business transformation
           </p>
         </motion.div>
 
@@ -291,8 +292,8 @@ const ExperienceSection: React.FC = () => {
                   <p
                     style={{
                       fontSize: '12px',
-                      fontFamily: 'Inter, sans-serif',
-                      color: '#6B7280',
+                      fontFamily: 'Lato, sans-serif',
+                      color: '#4A5568',
                       textAlign: 'center',
                       fontWeight: 500
                     }}
@@ -328,8 +329,8 @@ const ExperienceSection: React.FC = () => {
                 <span 
                   style={{
                     fontSize: '12px',
-                    fontFamily: 'Inter, sans-serif',
-                    color: experienceData[selectedExperience].color,
+                    fontFamily: 'Lato, sans-serif',
+                    color: '#FF5A5A',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
                     fontWeight: 600
@@ -342,8 +343,8 @@ const ExperienceSection: React.FC = () => {
                   className="mt-2 mb-3"
                   style={{
                     fontSize: '24px',
-                    fontFamily: 'Georgia, serif',
-                    color: '#2D3748',
+                    fontFamily: 'Cormorant Garamond, serif',
+                    color: '#1F1F1F',
                     fontWeight: 400
                   }}
                 >
@@ -354,8 +355,8 @@ const ExperienceSection: React.FC = () => {
                   className="mb-3"
                   style={{
                     fontSize: '16px',
-                    fontFamily: 'Inter, sans-serif',
-                    color: experienceData[selectedExperience].color,
+                    fontFamily: 'Lato, sans-serif',
+                    color: '#FF5A5A',
                     fontWeight: 500
                   }}
                 >
@@ -365,8 +366,8 @@ const ExperienceSection: React.FC = () => {
                 <p
                   style={{
                     fontSize: '14px',
-                    fontFamily: 'Inter, sans-serif',
-                    color: '#6B7280',
+                    fontFamily: 'Lato, sans-serif',
+                    color: '#4A5568',
                     lineHeight: '1.6'
                   }}
                 >
@@ -401,8 +402,8 @@ const ExperienceSection: React.FC = () => {
             <h3 
               style={{
                 fontSize: '36px',
-                fontFamily: 'Georgia, serif',
-                color: '#F26B75',
+                fontFamily: 'Cormorant Garamond, serif',
+                color: '#FF5A5A',
                 fontWeight: 300
               }}
             >
@@ -411,8 +412,8 @@ const ExperienceSection: React.FC = () => {
             <p 
               style={{
                 fontSize: '12px',
-                fontFamily: 'Inter, sans-serif',
-                color: '#6B7280',
+                fontFamily: 'Lato, sans-serif',
+                color: '#4A5568',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase'
               }}
@@ -425,8 +426,8 @@ const ExperienceSection: React.FC = () => {
             <h3 
               style={{
                 fontSize: '36px',
-                fontFamily: 'Georgia, serif',
-                color: '#F26B75',
+                fontFamily: 'Cormorant Garamond, serif',
+                color: '#FF5A5A',
                 fontWeight: 300
               }}
             >
@@ -435,8 +436,8 @@ const ExperienceSection: React.FC = () => {
             <p 
               style={{
                 fontSize: '12px',
-                fontFamily: 'Inter, sans-serif',
-                color: '#6B7280',
+                fontFamily: 'Lato, sans-serif',
+                color: '#4A5568',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase'
               }}
@@ -449,8 +450,8 @@ const ExperienceSection: React.FC = () => {
             <h3 
               style={{
                 fontSize: '36px',
-                fontFamily: 'Georgia, serif',
-                color: '#F26B75',
+                fontFamily: 'Cormorant Garamond, serif',
+                color: '#FF5A5A',
                 fontWeight: 300
               }}
             >
@@ -459,8 +460,8 @@ const ExperienceSection: React.FC = () => {
             <p 
               style={{
                 fontSize: '12px',
-                fontFamily: 'Inter, sans-serif',
-                color: '#6B7280',
+                fontFamily: 'Lato, sans-serif',
+                color: '#4A5568',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase'
               }}
@@ -473,8 +474,8 @@ const ExperienceSection: React.FC = () => {
             <h3 
               style={{
                 fontSize: '36px',
-                fontFamily: 'Georgia, serif',
-                color: '#F26B75',
+                fontFamily: 'Cormorant Garamond, serif',
+                color: '#FF5A5A',
                 fontWeight: 300
               }}
             >
@@ -483,8 +484,8 @@ const ExperienceSection: React.FC = () => {
             <p 
               style={{
                 fontSize: '12px',
-                fontFamily: 'Inter, sans-serif',
-                color: '#6B7280',
+                fontFamily: 'Lato, sans-serif',
+                color: '#4A5568',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase'
               }}

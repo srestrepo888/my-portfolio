@@ -65,14 +65,15 @@ const ServicesSection: React.FC = () => {
             className="mb-4"
             style={{
               fontSize: 'clamp(3.5rem, 7vw, 5rem)',
-              fontFamily: 'Georgia, serif',
-              fontWeight: 300,
+              fontFamily: 'Cormorant Garamond, serif',
+              fontWeight: 600,
+              fontStyle: 'italic',
               letterSpacing: '0.05em',
               lineHeight: '1',
-              color: '#F26B75'
+              color: '#FF5A5A'
             }}
           >
-            Services
+            Architectural Expertise
           </h2>
           
           <motion.div
@@ -83,7 +84,7 @@ const ServicesSection: React.FC = () => {
             style={{
               width: '80px',
               height: '1px',
-              background: 'linear-gradient(90deg, transparent, #F26B75, transparent)'
+              background: 'linear-gradient(90deg, transparent, #FF5A5A, transparent)'
             }}
           />
           
@@ -91,14 +92,14 @@ const ServicesSection: React.FC = () => {
             className="max-w-3xl mx-auto"
             style={{
               fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
-              fontFamily: 'Inter, sans-serif',
-              fontWeight: 300,
+              fontFamily: 'Lato, sans-serif',
+              fontWeight: 400,
               letterSpacing: '0.02em',
               lineHeight: '1.8',
-              color: '#6B7280'
+              color: '#4A5568'
             }}
           >
-            Architecture of experiences through interconnected expertise
+            Strategic design solutions that transform business vision into human experiences
           </p>
         </motion.div>
 
@@ -150,8 +151,8 @@ const ServicesSection: React.FC = () => {
             className="mb-8"
             style={{
               fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
-              fontFamily: 'Georgia, serif',
-              fontWeight: 300,
+              fontFamily: 'Cormorant Garamond, serif',
+              fontWeight: 400,
               color: '#4A5568',
               fontStyle: 'italic'
             }}
@@ -168,8 +169,8 @@ const ServicesSection: React.FC = () => {
                 className="mb-4"
                 style={{
                   fontSize: '48px',
-                  fontFamily: 'Georgia, serif',
-                  color: '#F26B75',
+                  fontFamily: 'Cormorant Garamond, serif',
+                  color: '#FF5A5A',
                   fontWeight: 300
                 }}
               >
@@ -178,7 +179,7 @@ const ServicesSection: React.FC = () => {
               <h4 
                 style={{
                   fontSize: '18px',
-                  fontFamily: 'Inter, sans-serif',
+                  fontFamily: 'Lato, sans-serif',
                   color: '#4A5568',
                   fontWeight: 500,
                   marginBottom: '8px'
@@ -189,8 +190,8 @@ const ServicesSection: React.FC = () => {
               <p 
                 style={{
                   fontSize: '14px',
-                  fontFamily: 'Inter, sans-serif',
-                  color: '#6B7280',
+                  fontFamily: 'Lato, sans-serif',
+                  color: '#4A5568',
                   lineHeight: '1.6'
                 }}
               >
@@ -206,8 +207,8 @@ const ServicesSection: React.FC = () => {
                 className="mb-4"
                 style={{
                   fontSize: '48px',
-                  fontFamily: 'Georgia, serif',
-                  color: '#FFB6C1',
+                  fontFamily: 'Cormorant Garamond, serif',
+                  color: '#FF5A5A',
                   fontWeight: 300
                 }}
               >
@@ -216,7 +217,7 @@ const ServicesSection: React.FC = () => {
               <h4 
                 style={{
                   fontSize: '18px',
-                  fontFamily: 'Inter, sans-serif',
+                  fontFamily: 'Lato, sans-serif',
                   color: '#4A5568',
                   fontWeight: 500,
                   marginBottom: '8px'
@@ -227,8 +228,8 @@ const ServicesSection: React.FC = () => {
               <p 
                 style={{
                   fontSize: '14px',
-                  fontFamily: 'Inter, sans-serif',
-                  color: '#6B7280',
+                  fontFamily: 'Lato, sans-serif',
+                  color: '#4A5568',
                   lineHeight: '1.6'
                 }}
               >
@@ -244,8 +245,8 @@ const ServicesSection: React.FC = () => {
                 className="mb-4"
                 style={{
                   fontSize: '48px',
-                  fontFamily: 'Georgia, serif',
-                  color: '#FFA07A',
+                  fontFamily: 'Cormorant Garamond, serif',
+                  color: '#FF5A5A',
                   fontWeight: 300
                 }}
               >
@@ -254,7 +255,7 @@ const ServicesSection: React.FC = () => {
               <h4 
                 style={{
                   fontSize: '18px',
-                  fontFamily: 'Inter, sans-serif',
+                  fontFamily: 'Lato, sans-serif',
                   color: '#4A5568',
                   fontWeight: 500,
                   marginBottom: '8px'
@@ -265,8 +266,8 @@ const ServicesSection: React.FC = () => {
               <p 
                 style={{
                   fontSize: '14px',
-                  fontFamily: 'Inter, sans-serif',
-                  color: '#6B7280',
+                  fontFamily: 'Lato, sans-serif',
+                  color: '#4A5568',
                   lineHeight: '1.6'
                 }}
               >
@@ -287,8 +288,8 @@ const ServicesSection: React.FC = () => {
             <h3 
               style={{
                 fontSize: '36px',
-                fontFamily: 'Georgia, serif',
-                color: '#F26B75',
+                fontFamily: 'Cormorant Garamond, serif',
+                color: '#FF5A5A',
                 fontWeight: 300,
                 marginBottom: '4px'
               }}
@@ -298,8 +299,8 @@ const ServicesSection: React.FC = () => {
             <p 
               style={{
                 fontSize: '12px',
-                fontFamily: 'Inter, sans-serif',
-                color: '#6B7280',
+                fontFamily: 'Lato, sans-serif',
+                color: '#4A5568',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase'
               }}
@@ -312,8 +313,8 @@ const ServicesSection: React.FC = () => {
             <h3 
               style={{
                 fontSize: '36px',
-                fontFamily: 'Georgia, serif',
-                color: '#F26B75',
+                fontFamily: 'Cormorant Garamond, serif',
+                color: '#FF5A5A',
                 fontWeight: 300,
                 marginBottom: '4px'
               }}
@@ -323,8 +324,8 @@ const ServicesSection: React.FC = () => {
             <p 
               style={{
                 fontSize: '12px',
-                fontFamily: 'Inter, sans-serif',
-                color: '#6B7280',
+                fontFamily: 'Lato, sans-serif',
+                color: '#4A5568',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase'
               }}
@@ -337,8 +338,8 @@ const ServicesSection: React.FC = () => {
             <h3 
               style={{
                 fontSize: '36px',
-                fontFamily: 'Georgia, serif',
-                color: '#F26B75',
+                fontFamily: 'Cormorant Garamond, serif',
+                color: '#FF5A5A',
                 fontWeight: 300,
                 marginBottom: '4px'
               }}
@@ -348,8 +349,8 @@ const ServicesSection: React.FC = () => {
             <p 
               style={{
                 fontSize: '12px',
-                fontFamily: 'Inter, sans-serif',
-                color: '#6B7280',
+                fontFamily: 'Lato, sans-serif',
+                color: '#4A5568',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase'
               }}
@@ -362,8 +363,8 @@ const ServicesSection: React.FC = () => {
             <h3 
               style={{
                 fontSize: '36px',
-                fontFamily: 'Georgia, serif',
-                color: '#F26B75',
+                fontFamily: 'Cormorant Garamond, serif',
+                color: '#FF5A5A',
                 fontWeight: 300,
                 marginBottom: '4px'
               }}
@@ -373,8 +374,8 @@ const ServicesSection: React.FC = () => {
             <p 
               style={{
                 fontSize: '12px',
-                fontFamily: 'Inter, sans-serif',
-                color: '#6B7280',
+                fontFamily: 'Lato, sans-serif',
+                color: '#4A5568',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase'
               }}
@@ -397,7 +398,7 @@ const ServicesSection: React.FC = () => {
         }}
         className="absolute top-20 right-10 w-20 h-20 opacity-10"
         style={{
-          background: 'radial-gradient(circle, #F26B75, transparent)',
+          background: 'radial-gradient(circle, #FF5A5A, transparent)',
           filter: 'blur(20px)'
         }}
       />

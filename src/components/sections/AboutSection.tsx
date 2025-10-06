@@ -21,19 +21,43 @@ const AboutSection: React.FC = () => {
         backgroundColor: '#FDF6F0'
       }}
     >
-      {/* Subtle Background Texture */}
+      {/* Personal Texture Brand Background */}
       <motion.div 
         className="absolute inset-0"
         style={{ y, opacity }}
       >
+        {/* Your Personal Texture Background */}
         <div 
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(ellipse at 20% 30%, rgba(242, 107, 117, 0.03) 0%, transparent 50%),
-              radial-gradient(ellipse at 80% 70%, rgba(255, 218, 185, 0.02) 0%, transparent 50%)
+              linear-gradient(135deg, #FDF6F0 0%, #F8F0E8 25%, #F5E8E0 50%, #F2E0D8 75%, #F0D8D0 100%),
+              radial-gradient(ellipse at 20% 30%, rgba(242, 107, 117, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 70%, rgba(255, 218, 185, 0.06) 0%, transparent 60%)
             `,
-            mixBlendMode: 'multiply'
+            mixBlendMode: 'normal'
+          }}
+        />
+        
+        {/* Personal Brand Texture Pattern - Organic Lines */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23F26B75' stroke-opacity='0.12' stroke-width='0.8'%3E%3Cpath d='M50 50c0-27.614-22.386-50-50-50v50h50z'/%3E%3Cpath d='M50 50c0 27.614 22.386 50 50 50V50H50z'/%3E%3Cpath d='M350 350c0 27.614 22.386 50 50 50v-50h-50z'/%3E%3Cpath d='M350 350c0-27.614-22.386-50-50-50v50h50z'/%3E%3Cpath d='M100 100c0-16.569-13.431-30-30-30v30h30z'/%3E%3Cpath d='M300 300c0 16.569 13.431 30 30 30v-30h-30z'/%3E%3C/g%3E%3Cg stroke='%23FFDAB9' stroke-opacity='0.15' stroke-width='0.5'%3E%3Cpath d='M80 80c0-22.091-17.909-40-40-40v40h40z'/%3E%3Cpath d='M320 320c0 22.091 17.909 40 40 40v-40h-40z'/%3E%3Cpath d='M150 150c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M250 250c0 11.046 8.954 20 20 20v-20h-20z'/%3E%3C/g%3E%3Cg stroke='%23F26B75' stroke-opacity='0.08' stroke-width='0.3'%3E%3Cpath d='M120 120c0-6.627-5.373-12-12-12v12h12z'/%3E%3Cpath d='M280 280c0 6.627 5.373 12 12 12v-12h-12z'/%3E%3Cpath d='M200 200c0-33.137-26.863-60-60-60v60h60z'/%3E%3Cpath d='M200 200c0 33.137 26.863 60 60 60V200H200z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '400px 400px',
+            mixBlendMode: 'multiply',
+            opacity: 0.6
+          }}
+        />
+        
+        {/* Flowing Organic Lines Pattern */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23F26B75' stroke-opacity='0.1' stroke-width='0.5'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M20 20c0 11.046 8.954 20 20 20V20H20z'/%3E%3Cpath d='M280 280c0 11.046 8.954 20 20 20v-20h-20z'/%3E%3Cpath d='M280 280c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M50 50c0-16.569-13.431-30-30-30v30h30z'/%3E%3Cpath d='M250 250c0 16.569 13.431 30 30 30v-30h-30z'/%3E%3Cpath d='M100 100c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M200 200c0 11.046 8.954 20 20 20v-20h-20z'/%3E%3Cpath d='M150 150c0-16.569-13.431-30-30-30v30h30z'/%3E%3Cpath d='M150 150c0 16.569 13.431 30 30 30v-30h-30z'/%3E%3C/g%3E%3Cg stroke='%23FFDAB9' stroke-opacity='0.12' stroke-width='0.3'%3E%3Cpath d='M80 80c0-22.091-17.909-40-40-40v40h40z'/%3E%3Cpath d='M220 220c0 22.091 17.909 40 40 40v-40h-40z'/%3E%3Cpath d='M120 120c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M180 180c0 11.046 8.954 20 20 20v-20h-20z'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '300px 300px',
+            mixBlendMode: 'overlay',
+            opacity: 0.4
           }}
         />
       </motion.div>
@@ -179,30 +203,37 @@ const AboutSection: React.FC = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Column - Floating Photo Integration */}
+            {/* Right Column - Truly Floating Photo */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5 }}
               className="relative h-96 lg:h-[500px]"
             >
-              {/* Floating Photo - No Container, Part of Background */}
+              {/* Floating Photo - No Container, Truly Floating */}
               <motion.div
                 className="absolute inset-0"
                 animate={{
-                  y: [0, -15, 8, 0],
-                  rotate: [0, 1, -0.5, 0],
-                  scale: [1, 1.02, 0.98, 1]
+                  y: [0, -20, 10, 0],
+                  x: [0, 15, -8, 0],
+                  rotate: [0, 2, -1, 0],
+                  scale: [1, 1.03, 0.97, 1]
                 }}
                 transition={{
-                  duration: 12,
+                  duration: 15,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
                 whileHover={{ 
-                  scale: 1.05,
-                  rotate: 2,
-                  transition: { duration: 0.6, ease: "easeOut" }
+                  scale: 1.08,
+                  rotate: 3,
+                  y: -10,
+                  transition: { duration: 0.8, ease: "easeOut" }
+                }}
+                style={{
+                  filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
+                  maskImage: `radial-gradient(ellipse 85% 95% at 50% 50%, black 70%, transparent 90%)`,
+                  WebkitMaskImage: `radial-gradient(ellipse 85% 95% at 50% 50%, black 70%, transparent 90%)`
                 }}
               >
                 <Image
@@ -212,136 +243,112 @@ const AboutSection: React.FC = () => {
                   className="object-cover object-center"
                   style={{
                     filter: 'contrast(1.1) saturate(0.9) brightness(1.05)',
-                    borderRadius: '12px',
-                    maskImage: `radial-gradient(ellipse 80% 90% at 50% 50%, black 60%, transparent 85%)`,
-                    WebkitMaskImage: `radial-gradient(ellipse 80% 90% at 50% 50%, black 60%, transparent 85%)`
+                    borderRadius: '20px'
                   }}
                 />
               </motion.div>
 
-              {/* Personal Texture Brand Integration - Organic Flow */}
+              {/* Floating Organic Brand Elements Around Photo */}
               <motion.div
-                className="absolute inset-0"
                 animate={{
-                  opacity: [0.3, 0.6, 0.4, 0.3],
-                  scale: [1, 1.05, 0.95, 1]
-                }}
-                transition={{
-                  duration: 15,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                style={{
-                  background: `
-                    radial-gradient(ellipse at 20% 30%, rgba(242, 107, 117, 0.08) 0%, transparent 60%),
-                    radial-gradient(ellipse at 80% 70%, rgba(255, 218, 185, 0.06) 0%, transparent 60%),
-                    linear-gradient(135deg, transparent 0%, rgba(242, 107, 117, 0.03) 50%, transparent 100%)
-                  `,
-                  mixBlendMode: 'multiply',
-                  borderRadius: '12px'
-                }}
-              />
-
-              {/* Personal Brand Texture Pattern - Flowing Lines */}
-              <motion.div
-                className="absolute inset-0"
-                animate={{
-                  opacity: [0.1, 0.25, 0.15, 0.1],
-                  x: [0, 10, -5, 0],
-                  y: [0, -8, 4, 0]
+                  y: [0, -25, 12, 0],
+                  x: [0, 20, -10, 0],
+                  rotate: [0, 180, 360, 0],
+                  opacity: [0.3, 0.6, 0.4, 0.3]
                 }}
                 transition={{
                   duration: 20,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
+                className="absolute top-4 right-4 w-24 h-24"
                 style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23F26B75' stroke-opacity='0.1' stroke-width='0.5'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M20 20c0 11.046 8.954 20 20 20V20H20z'/%3E%3Cpath d='M180 180c0 11.046 8.954 20 20 20v-20h-20z'/%3E%3Cpath d='M180 180c0-11.046-8.954-20-20-20v20h20z'/%3E%3C/g%3E%3Cg stroke='%23FFDAB9' stroke-opacity='0.08' stroke-width='0.3'%3E%3Cpath d='M50 50c0-16.569-13.431-30-30-30v30h30z'/%3E%3Cpath d='M150 150c0 16.569 13.431 30 30 30v-30h-30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                  backgroundSize: '200px 200px',
-                  mixBlendMode: 'overlay',
-                  borderRadius: '12px'
-                }}
-              />
-
-              {/* Floating Organic Brand Elements */}
-              <motion.div
-                animate={{
-                  y: [0, -20, 10, 0],
-                  x: [0, 15, -8, 0],
-                  rotate: [0, 180, 360, 0],
-                  opacity: [0.2, 0.5, 0.3, 0.2]
-                }}
-                transition={{
-                  duration: 18,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="absolute top-8 right-8 w-20 h-20"
-                style={{
-                  background: 'radial-gradient(circle, rgba(242, 107, 117, 0.12), transparent)',
+                  background: 'radial-gradient(circle, rgba(242, 107, 117, 0.15), transparent)',
                   borderRadius: '50%',
-                  filter: 'blur(3px)'
+                  filter: 'blur(4px)'
                 }}
               />
 
               <motion.div
                 animate={{
-                  y: [0, 25, -12, 0],
-                  x: [0, -18, 9, 0],
-                  scale: [0.8, 1.2, 0.9, 0.8],
-                  opacity: [0.15, 0.4, 0.25, 0.15]
-                }}
-                transition={{
-                  duration: 22,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 5
-                }}
-                className="absolute bottom-12 left-12 w-16 h-16"
-                style={{
-                  background: 'linear-gradient(45deg, rgba(255, 218, 185, 0.15), rgba(242, 107, 117, 0.08))',
-                  borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
-                  filter: 'blur(2px)'
-                }}
-              />
-
-              {/* Flowing Brand Lines */}
-              <motion.div
-                animate={{
-                  x: [0, 30, -20, 0],
-                  y: [0, -15, 10, 0],
-                  rotate: [0, 2, -1, 0],
-                  opacity: [0.1, 0.3, 0.15, 0.1]
+                  y: [0, 30, -15, 0],
+                  x: [0, -25, 12, 0],
+                  scale: [0.8, 1.3, 0.9, 0.8],
+                  opacity: [0.2, 0.5, 0.3, 0.2]
                 }}
                 transition={{
                   duration: 25,
                   repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 7
+                }}
+                className="absolute bottom-8 left-8 w-20 h-20"
+                style={{
+                  background: 'linear-gradient(45deg, rgba(255, 218, 185, 0.2), rgba(242, 107, 117, 0.1))',
+                  borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
+                  filter: 'blur(3px)'
+                }}
+              />
+
+              {/* Flowing Brand Lines Around Photo */}
+              <motion.div
+                animate={{
+                  x: [0, 40, -25, 0],
+                  y: [0, -20, 12, 0],
+                  rotate: [0, 3, -2, 0],
+                  opacity: [0.15, 0.4, 0.2, 0.15]
+                }}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="absolute top-1/3 left-4 w-32 h-px"
+                className="absolute top-1/4 left-2 w-40 h-px"
                 style={{
-                  background: 'linear-gradient(90deg, transparent, rgba(242, 107, 117, 0.4), transparent)',
-                  transform: 'rotate(-15deg)'
+                  background: 'linear-gradient(90deg, transparent, rgba(242, 107, 117, 0.5), transparent)',
+                  transform: 'rotate(-20deg)'
                 }}
               />
 
               <motion.div
                 animate={{
-                  x: [0, -25, 15, 0],
-                  y: [0, 20, -10, 0],
-                  rotate: [0, -1, 2, 0],
-                  opacity: [0.08, 0.25, 0.12, 0.08]
+                  x: [0, -35, 20, 0],
+                  y: [0, 25, -15, 0],
+                  rotate: [0, -2, 3, 0],
+                  opacity: [0.12, 0.35, 0.18, 0.12]
                 }}
                 transition={{
-                  duration: 30,
+                  duration: 35,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 8
+                  delay: 10
                 }}
-                className="absolute bottom-1/4 right-6 w-24 h-px"
+                className="absolute bottom-1/3 right-2 w-36 h-px"
                 style={{
-                  background: 'linear-gradient(90deg, transparent, rgba(255, 218, 185, 0.5), transparent)',
-                  transform: 'rotate(20deg)'
+                  background: 'linear-gradient(90deg, transparent, rgba(255, 218, 185, 0.6), transparent)',
+                  transform: 'rotate(25deg)'
+                }}
+              />
+
+              {/* Additional Floating Elements */}
+              <motion.div
+                animate={{
+                  y: [0, -15, 8, 0],
+                  x: [0, 12, -6, 0],
+                  scale: [1, 1.1, 0.9, 1],
+                  opacity: [0.1, 0.3, 0.15, 0.1]
+                }}
+                transition={{
+                  duration: 18,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 3
+                }}
+                className="absolute top-1/2 right-1/4 w-16 h-16"
+                style={{
+                  background: 'conic-gradient(from 45deg, rgba(242, 107, 117, 0.1), rgba(255, 218, 185, 0.08), rgba(242, 107, 117, 0.1))',
+                  borderRadius: '50%',
+                  filter: 'blur(2px)'
                 }}
               />
             </motion.div>

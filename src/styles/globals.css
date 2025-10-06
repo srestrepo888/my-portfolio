@@ -5,8 +5,22 @@
 /* Import design tokens first */
 @import './design-tokens.css';
 
-/* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap');
+/* Font loading optimization - use font-display: swap for better performance */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+}
 
 @layer base {
   * {
@@ -685,4 +699,108 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent-hover);
+}
+
+/* Performance Optimizations */
+
+/* Enable GPU acceleration for transforms */
+.gpu-accelerated {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize animations */
+.perf-optimized {
+  contain: layout style paint;
+  will-change: auto;
+}
+
+/* Reduce repaints for fixed elements */
+.fixed-element {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Image optimization */
+img {
+  content-visibility: auto;
+  contain-intrinsic-size: 400px 300px;
+}
+
+/* Lazy loading styles */
+.lazy-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* Optimize large lists */
+.virtual-list {
+  contain: strict;
+  content-visibility: auto;
+}
+
+/* Critical CSS - Inline these in production */
+.critical {
+  /* Hero section critical styles */
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Reduce motion for accessibility and performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-play-state: paused !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .gpu-accelerated,
+  .perf-optimized {
+    will-change: auto;
+    transform: none;
+  }
+}
+
+/* High performance mode for low-end devices */
+@media (max-width: 768px) and (hover: none) {
+  .particle-field,
+  .liquid-text,
+  .magnetic-button {
+    animation: none !important;
+    transition: opacity 0.3s ease !important;
+  }
+  
+  .smooth-scroll {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize for print */
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  
+  img {
+    max-width: 100% !important;
+  }
+  
+  @page {
+    margin: 0.5cm;
+  }
 }

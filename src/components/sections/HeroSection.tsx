@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 
 const ParticleField = dynamic(() => import('@/components/effects/ParticleField'), { ssr: false });
 const MagneticButton = dynamic(() => import('@/components/effects/MagneticButton'), { ssr: false });
+const LiquidText = dynamic(() => import('@/components/effects/LiquidText'), { ssr: false });
 
 const HeroSection: React.FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -25,36 +26,66 @@ const HeroSection: React.FC = () => {
         opacity
       }}
     >
-      {/* Organic Photo Integration - Subtle Background Texture */}
+      {/* Organic Photo Integration - Face-focused Background Texture */}
       <div className="absolute inset-0">
-        {/* Photo as organic background texture - NOT in a container */}
+        {/* Photo organically embedded in background - focusing on face */}
         <motion.div 
           className="absolute inset-0"
           style={{ y }}
         >
-          <img
-            src="/images/hero-portrait.svg"
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover object-top"
-            style={{
-              opacity: 0.08, // Very subtle, like a watermark
-              filter: 'contrast(1.1) saturate(0.8)',
-              transform: 'scale(1.3) translateY(-10%)',
-              maskImage: 'radial-gradient(ellipse at center, black 0%, transparent 70%)',
-              WebkitMaskImage: 'radial-gradient(ellipse at center, black 0%, transparent 70%)'
-            }}
-          />
+          <div className="relative w-full h-full">
+            <img
+              src="/images/silvana-portrait-hero.jpg"
+              alt=""
+              className="absolute w-full h-full"
+              style={{
+                opacity: 0.12,
+                filter: 'contrast(1.15) saturate(0.9) brightness(1.1)',
+                objectFit: 'cover',
+                objectPosition: 'center 25%', // Focus on face, not chest
+                transform: 'scale(1.1)',
+                maskImage: `radial-gradient(ellipse 50% 70% at 50% 30%, 
+                  rgba(0,0,0,0.9) 0%, 
+                  rgba(0,0,0,0.7) 25%, 
+                  rgba(0,0,0,0.4) 50%, 
+                  transparent 75%)`,
+                WebkitMaskImage: `radial-gradient(ellipse 50% 70% at 50% 30%, 
+                  rgba(0,0,0,0.9) 0%, 
+                  rgba(0,0,0,0.7) 25%, 
+                  rgba(0,0,0,0.4) 50%, 
+                  transparent 75%)`
+              }}
+            />
+            
+            {/* Organic texture overlay - creates natural embedding */}
+            <div 
+              className="absolute inset-0"
+              style={{
+                background: `
+                  radial-gradient(ellipse 60% 80% at 50% 20%, 
+                    transparent 0%, 
+                    rgba(253, 246, 240, 0.1) 20%,
+                    rgba(253, 246, 240, 0.3) 40%,
+                    rgba(253, 246, 240, 0.6) 60%,
+                    rgba(253, 246, 240, 0.85) 80%,
+                    #FDF6F0 100%),
+                  linear-gradient(180deg, 
+                    transparent 0%, 
+                    rgba(253, 246, 240, 0.2) 30%, 
+                    rgba(253, 246, 240, 0.9) 70%, 
+                    #FDF6F0 100%)`,
+                mixBlendMode: 'normal'
+              }}
+            />
+          </div>
         </motion.div>
 
-        {/* Organic gradient overlay to blend naturally */}
+        {/* Subtle organic noise texture */}
         <div 
-          className="absolute inset-0"
+          className="absolute inset-0 opacity-5"
           style={{
-            background: `radial-gradient(ellipse at center top, 
-              transparent 0%, 
-              rgba(253, 246, 240, 0.4) 30%, 
-              rgba(253, 246, 240, 0.8) 60%, 
-              #FDF6F0 90%)`
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E")`,
+            mixBlendMode: 'multiply'
           }}
         />
       </div>
@@ -128,41 +159,76 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 1.2, delay: 0.3 }}
           className="text-center relative z-10"
         >
-          {/* Clean Typography - The Main Focus */}
+          {/* Liquid Morphing Typography - The Main Focus */}
           <motion.h1 
             className="mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            <span 
-              className="block"
-              style={{ 
-                fontSize: 'clamp(4rem, 9vw, 7rem)',
-                fontFamily: 'Georgia, serif',
-                fontWeight: 300,
-                letterSpacing: '0.08em',
-                lineHeight: '0.9',
-                color: '#F26B75',
-                textTransform: 'uppercase'
-              }}
-            >
-              Experience
-            </span>
-            <span 
-              className="block mt-4"
-              style={{ 
-                fontSize: 'clamp(3.5rem, 8vw, 6rem)',
-                fontFamily: 'Inter, sans-serif',
-                fontWeight: 200,
-                letterSpacing: '0.2em',
-                lineHeight: '0.9',
-                color: '#4A5568',
-                textTransform: 'uppercase'
-              }}
-            >
-              Architect
-            </span>
+            {mounted ? (
+              <>
+                <LiquidText
+                  text="EXPERIENCE"
+                  className="block"
+                  style={{ 
+                    fontSize: 'clamp(4rem, 9vw, 7rem)',
+                    fontFamily: 'Georgia, serif',
+                    fontWeight: 300,
+                    letterSpacing: '0.08em',
+                    lineHeight: '0.9',
+                    color: '#F26B75',
+                    textTransform: 'uppercase'
+                  }}
+                  delay={0.5}
+                />
+                <LiquidText
+                  text="ARCHITECT"
+                  className="block mt-4"
+                  style={{ 
+                    fontSize: 'clamp(3.5rem, 8vw, 6rem)',
+                    fontFamily: 'Inter, sans-serif',
+                    fontWeight: 200,
+                    letterSpacing: '0.2em',
+                    lineHeight: '0.9',
+                    color: '#4A5568',
+                    textTransform: 'uppercase'
+                  }}
+                  delay={0.7}
+                />
+              </>
+            ) : (
+              <>
+                <span 
+                  className="block"
+                  style={{ 
+                    fontSize: 'clamp(4rem, 9vw, 7rem)',
+                    fontFamily: 'Georgia, serif',
+                    fontWeight: 300,
+                    letterSpacing: '0.08em',
+                    lineHeight: '0.9',
+                    color: '#F26B75',
+                    textTransform: 'uppercase'
+                  }}
+                >
+                  Experience
+                </span>
+                <span 
+                  className="block mt-4"
+                  style={{ 
+                    fontSize: 'clamp(3.5rem, 8vw, 6rem)',
+                    fontFamily: 'Inter, sans-serif',
+                    fontWeight: 200,
+                    letterSpacing: '0.2em',
+                    lineHeight: '0.9',
+                    color: '#4A5568',
+                    textTransform: 'uppercase'
+                  }}
+                >
+                  Architect
+                </span>
+              </>
+            )}
           </motion.h1>
 
           {/* Subtle Description - Optional */}

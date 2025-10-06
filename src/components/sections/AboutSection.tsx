@@ -49,7 +49,7 @@ const AboutSection: React.FC = () => {
           />
         </div>
 
-        {/* Personal Texture Overlay - Organic Flow */}
+        {/* Personal Texture Overlay - Ultra-Organic Flow */}
         <div 
           className="absolute inset-0"
           style={{
@@ -59,6 +59,40 @@ const AboutSection: React.FC = () => {
               radial-gradient(ellipse at 50% 50%, rgba(253, 246, 240, 0.9) 30%, rgba(253, 246, 240, 0.95) 70%)
             `,
             mixBlendMode: 'normal'
+          }}
+        />
+        
+        {/* Organic Noise Texture Pattern */}
+        <div 
+          className="absolute inset-0 opacity-3"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='organic'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02' numOctaves='3' result='turbulence'/%3E%3CfeColorMatrix in='turbulence' type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23organic)' opacity='0.03'/%3E%3C/svg%3E")`,
+            backgroundSize: '200px 200px',
+            mixBlendMode: 'multiply'
+          }}
+        />
+        
+        {/* Flowing Gradient Lines - Organic Movement */}
+        <motion.div 
+          className="absolute inset-0 opacity-5"
+          animate={{
+            backgroundPosition: ['0% 0%', '100% 100%'],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: 'reverse',
+            ease: 'linear'
+          }}
+          style={{
+            backgroundImage: `repeating-linear-gradient(
+              45deg,
+              transparent,
+              transparent 35px,
+              rgba(242, 107, 117, 0.03) 35px,
+              rgba(242, 107, 117, 0.03) 70px
+            )`,
+            backgroundSize: '200% 200%'
           }}
         />
       </motion.div>

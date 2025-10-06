@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import { projects } from '@/data/projects';
 
 const MagneticButton = dynamic(() => import('@/components/effects/MagneticButton'), { ssr: false });
+const ProgressiveImage = dynamic(() => import('@/components/ui/ProgressiveImage'), { ssr: false });
 
 const ProjectsSection: React.FC = () => {
   const { ref, inView } = useInView({
@@ -15,9 +16,12 @@ const ProjectsSection: React.FC = () => {
 
   const [currentProject, setCurrentProject] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 2000], [0, -100]);
+  const parallaxY = useTransform(scrollY, [0, 1000], [0, 150]);
+  const scale = useTransform(scrollY, [0, 1000], [1, 1.1]);
 
   useEffect(() => {
     if (isAutoPlaying) {
@@ -29,8 +33,11 @@ const ProjectsSection: React.FC = () => {
   }, [isAutoPlaying]);
 
   const handleProjectChange = (index: number) => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentProject(index);
     setIsAutoPlaying(false);
+    setTimeout(() => setIsTransitioning(false), 1000);
   };
 
   return (
@@ -97,21 +104,44 @@ const ProjectsSection: React.FC = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentProject}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
+              initial={{ 
+                opacity: 0,
+                rotateY: -10,
+                z: -100
+              }}
+              animate={{ 
+                opacity: 1,
+                rotateY: 0,
+                z: 0
+              }}
+              exit={{ 
+                opacity: 0,
+                rotateY: 10,
+                z: -100
+              }}
+              transition={{ 
+                duration: 1.2,
+                ease: [0.43, 0.13, 0.23, 0.96]
+              }}
               className="relative"
+              style={{ perspective: '1000px' }}
             >
               {/* Main Project Display - Cinematic View */}
               <div className="relative rounded-lg overflow-hidden" style={{ height: '70vh', minHeight: '500px' }}>
                 {/* Video/Image Background */}
                 <div className="absolute inset-0">
                   <motion.div
-                    initial={{ scale: 1.1 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 6, ease: "easeOut" }}
+                    initial={{ scale: 1.2 }}
+                    animate={{ 
+                      scale: 1,
+                      y: parallaxY
+                    }}
+                    transition={{ 
+                      scale: { duration: 8, ease: "easeOut" },
+                      y: { duration: 0 }
+                    }}
                     className="relative w-full h-full"
+                    style={{ willChange: 'transform' }}
                   >
                     {projects[currentProject].video ? (
                       <video
@@ -126,11 +156,12 @@ const ProjectsSection: React.FC = () => {
                         <source src={projects[currentProject].video} type="video/mp4" />
                       </video>
                     ) : (
-                      <img
+                      <ProgressiveImage
                         src={projects[currentProject].heroImage}
                         alt={projects[currentProject].title}
                         className="absolute inset-0 w-full h-full object-cover"
                         style={{ filter: 'brightness(0.7)' }}
+                        placeholderColor="#FDF6F0"
                       />
                     )}
                   </motion.div>
@@ -151,9 +182,21 @@ const ProjectsSection: React.FC = () => {
                 <div className="relative z-10 h-full flex items-center px-8 lg:px-16">
                   <div className="max-w-2xl">
                     <motion.div
-                      initial={{ opacity: 0, y: 40 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.2 }}
+                      initial={{ 
+                        opacity: 0, 
+                        y: 60,
+                        x: -30
+                      }}
+                      animate={{ 
+                        opacity: 1, 
+                        y: 0,
+                        x: 0
+                      }}
+                      transition={{ 
+                        duration: 1.2, 
+                        delay: 0.3,
+                        ease: [0.43, 0.13, 0.23, 0.96]
+                      }}
                     >
                       {/* Project Number */}
                       <span 
@@ -328,8 +371,21 @@ const ProjectsSection: React.FC = () => {
           {projects.slice(0, 6).map((project, index) => (
             <motion.div
               key={project.id}
-              whileHover={{ y: -10 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                ease: [0.43, 0.13, 0.23, 0.96]
+              }}
+              whileHover={{ 
+                y: -15,
+                scale: 1.02,
+                transition: { 
+                  duration: 0.4,
+                  ease: 'easeOut'
+                }
+              }}
               className="relative group cursor-pointer"
               onClick={() => handleProjectChange(index)}
             >
@@ -340,10 +396,11 @@ const ProjectsSection: React.FC = () => {
                   aspectRatio: '4/3'
                 }}
               >
-                <img
+                <ProgressiveImage
                   src={project.heroImage}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover"
+                  placeholderColor="#FDF6F0"
                 />
                 <div 
                   className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"

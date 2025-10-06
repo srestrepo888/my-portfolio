@@ -29,6 +29,8 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  // Disable build traces to fix micromatch stack overflow
+  outputFileTracing: false,
   async headers() {
     return [
       {

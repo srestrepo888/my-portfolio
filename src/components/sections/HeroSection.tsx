@@ -83,47 +83,102 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 1.2, delay: 0.3 }}
           className="text-center relative z-10"
         >
-          {/* Main Typography - Sophisticated Display Typography */}
-          <TypographyAnimation
-            variant="reveal-up"
-            delay={0.4}
-            duration={1.2}
+          {/* Main Typography - Ultra-Luxurious Display Typography */}
+          <motion.div
             className="mb-8"
-            as="h1"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: mounted ? 1 : 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {/* EXPERIENCE - Display Typography with Gradient */}
-            <TextReveal
-              text="EXPERIENCE"
-              className="text-display-1 mb-2"
-              direction="up"
-              delay={0.6}
-              duration={1.5}
-              stagger={0.1}
-              splitBy="character"
+            {/* EXPERIENCE - Sophisticated Gradient Typography */}
+            <motion.div
+              className="relative mb-2"
+              initial={{ 
+                opacity: 0,
+                y: 80,
+                scale: 0.8,
+                filter: 'blur(20px)'
+              }}
+              animate={mounted ? { 
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                filter: 'blur(0px)'
+              } : {}}
+              transition={{
+                duration: 2.2,
+                delay: 0.6,
+                ease: [0.16, 1, 0.3, 1] // Ultra-smooth, luxurious easing
+              }}
               style={{
-                background: 'linear-gradient(90deg, #FF6663 0%, #FF6663 30%, rgba(255, 102, 99, 0.3) 70%, rgba(255, 102, 99, 0.1) 100%)',
+                fontSize: 'clamp(4.5rem, 10vw, 8rem)',
+                fontFamily: 'Playfair Display, serif',
+                fontWeight: 300,
+                letterSpacing: '0.02em',
+                lineHeight: '0.85',
+                textTransform: 'uppercase',
+                background: 'linear-gradient(135deg, #FF6663 0%, #FF6663 25%, rgba(255, 102, 99, 0.7) 50%, rgba(255, 102, 99, 0.3) 75%, rgba(255, 102, 99, 0.1) 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-                textTransform: 'uppercase'
+                textShadow: '0 0 40px rgba(255, 102, 99, 0.2)'
               }}
-            />
+            >
+              EXPERIENCE
+            </motion.div>
 
-            {/* ARCHITECT - Heading Typography */}
-            <TextReveal
-              text="ARCHITECT"
-              className="text-display-2"
-              direction="up"
-              delay={1.0}
-              duration={1.2}
-              stagger={0.08}
-              splitBy="character"
+            {/* ARCHITECT - Elegant Serif Typography */}
+            <motion.div
+              className="relative"
+              initial={{ 
+                opacity: 0,
+                y: 60,
+                scale: 0.9,
+                filter: 'blur(15px)'
+              }}
+              animate={mounted ? { 
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                filter: 'blur(0px)'
+              } : {}}
+              transition={{
+                duration: 1.8,
+                delay: 1.2,
+                ease: [0.19, 1, 0.22, 1] // Sophisticated easing
+              }}
               style={{
+                fontSize: 'clamp(3rem, 7vw, 5.5rem)',
+                fontFamily: 'Playfair Display, serif',
+                fontWeight: 400,
+                letterSpacing: '0.05em',
+                lineHeight: '0.9',
                 color: '#2D3748',
-                textTransform: 'uppercase'
+                textTransform: 'uppercase',
+                fontStyle: 'italic'
+              }}
+            >
+              ARCHITECT
+            </motion.div>
+
+            {/* Subtle Decorative Line */}
+            <motion.div
+              className="mx-auto mt-6"
+              initial={{ scaleX: 0, opacity: 0 }}
+              animate={mounted ? { scaleX: 1, opacity: 1 } : {}}
+              transition={{
+                duration: 1.5,
+                delay: 1.8,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+              style={{
+                width: '120px',
+                height: '1px',
+                background: 'linear-gradient(90deg, transparent, rgba(255, 102, 99, 0.6), transparent)',
+                transformOrigin: 'center'
               }}
             />
-          </TypographyAnimation>
+          </motion.div>
 
           {/* Rounded CTA Buttons - Bottom System */}
           <motion.div

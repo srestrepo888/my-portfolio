@@ -162,96 +162,107 @@ const AboutSection: React.FC = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="relative h-96 lg:h-[500px]"
+              className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center"
             >
-                   {/* Elegant Static Photo */}
-                   <motion.div
-                     className="absolute inset-0"
-                     initial={{ opacity: 0, scale: 0.9 }}
-                     animate={{ opacity: 1, scale: 1 }}
-                     transition={{ duration: 0.8, delay: 0.5 }}
-                     whileHover={{ 
-                       scale: 1.02,
-                       transition: { duration: 0.3, ease: "easeOut" }
-                     }}
-                     style={{
-                       filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
-                       maskImage: `radial-gradient(ellipse 85% 95% at 50% 50%, black 70%, transparent 90%)`,
-                       WebkitMaskImage: `radial-gradient(ellipse 85% 95% at 50% 50%, black 70%, transparent 90%)`
-                     }}
-                   >
+              {/* Truly Floating Photo - No Container */}
+              <motion.div
+                className="relative w-full h-full"
+                initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
+                transition={{ duration: 1.2, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ 
+                  scale: 1.03,
+                  y: -5,
+                  transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] }
+                }}
+                style={{
+                  filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.2)) drop-shadow(0 10px 20px rgba(255, 102, 99, 0.1))',
+                  borderRadius: '24px',
+                  overflow: 'hidden'
+                }}
+              >
                 <Image
                   src="/images/silvana-portrait.jpg"
                   alt="Silvana Restrepo - Experience Architect"
                   fill
                   className="object-cover object-center"
                   style={{
-                    filter: 'contrast(1.1) saturate(0.9) brightness(1.05)',
-                    borderRadius: '20px'
+                    filter: 'contrast(1.05) saturate(0.9) brightness(1.02)',
+                    transform: 'scale(1.02)'
                   }}
                 />
               </motion.div>
 
-                   {/* Elegant Static Brand Elements Around Photo */}
-                   <div
-                     className="absolute top-4 right-4 w-24 h-24"
-                     style={{
-                       background: 'radial-gradient(circle, rgba(242, 107, 117, 0.15), transparent)',
-                       borderRadius: '50%',
-                       filter: 'blur(4px)',
-                       opacity: 0.4
-                     }}
-                   />
+              {/* Sophisticated Floating Elements - No White Frame */}
+              <motion.div
+                className="absolute top-6 right-6 w-20 h-20"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={inView ? { opacity: 0.6, scale: 1 } : {}}
+                transition={{ duration: 1.5, delay: 1.0 }}
+                style={{
+                  background: 'radial-gradient(circle, rgba(255, 102, 99, 0.2), transparent)',
+                  borderRadius: '50%',
+                  filter: 'blur(8px)'
+                }}
+              />
 
-                   <div
-                     className="absolute bottom-8 left-8 w-20 h-20"
-                     style={{
-                       background: 'linear-gradient(45deg, rgba(255, 218, 185, 0.2), rgba(242, 107, 117, 0.1))',
-                       borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
-                       filter: 'blur(3px)',
-                       opacity: 0.3
-                     }}
-                   />
+              <motion.div
+                className="absolute bottom-8 left-8 w-16 h-16"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={inView ? { opacity: 0.4, scale: 1 } : {}}
+                transition={{ duration: 1.5, delay: 1.2 }}
+                style={{
+                  background: 'linear-gradient(45deg, rgba(255, 153, 150, 0.3), rgba(255, 102, 99, 0.1))',
+                  borderRadius: '50%',
+                  filter: 'blur(6px)'
+                }}
+              />
 
-                   {/* Elegant Static Brand Lines Around Photo */}
-                   <div
-                     className="absolute top-1/4 left-2 w-40 h-px"
-                     style={{
-                       background: 'linear-gradient(90deg, transparent, rgba(242, 107, 117, 0.5), transparent)',
-                       transform: 'rotate(-20deg)',
-                       opacity: 0.2
-                     }}
-                   />
+              <motion.div
+                className="absolute top-1/3 left-4 w-32 h-px"
+                initial={{ opacity: 0, scaleX: 0 }}
+                animate={inView ? { opacity: 0.5, scaleX: 1 } : {}}
+                transition={{ duration: 1.2, delay: 1.4 }}
+                style={{
+                  background: 'linear-gradient(90deg, transparent, rgba(255, 102, 99, 0.4), transparent)',
+                  transform: 'rotate(-12deg)',
+                  transformOrigin: 'left center'
+                }}
+              />
 
-                   <div
-                     className="absolute bottom-1/3 right-2 w-36 h-px"
-                     style={{
-                       background: 'linear-gradient(90deg, transparent, rgba(255, 218, 185, 0.6), transparent)',
-                       transform: 'rotate(25deg)',
-                       opacity: 0.15
-                     }}
-                   />
+              <motion.div
+                className="absolute bottom-1/4 right-4 w-28 h-px"
+                initial={{ opacity: 0, scaleX: 0 }}
+                animate={inView ? { opacity: 0.4, scaleX: 1 } : {}}
+                transition={{ duration: 1.2, delay: 1.6 }}
+                style={{
+                  background: 'linear-gradient(90deg, transparent, rgba(255, 153, 150, 0.5), transparent)',
+                  transform: 'rotate(8deg)',
+                  transformOrigin: 'right center'
+                }}
+              />
 
-                   {/* Additional Static Elements */}
-                   <div
-                     className="absolute top-1/2 right-1/4 w-16 h-16"
-                     style={{
-                       background: 'conic-gradient(from 45deg, rgba(242, 107, 117, 0.1), rgba(255, 218, 185, 0.08), rgba(242, 107, 117, 0.1))',
-                       borderRadius: '50%',
-                       filter: 'blur(2px)',
-                       opacity: 0.2
-                     }}
-                   />
+              <motion.div
+                className="absolute top-1/2 right-1/3 w-12 h-12"
+                initial={{ opacity: 0, scale: 0, rotate: 0 }}
+                animate={inView ? { opacity: 0.3, scale: 1, rotate: 45 } : {}}
+                transition={{ duration: 1.8, delay: 1.8 }}
+                style={{
+                  background: 'conic-gradient(from 45deg, rgba(255, 102, 99, 0.15), rgba(255, 153, 150, 0.1), rgba(255, 102, 99, 0.15))',
+                  borderRadius: '50%',
+                  filter: 'blur(4px)'
+                }}
+              />
             </motion.div>
           </div>
         </div>
       </div>
 
-           {/* Subtle Static Background Elements */}
+           {/* Sophisticated Background Elements */}
            <div
              className="absolute top-1/4 right-1/4 w-24 h-24"
              style={{
-               background: 'radial-gradient(circle, rgba(242, 107, 117, 0.08), transparent)',
+               background: 'radial-gradient(circle, rgba(255, 102, 99, 0.08), transparent)',
                filter: 'blur(30px)',
                borderRadius: '50%',
                opacity: 0.1
@@ -261,7 +272,7 @@ const AboutSection: React.FC = () => {
            <div
              className="absolute bottom-1/3 left-1/5 w-32 h-32"
              style={{
-               background: 'radial-gradient(circle, rgba(255, 218, 185, 0.06), transparent)',
+               background: 'radial-gradient(circle, rgba(255, 153, 150, 0.06), transparent)',
                filter: 'blur(40px)',
                borderRadius: '50%',
                opacity: 0.08

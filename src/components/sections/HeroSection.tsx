@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import UnifiedButton from '@/components/common/UnifiedButton';
 
 const MagneticButton = dynamic(() => import('@/components/effects/MagneticButton'), { ssr: false });
 
@@ -39,18 +40,18 @@ const HeroSection: React.FC = () => {
                 opacity: 0.15,
                 filter: 'contrast(1.1) saturate(0.8) brightness(1.05)',
                 objectFit: 'cover',
-                objectPosition: 'center 30%', // Focus on face
-                transform: 'scale(1.05)',
-                maskImage: `radial-gradient(ellipse 60% 80% at 50% 25%, 
+                objectPosition: 'center 20%', // Focus on face and eyes
+                transform: 'scale(1.1)', // Slightly larger to ensure eyes are visible
+                maskImage: `radial-gradient(ellipse 70% 90% at 50% 20%, 
                   rgba(0,0,0,0.8) 0%, 
-                  rgba(0,0,0,0.6) 30%, 
-                  rgba(0,0,0,0.3) 60%, 
-                  transparent 85%)`,
-                WebkitMaskImage: `radial-gradient(ellipse 60% 80% at 50% 25%, 
+                  rgba(0,0,0,0.6) 25%, 
+                  rgba(0,0,0,0.3) 50%, 
+                  transparent 80%)`,
+                WebkitMaskImage: `radial-gradient(ellipse 70% 90% at 50% 20%, 
                   rgba(0,0,0,0.8) 0%, 
-                  rgba(0,0,0,0.6) 30%, 
-                  rgba(0,0,0,0.3) 60%, 
-                  transparent 85%)`
+                  rgba(0,0,0,0.6) 25%, 
+                  rgba(0,0,0,0.3) 50%, 
+                  transparent 80%)`
               }}
             />
             
@@ -145,7 +146,7 @@ const HeroSection: React.FC = () => {
                 fontWeight: 400,
                 letterSpacing: '0.08em',
                 lineHeight: '0.9',
-                color: '#1F1F1F',
+                color: '#2D3748',
                 textTransform: 'uppercase'
               }}
             >
@@ -163,58 +164,21 @@ const HeroSection: React.FC = () => {
             {mounted && (
               <>
                 <MagneticButton>
-                  <motion.button 
-                    className="px-10 py-4"
-                    style={{ 
-                      backgroundColor: '#FF6663',
-                      color: 'white',
-                      fontFamily: 'Lato, sans-serif',
-                      fontSize: 'clamp(0.9rem, 1.3vw, 1rem)',
-                      letterSpacing: '0.1em',
-                      textTransform: 'uppercase',
-                      fontWeight: 400,
-                      borderRadius: '50px', // Fully rounded
-                      border: 'none',
-                      cursor: 'pointer',
-                      transition: 'all 0.3s ease'
-                    }}
-                    whileHover={{ 
-                      backgroundColor: '#E55A57',
-                      y: -2,
-                      scale: 1.02
-                    }}
-                    whileTap={{ scale: 0.98 }}
+                  <UnifiedButton
+                    variant="primary"
+                    size="lg"
                   >
                     View My Work
-                  </motion.button>
+                  </UnifiedButton>
                 </MagneticButton>
                 
                 <MagneticButton>
-                  <motion.button 
-                    className="px-10 py-4"
-                    style={{ 
-                      backgroundColor: 'transparent',
-                      border: '1px solid #CBD5E1',
-                      color: '#6B7280',
-                      fontFamily: 'Lato, sans-serif',
-                      fontSize: 'clamp(0.9rem, 1.3vw, 1rem)',
-                      letterSpacing: '0.1em',
-                      textTransform: 'uppercase',
-                      fontWeight: 400,
-                      borderRadius: '50px', // Fully rounded
-                      cursor: 'pointer',
-                      transition: 'all 0.3s ease'
-                    }}
-                    whileHover={{ 
-                      borderColor: '#9CA3AF',
-                      color: '#4A5568',
-                      y: -2,
-                      scale: 1.02
-                    }}
-                    whileTap={{ scale: 0.98 }}
+                  <UnifiedButton
+                    variant="secondary"
+                    size="lg"
                   >
                     About Me
-                  </motion.button>
+                  </UnifiedButton>
                 </MagneticButton>
               </>
             )}

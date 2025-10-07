@@ -39,12 +39,13 @@
   --color-gradient-start: #FFFBEE;
   --color-gradient-end: #FFF5E6;
   
-  /* Sophisticated Text Colors */
-  --color-text-primary: #1F1F1F;
-  --color-text-secondary: #4A5568;
-  --color-text-tertiary: #718096;
-  --color-text-accent: #FF6663;
-  --color-text-light: #9CA3AF;
+  /* Sophisticated Text Colors - Softer, More Elegant */
+  --color-text-primary: #2D3748; /* Softer than pure black */
+  --color-text-secondary: #4A5568; /* Maintained for hierarchy */
+  --color-text-tertiary: #718096; /* Maintained for hierarchy */
+  --color-text-accent: #FF6663; /* Maintained for accents */
+  --color-text-light: #9CA3AF; /* Maintained for light text */
+  --color-text-soft: #5A6C7D; /* New softer primary alternative */
 
   /* Optimized Spacing System - Single Viewport Consumption */
   --space-xs: 8px;

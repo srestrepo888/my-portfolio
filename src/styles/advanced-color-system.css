@@ -1,0 +1,232 @@
+/* Advanced Color Psychology System - Award-Winning Excellence */
+
+:root {
+  /* PRIMARY BRAND COLORS - Sophisticated Foundation */
+  --color-primary-coral: #FF6663;        /* Primary accent - energetic, confident */
+  --color-primary-cream: #FFFBEE;        /* Primary background - warm, inviting */
+  
+  /* EXTENDED ACCENT PALETTE - Harmonious Psychology */
+  --color-accent-sage: #8FBC8F;          /* Sage green - wisdom, growth, balance */
+  --color-accent-lavender: #B19CD9;      /* Lavender - creativity, luxury, calm */
+  --color-accent-amber: #FFB347;         /* Amber - warmth, optimism, energy */
+  --color-accent-slate: #708090;         /* Slate blue - sophistication, trust */
+  
+  /* SOPHISTICATED NEUTRAL SYSTEM */
+  --color-neutral-charcoal: #2C3E50;     /* Deep charcoal - authority, elegance */
+  --color-neutral-stone: #8B9DC3;        /* Stone blue - calm, professional */
+  --color-neutral-pearl: #F8F9FA;        /* Pearl white - purity, clarity */
+  --color-neutral-mist: #E8F4F8;         /* Mist blue - serenity, openness */
+  
+  /* TEMPERATURE BALANCE COLORS */
+  --color-warm-gold: #D4AF37;            /* Warm gold - luxury, success */
+  --color-warm-terracotta: #E2725B;      /* Warm terracotta - earth, stability */
+  --color-cool-mint: #98FB98;            /* Cool mint - freshness, renewal */
+  --color-cool-steel: #B0C4DE;           /* Cool steel - precision, reliability */
+  
+  /* ACCESSIBILITY-OPTIMIZED TEXT COLORS */
+  --color-text-primary: #1A1A1A;         /* AAA contrast on cream */
+  --color-text-secondary: #4A5568;       /* AA+ contrast on cream */
+  --color-text-tertiary: #718096;        /* AA contrast on cream */
+  --color-text-accent: #FF6663;          /* Brand accent */
+  --color-text-inverse: #FFFFFF;         /* White text for dark backgrounds */
+  
+  /* SOPHISTICATED GRADIENT SYSTEM */
+  --gradient-primary: linear-gradient(135deg, #FF6663 0%, #FF8A80 50%, #FFB3BA 100%);
+  --gradient-secondary: linear-gradient(135deg, #8FBC8F 0%, #A8D8A8 50%, #C2E0C2 100%);
+  --gradient-tertiary: linear-gradient(135deg, #B19CD9 0%, #C7B8E0 50%, #DDD5E8 100%);
+  --gradient-warm: linear-gradient(135deg, #FFB347 0%, #FFC966 50%, #FFE0A6 100%);
+  --gradient-cool: linear-gradient(135deg, #708090 0%, #8B9DC3 50%, #A8B8D8 100%);
+  
+  /* LUXURY GRADIENTS - Multi-stop Sophistication */
+  --gradient-luxury-primary: linear-gradient(135deg, 
+    #FF6663 0%, 
+    #FF7A77 15%, 
+    #FF8E8B 30%, 
+    #FFA29F 45%, 
+    #FFB6B3 60%, 
+    #FFCAC7 75%, 
+    #FFDEDB 90%, 
+    #FFF2F1 100%
+  );
+  
+  --gradient-luxury-sage: linear-gradient(135deg, 
+    #8FBC8F 0%, 
+    #9BC49B 20%, 
+    #A7CCA7 40%, 
+    #B3D4B3 60%, 
+    #BFDCBF 80%, 
+    #CBE4CB 100%
+  );
+  
+  --gradient-luxury-lavender: linear-gradient(135deg, 
+    #B19CD9 0%, 
+    #BBA8DD 20%, 
+    #C5B4E1 40%, 
+    #CFC0E5 60%, 
+    #D9CCE9 80%, 
+    #E3D8ED 100%
+  );
+  
+  /* DEPTH GRADIENTS - Sophisticated Layering */
+  --gradient-depth-warm: linear-gradient(180deg, 
+    rgba(255, 102, 99, 0.1) 0%, 
+    rgba(255, 102, 99, 0.05) 25%, 
+    transparent 50%, 
+    rgba(255, 179, 71, 0.05) 75%, 
+    rgba(255, 179, 71, 0.1) 100%
+  );
+  
+  --gradient-depth-cool: linear-gradient(180deg, 
+    rgba(112, 128, 144, 0.1) 0%, 
+    rgba(112, 128, 144, 0.05) 25%, 
+    transparent 50%, 
+    rgba(139, 157, 195, 0.05) 75%, 
+    rgba(139, 157, 195, 0.1) 100%
+  );
+  
+  /* PSYCHOLOGICAL STATE COLORS */
+  --color-state-success: #8FBC8F;        /* Sage green - growth, success */
+  --color-state-warning: #FFB347;        /* Amber - attention, energy */
+  --color-state-info: #708090;           /* Slate - information, trust */
+  --color-state-error: #E2725B;          /* Terracotta - urgency, action */
+  
+  /* INTERACTION STATE COLORS */
+  --color-hover-primary: #E55A57;        /* Darker coral on hover */
+  --color-hover-secondary: #7BA67B;      /* Darker sage on hover */
+  --color-hover-tertiary: #9F8BC7;       /* Darker lavender on hover */
+  --color-hover-neutral: #2A3E4F;        /* Darker charcoal on hover */
+  
+  /* FOCUS AND ACCESSIBILITY */
+  --color-focus-ring: #FF6663;           /* Focus ring color */
+  --color-focus-ring-light: rgba(255, 102, 99, 0.3); /* Light focus ring */
+  --color-selection: rgba(255, 102, 99, 0.2); /* Text selection color */
+  
+  /* SHADOW COLORS - Sophisticated Depth */
+  --shadow-primary: 0 4px 20px rgba(255, 102, 99, 0.15);
+  --shadow-secondary: 0 4px 20px rgba(143, 188, 143, 0.15);
+  --shadow-tertiary: 0 4px 20px rgba(177, 156, 217, 0.15);
+  --shadow-neutral: 0 4px 20px rgba(44, 62, 80, 0.15);
+  --shadow-elevated: 0 8px 40px rgba(44, 62, 80, 0.2);
+  --shadow-floating: 0 12px 60px rgba(44, 62, 80, 0.25);
+}
+
+/* SOPHISTICATED GRADIENT UTILITIES */
+.gradient-primary { background: var(--gradient-primary); }
+.gradient-secondary { background: var(--gradient-secondary); }
+.gradient-tertiary { background: var(--gradient-tertiary); }
+.gradient-warm { background: var(--gradient-warm); }
+.gradient-cool { background: var(--gradient-cool); }
+.gradient-luxury-primary { background: var(--gradient-luxury-primary); }
+.gradient-luxury-sage { background: var(--gradient-luxury-sage); }
+.gradient-luxury-lavender { background: var(--gradient-luxury-lavender); }
+
+/* DEPTH GRADIENT UTILITIES */
+.gradient-depth-warm { background: var(--gradient-depth-warm); }
+.gradient-depth-cool { background: var(--gradient-depth-cool); }
+
+/* PSYCHOLOGICAL STATE UTILITIES */
+.text-success { color: var(--color-state-success); }
+.text-warning { color: var(--color-state-warning); }
+.text-info { color: var(--color-state-info); }
+.text-error { color: var(--color-state-error); }
+
+.bg-success { background-color: var(--color-state-success); }
+.bg-warning { background-color: var(--color-state-warning); }
+.bg-info { background-color: var(--color-state-info); }
+.bg-error { background-color: var(--color-state-error); }
+
+/* SOPHISTICATED SHADOW UTILITIES */
+.shadow-primary { box-shadow: var(--shadow-primary); }
+.shadow-secondary { box-shadow: var(--shadow-secondary); }
+.shadow-tertiary { box-shadow: var(--shadow-tertiary); }
+.shadow-neutral { box-shadow: var(--shadow-neutral); }
+.shadow-elevated { box-shadow: var(--shadow-elevated); }
+.shadow-floating { box-shadow: var(--shadow-floating); }
+
+/* ACCESSIBILITY ENHANCEMENTS */
+.focus-ring:focus {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.focus-ring-light:focus {
+  outline: 2px solid var(--color-focus-ring-light);
+  outline-offset: 2px;
+}
+
+/* SELECTION STYLING */
+::selection {
+  background-color: var(--color-selection);
+  color: var(--color-text-primary);
+}
+
+::-moz-selection {
+  background-color: var(--color-selection);
+  color: var(--color-text-primary);
+}
+
+/* TEMPERATURE BALANCE UTILITIES */
+.temperature-warm {
+  background: linear-gradient(135deg, var(--color-warm-gold), var(--color-warm-terracotta));
+}
+
+.temperature-cool {
+  background: linear-gradient(135deg, var(--color-cool-mint), var(--color-cool-steel));
+}
+
+.temperature-balanced {
+  background: linear-gradient(135deg, 
+    var(--color-warm-gold) 0%, 
+    var(--color-accent-sage) 50%, 
+    var(--color-cool-steel) 100%
+  );
+}
+
+/* SOPHISTICATED HOVER EFFECTS */
+.hover-luxury-primary:hover {
+  background: var(--gradient-luxury-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevated);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-luxury-secondary:hover {
+  background: var(--gradient-luxury-sage);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevated);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-luxury-tertiary:hover {
+  background: var(--gradient-luxury-lavender);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevated);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* RESPONSIVE COLOR ADJUSTMENTS */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-primary: #F8F9FA;
+    --color-text-secondary: #E8F4F8;
+    --color-text-tertiary: #B0C4DE;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-luxury-primary,
+  .hover-luxury-secondary,
+  .hover-luxury-tertiary {
+    transition: none;
+  }
+}
+
+/* HIGH CONTRAST MODE SUPPORT */
+@media (prefers-contrast: high) {
+  :root {
+    --color-text-primary: #000000;
+    --color-text-secondary: #333333;
+    --color-text-tertiary: #666666;
+    --color-focus-ring: #000000;
+  }
+}

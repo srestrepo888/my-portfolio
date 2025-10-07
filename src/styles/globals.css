@@ -8,6 +8,9 @@
 /* Import sophisticated typography system */
 @import './typography.css';
 
+/* Import advanced color psychology system */
+@import './advanced-color-system.css';
+
 /* Font loading optimization - use font-display: swap for better performance */
 @font-face {
   font-family: 'Inter';

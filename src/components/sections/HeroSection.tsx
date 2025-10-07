@@ -117,7 +117,7 @@ const HeroSection: React.FC = () => {
                 letterSpacing: '0.02em',
                 lineHeight: '0.85',
                 textTransform: 'uppercase',
-                background: 'linear-gradient(135deg, #FF6663 0%, #FF6663 25%, rgba(255, 102, 99, 0.7) 50%, rgba(255, 102, 99, 0.3) 75%, rgba(255, 102, 99, 0.1) 100%)',
+                background: 'linear-gradient(135deg, #FF6663 0%, #FF7A77 15%, #FF8E8B 30%, #FFA29F 45%, #FFB6B3 60%, #FFCAC7 75%, #FFDEDB 90%, #FFF2F1 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',

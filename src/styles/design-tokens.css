@@ -23,21 +23,42 @@
   --font-body: 'Lato', 'Helvetica Neue', 'Arial', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
 
-  /* Updated Color System - Professional & Sophisticated */
-  --color-background: #FFFBEE; /* Warm cream background - primary brand color */
-  --color-surface: #FFFFFF; /* Pure white for cards and surfaces */
-  --color-primary: #1F1F1F; /* Near black for text - sophisticated */
-  --color-primary-dark: #0F0F0F; /* Deep black for headings */
-  --color-secondary: #4A5568; /* Readable gray */
-  --color-tertiary: #718096; /* Lighter gray */
-  --color-accent: #FF6663; /* Primary accent color - coral red */
-  --color-accent-hover: #E55A57; /* Darker accent on hover */
-  --color-accent-light: #FF9996; /* Light accent variant */
-  --color-accent-dark: #CC5250; /* Dark accent variant */
-  --color-contrast: #FF6663; /* Same as accent for consistency */
-  --color-vanilla-off: #FFFBEE; /* Same as background */
-  --color-gradient-start: #FFFBEE;
-  --color-gradient-end: #FFF5E6;
+/* Advanced Color Psychology System - Award-Winning Excellence */
+--color-background: #FFFBEE; /* Warm cream background - primary brand color */
+--color-surface: #FFFFFF; /* Pure white for cards and surfaces */
+
+/* PRIMARY BRAND COLORS - Sophisticated Foundation */
+--color-primary-coral: #FF6663; /* Primary accent - energetic, confident */
+--color-accent-sage: #8FBC8F; /* Sage green - wisdom, growth, balance */
+--color-accent-lavender: #B19CD9; /* Lavender - creativity, luxury, calm */
+--color-accent-amber: #FFB347; /* Amber - warmth, optimism, energy */
+--color-accent-slate: #708090; /* Slate blue - sophistication, trust */
+
+/* SOPHISTICATED NEUTRAL SYSTEM */
+--color-neutral-charcoal: #2C3E50; /* Deep charcoal - authority, elegance */
+--color-neutral-stone: #8B9DC3; /* Stone blue - calm, professional */
+--color-neutral-pearl: #F8F9FA; /* Pearl white - purity, clarity */
+--color-neutral-mist: #E8F4F8; /* Mist blue - serenity, openness */
+
+/* TEMPERATURE BALANCE COLORS */
+--color-warm-gold: #D4AF37; /* Warm gold - luxury, success */
+--color-warm-terracotta: #E2725B; /* Warm terracotta - earth, stability */
+--color-cool-mint: #98FB98; /* Cool mint - freshness, renewal */
+--color-cool-steel: #B0C4DE; /* Cool steel - precision, reliability */
+
+/* LEGACY SUPPORT - Maintained for compatibility */
+--color-primary: #1A1A1A; /* Updated to AAA contrast */
+--color-primary-dark: #0F0F0F; /* Deep black for headings */
+--color-secondary: #4A5568; /* Readable gray */
+--color-tertiary: #718096; /* Lighter gray */
+--color-accent: #FF6663; /* Primary accent color - coral red */
+--color-accent-hover: #E55A57; /* Darker accent on hover */
+--color-accent-light: #FF9996; /* Light accent variant */
+--color-accent-dark: #CC5250; /* Dark accent variant */
+--color-contrast: #FF6663; /* Same as accent for consistency */
+--color-vanilla-off: #FFFBEE; /* Same as background */
+--color-gradient-start: #FFFBEE;
+--color-gradient-end: #FFF5E6;
   
   /* Sophisticated Text Colors - Softer, More Elegant */
   --color-text-primary: #2D3748; /* Softer than pure black */

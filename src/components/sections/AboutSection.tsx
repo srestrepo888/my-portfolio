@@ -200,7 +200,7 @@ const AboutSection: React.FC = () => {
                 animate={inView ? { opacity: 0.6, scale: 1 } : {}}
                 transition={{ duration: 1.5, delay: 1.0 }}
                 style={{
-                  background: 'radial-gradient(circle, rgba(255, 102, 99, 0.2), transparent)',
+                  background: 'radial-gradient(circle, rgba(255, 102, 99, 0.2), rgba(255, 179, 71, 0.1), transparent)',
                   borderRadius: '50%',
                   filter: 'blur(8px)'
                 }}
@@ -212,7 +212,7 @@ const AboutSection: React.FC = () => {
                 animate={inView ? { opacity: 0.4, scale: 1 } : {}}
                 transition={{ duration: 1.5, delay: 1.2 }}
                 style={{
-                  background: 'linear-gradient(45deg, rgba(255, 153, 150, 0.3), rgba(255, 102, 99, 0.1))',
+                  background: 'linear-gradient(45deg, rgba(255, 153, 150, 0.3), rgba(255, 179, 71, 0.2), rgba(255, 102, 99, 0.1))',
                   borderRadius: '50%',
                   filter: 'blur(6px)'
                 }}

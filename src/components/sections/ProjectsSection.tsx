@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { projects } from '@/data/projects';
+import SectionHeader from '@/components/common/SectionHeader';
 
 const MagneticButton = dynamic(() => import('@/components/effects/MagneticButton'), { ssr: false });
 const ProgressiveImage = dynamic(() => import('@/components/ui/ProgressiveImage'), { ssr: false });
@@ -43,9 +44,12 @@ const ProjectsSection: React.FC = () => {
   return (
     <section 
       id="projects" 
-      className="relative min-h-screen py-24 overflow-hidden"
+      className="relative py-16 lg:py-20 overflow-hidden"
       style={{
-        backgroundColor: '#FDF6F0'
+        backgroundColor: '#FFFBEE',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center'
       }}
     >
       {/* Cinematic Background */}
@@ -57,47 +61,20 @@ const ProjectsSection: React.FC = () => {
           className="absolute inset-0"
           style={{
             background: `linear-gradient(180deg, 
-              #FDF6F0 0%, 
-              rgba(253, 246, 240, 0.95) 50%, 
-              rgba(255, 251, 248, 0.98) 100%)`
+              #FFFBEE 0%, 
+              rgba(255, 251, 238, 0.95) 50%, 
+              rgba(255, 248, 240, 0.98) 100%)`
           }}
         />
       </motion.div>
 
-      <div className="container mx-auto px-8 lg:px-16 relative z-10">
-        {/* Section Title */}
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
-        >
-          <h2 
-            className="mb-4"
-            style={{
-              fontSize: 'clamp(3.5rem, 7vw, 5rem)',
-              fontFamily: 'Georgia, serif',
-              fontWeight: 300,
-              letterSpacing: '0.05em',
-              lineHeight: '1',
-              color: '#F26B75'
-            }}
-          >
-            Selected Work
-          </h2>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={inView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mx-auto"
-            style={{
-              width: '80px',
-              height: '1px',
-              background: 'linear-gradient(90deg, transparent, #F26B75, transparent)'
-            }}
-          />
-        </motion.div>
+      <div className="container mx-auto px-8 lg:px-16 relative z-10 w-full">
+        {/* Section Header */}
+        <SectionHeader 
+          number="02"
+          title="Selected Work"
+          subtitle="A curated collection of projects that showcase the intersection of strategic thinking, human-centered design, and innovative solutions across diverse industries."
+        />
 
         {/* Cinematic Carousel */}
         <div className="relative">
@@ -204,7 +181,7 @@ const ProjectsSection: React.FC = () => {
                         style={{
                           fontSize: '14px',
                           fontFamily: 'Inter, sans-serif',
-                          color: '#F26B75',
+                          color: '#FF6663',
                           letterSpacing: '0.2em',
                           textTransform: 'uppercase',
                           fontWeight: 500
@@ -284,20 +261,20 @@ const ProjectsSection: React.FC = () => {
                         <Link href={`/projects/${projects[currentProject].id}`}>
                           <motion.button 
                             className="px-10 py-4"
-                            style={{
-                              backgroundColor: '#F26B75',
-                              color: 'white',
-                              fontFamily: 'Inter, sans-serif',
-                              fontSize: '13px',
-                              letterSpacing: '0.15em',
-                              textTransform: 'uppercase',
-                              fontWeight: 600,
-                              borderRadius: '2px'
-                            }}
-                            whileHover={{ 
-                              backgroundColor: '#E85D67',
-                              y: -2
-                            }}
+                        style={{
+                          backgroundColor: '#FF6663',
+                          color: 'white',
+                          fontFamily: 'Inter, sans-serif',
+                          fontSize: '13px',
+                          letterSpacing: '0.15em',
+                          textTransform: 'uppercase',
+                          fontWeight: 600,
+                          borderRadius: '2px'
+                        }}
+                        whileHover={{ 
+                          backgroundColor: '#E55A57',
+                          y: -2
+                        }}
                           >
                             View Case Study
                           </motion.button>
@@ -325,7 +302,7 @@ const ProjectsSection: React.FC = () => {
                         initial={{ scaleX: 0 }}
                         animate={{ 
                           scaleX: currentProject === index ? 1 : 0,
-                          backgroundColor: currentProject === index ? '#F26B75' : 'transparent'
+                          backgroundColor: currentProject === index ? '#FF6663' : 'transparent'
                         }}
                         transition={{ 
                           duration: currentProject === index && isAutoPlaying ? 6 : 0.3,

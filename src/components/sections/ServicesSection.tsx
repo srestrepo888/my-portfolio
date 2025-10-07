@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import dynamic from 'next/dynamic';
+import SectionHeader from '@/components/common/SectionHeader';
 
 const ServiceConstellation = dynamic(() => import('@/components/effects/ServiceConstellation'), { ssr: false });
 
@@ -17,9 +18,12 @@ const ServicesSection: React.FC = () => {
   return (
     <section 
       id="services" 
-      className="relative min-h-screen py-24 overflow-hidden"
+      className="relative py-16 lg:py-20 overflow-hidden"
       style={{
-        backgroundColor: '#FDF6F0'
+        backgroundColor: '#FFFBEE',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center'
       }}
     >
       {/* Organic Background Texture */}
@@ -31,9 +35,9 @@ const ServicesSection: React.FC = () => {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(ellipse at 20% 30%, rgba(242, 107, 117, 0.05) 0%, transparent 40%),
-              radial-gradient(ellipse at 80% 70%, rgba(255, 218, 185, 0.04) 0%, transparent 40%),
-              radial-gradient(ellipse at 50% 50%, rgba(253, 246, 240, 0.95) 50%, #FDF6F0 100%)
+              radial-gradient(ellipse at 20% 30%, rgba(255, 102, 99, 0.05) 0%, transparent 40%),
+              radial-gradient(ellipse at 80% 70%, rgba(255, 153, 150, 0.04) 0%, transparent 40%),
+              radial-gradient(ellipse at 50% 50%, rgba(255, 251, 238, 0.95) 50%, #FFFBEE 100%)
             `
           }}
         />
@@ -70,7 +74,7 @@ const ServicesSection: React.FC = () => {
               fontStyle: 'italic',
               letterSpacing: '0.05em',
               lineHeight: '1',
-              color: '#FF5A5A'
+              color: '#FF6663'
             }}
           >
             Architectural Expertise
@@ -84,7 +88,7 @@ const ServicesSection: React.FC = () => {
             style={{
               width: '80px',
               height: '1px',
-              background: 'linear-gradient(90deg, transparent, #FF5A5A, transparent)'
+              background: 'linear-gradient(90deg, transparent, #FF6663, transparent)'
             }}
           />
           
@@ -114,7 +118,7 @@ const ServicesSection: React.FC = () => {
             background: 'rgba(255, 255, 255, 0.3)',
             backdropFilter: 'blur(10px)',
             borderRadius: '20px',
-            border: '1px solid rgba(242, 107, 117, 0.1)'
+            border: '1px solid rgba(255, 102, 99, 0.1)'
           }}
         >
           <ServiceConstellation />
@@ -154,7 +158,7 @@ const ServicesSection: React.FC = () => {
         }}
         className="absolute top-20 right-10 w-20 h-20 opacity-10"
         style={{
-          background: 'radial-gradient(circle, #FF5A5A, transparent)',
+          background: 'radial-gradient(circle, #FF6663, transparent)',
           filter: 'blur(20px)'
         }}
       />

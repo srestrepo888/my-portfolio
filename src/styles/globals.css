@@ -27,6 +27,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: none !important; /* Hide default cursor for custom cursor */
+  }
+
+  /* Ensure custom cursor works on all interactive elements */
+  a, button, input, textarea, select, [role="button"], [tabindex], .touchable, .cursor-pointer {
+    cursor: none !important;
   }
 
   html {
@@ -220,18 +226,18 @@
   /* Personal Branding Texture */
   .bg-brand-texture {
     background: 
-      radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 218, 185, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(255, 228, 196, 0.1) 0%, transparent 50%),
-      linear-gradient(135deg, #FFF8F5 0%, #FFF0E6 50%, #FFE4E4 100%);
+      radial-gradient(circle at 20% 80%, rgba(255, 102, 99, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 153, 150, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(255, 245, 230, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, #FFFBEE 0%, #FFF5E6 50%, #FFE6E5 100%);
     background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
   }
 
   .bg-brand-texture-overlay {
     background-image: 
-      radial-gradient(circle at 25% 25%, rgba(255, 182, 193, 0.08) 0%, transparent 25%),
-      radial-gradient(circle at 75% 75%, rgba(255, 218, 185, 0.08) 0%, transparent 25%),
-      radial-gradient(circle at 50% 50%, rgba(255, 228, 196, 0.05) 0%, transparent 25%);
+      radial-gradient(circle at 25% 25%, rgba(255, 102, 99, 0.08) 0%, transparent 25%),
+      radial-gradient(circle at 75% 75%, rgba(255, 153, 150, 0.08) 0%, transparent 25%),
+      radial-gradient(circle at 50% 50%, rgba(255, 245, 230, 0.05) 0%, transparent 25%);
     background-size: 200px 200px, 300px 300px, 150px 150px;
     opacity: 0.3;
   }
@@ -262,7 +268,7 @@
     position: relative;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 182, 193, 0.2);
+    border: 1px solid rgba(255, 102, 99, 0.2);
     border-radius: 24px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
@@ -281,7 +287,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 90, 90, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 102, 99, 0.3), transparent);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -294,9 +300,9 @@
     position: relative;
     width: 16px;
     height: 16px;
-    background: #FF5A5A;
+    background: #FF6663;
     border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(255, 90, 90, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 102, 99, 0.3);
     transition: all 0.3s ease;
   }
 
@@ -308,7 +314,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(255, 90, 90, 0.3);
+    background: rgba(255, 102, 99, 0.3);
     border-radius: 50%;
     animation: pulse-ring 2s infinite;
   }
@@ -329,9 +335,9 @@
   }
 
   .year-badge {
-    background: linear-gradient(135deg, #FF5A5A, #FFB3B3);
+    background: linear-gradient(135deg, #FF6663, #FF9996);
     color: white;
-    box-shadow: 0 4px 15px rgba(255, 90, 90, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 102, 99, 0.3);
     border-radius: 9999px;
     padding: 8px 16px;
     font-size: 14px;
@@ -339,8 +345,8 @@
   }
 
   .category-tag {
-    background: rgba(255, 182, 193, 0.2);
-    color: #FF5A5A;
+    background: rgba(255, 102, 99, 0.2);
+    color: #FF6663;
     border-radius: 9999px;
     padding: 4px 12px;
     font-size: 12px;
@@ -352,7 +358,7 @@
   .hover-indicator {
     display: flex;
     align-items: center;
-    color: rgba(255, 90, 90, 0.6);
+    color: rgba(255, 102, 99, 0.6);
     font-size: 14px;
   }
 
@@ -373,13 +379,13 @@
   .floating-element {
     position: absolute;
     border-radius: 50%;
-    background: rgba(255, 90, 90, 0.2);
+    background: rgba(255, 102, 99, 0.2);
     animation: float 3s ease-in-out infinite;
   }
 
   .floating-element:nth-child(2) {
     animation-delay: 0.5s;
-    background: rgba(255, 182, 193, 0.3);
+    background: rgba(255, 153, 150, 0.3);
   }
 
   @keyframes float {
@@ -405,7 +411,7 @@
     position: absolute;
     inset: 0;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(255, 90, 90, 0.2), rgba(255, 182, 193, 0.3));
+    background: linear-gradient(135deg, rgba(255, 102, 99, 0.2), rgba(255, 153, 150, 0.3));
     transition: all 0.3s ease;
   }
 
@@ -413,7 +419,7 @@
     position: absolute;
     inset: 8px;
     border-radius: 8px;
-    background: linear-gradient(135deg, #FF5A5A, #FFB3B3);
+    background: linear-gradient(135deg, #FF6663, #FF9996);
     transition: all 0.3s ease;
   }
 
@@ -428,7 +434,7 @@
     position: relative;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 182, 193, 0.2);
+    border: 1px solid rgba(255, 102, 99, 0.2);
     border-radius: 24px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
@@ -447,7 +453,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 90, 90, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 102, 99, 0.3), transparent);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -463,29 +469,29 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #FF5A5A, #FFB3B3);
+    background: linear-gradient(135deg, #FF6663, #FF9996);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(255, 90, 90, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 102, 99, 0.3);
   }
 
   .service-highlight {
     display: inline-block;
     padding: 8px 16px;
     border-radius: 9999px;
-    background: rgba(255, 182, 193, 0.2);
-    color: #FF5A5A;
+    background: rgba(255, 102, 99, 0.2);
+    color: #FF6663;
     font-size: 14px;
     font-weight: 500;
     transition: all 0.3s ease;
   }
 
   .service-highlight:hover {
-    background: rgba(255, 182, 193, 0.3);
+    background: rgba(255, 102, 99, 0.3);
     transform: scale(1.05);
   }
 

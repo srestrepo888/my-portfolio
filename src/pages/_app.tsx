@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
-import CustomCursor from '@/components/common/CustomCursor'
+import UltraLuxuryCursor from '@/components/effects/UltraLuxuryCursor'
 import ScrollProgress from '@/components/common/ScrollProgress'
 import WebVitals from '@/components/common/WebVitals'
 import { AnimatePresence } from 'framer-motion'
@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <WebVitals />
       {mounted && (
         <>
-          <CustomCursor />
+          <UltraLuxuryCursor />
           <ScrollProgress showPercentage={false} position="top" height={3} />
         </>
       )}

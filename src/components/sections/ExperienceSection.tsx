@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import SectionHeader from '@/components/common/SectionHeader';
 
 const ExperienceSection: React.FC = () => {
   const { ref, inView } = useInView({
@@ -28,7 +29,7 @@ const ExperienceSection: React.FC = () => {
       description: "Leading digital transformation initiatives for global enterprises",
       year: 2020,
       category: "Leadership",
-      color: "#FF5A5A",
+      color: "#FF6663",
       position: { x: 85, y: 20 }
     },
     {
@@ -39,7 +40,7 @@ const ExperienceSection: React.FC = () => {
       description: "Developing frameworks for technology governance",
       year: 2019,
       category: "Strategy",
-      color: "#FF5A5A",
+      color: "#FF6663",
       position: { x: 70, y: 35 }
     },
     {
@@ -50,7 +51,7 @@ const ExperienceSection: React.FC = () => {
       description: "Scaling regional operations and market presence",
       year: 2018,
       category: "Strategy",
-      color: "#FF5A5A",
+      color: "#FF6663",
       position: { x: 55, y: 45 }
     },
     {
@@ -61,7 +62,7 @@ const ExperienceSection: React.FC = () => {
       description: "Transforming retail through experiential design",
       year: 2016,
       category: "Marketing",
-      color: "#FF5A5A",
+      color: "#FF6663",
       position: { x: 40, y: 55 }
     },
     {
@@ -72,7 +73,7 @@ const ExperienceSection: React.FC = () => {
       description: "Optimizing market segmentation strategies",
       year: 2013,
       category: "Analytics",
-      color: "#FF5A5A",
+      color: "#FF6663",
       position: { x: 30, y: 70 }
     },
     {
@@ -83,7 +84,7 @@ const ExperienceSection: React.FC = () => {
       description: "Supporting corporate expansion and M&A activities",
       year: 2002,
       category: "Analytics",
-      color: "#FF5A5A",
+      color: "#FF6663",
       position: { x: 15, y: 85 }
     }
   ];
@@ -99,8 +100,13 @@ const ExperienceSection: React.FC = () => {
     <section 
       ref={containerRef}
       id="experience" 
-      className="relative min-h-screen py-24 overflow-hidden"
-      style={{ backgroundColor: '#FDF6F0' }}
+      className="relative py-16 lg:py-20 overflow-hidden"
+      style={{ 
+        backgroundColor: '#FFFBEE',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center'
+      }}
     >
       {/* Journey Path Background */}
       <motion.div 
@@ -175,7 +181,7 @@ const ExperienceSection: React.FC = () => {
               fontStyle: 'italic',
               letterSpacing: '0.05em',
               lineHeight: '1',
-              color: '#FF5A5A'
+              color: '#FF6663'
             }}
           >
             My Experience
@@ -189,7 +195,7 @@ const ExperienceSection: React.FC = () => {
             style={{
               width: '80px',
               height: '1px',
-              background: 'linear-gradient(90deg, transparent, #FF5A5A, transparent)'
+              background: 'linear-gradient(90deg, transparent, #FF6663, transparent)'
             }}
           />
           
@@ -232,7 +238,7 @@ const ExperienceSection: React.FC = () => {
             <div 
               className="w-2 h-2 rounded-full animate-pulse"
               style={{ 
-                backgroundColor: '#FF5A5A',
+                backgroundColor: '#FF6663',
                 animationDelay: '0.5s'
               }}
             />

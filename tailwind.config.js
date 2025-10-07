@@ -16,14 +16,15 @@ module.exports = {
           light: '#718096', // Lighter gray
         },
         accent: {
-          DEFAULT: '#FF5A5A', // Vibrant coral
-          hover: '#FF4040',
-          light: '#FFB3B3', // Light pink
+          DEFAULT: '#FF6663', // Primary accent color - coral red
+          hover: '#E55A57', // Darker accent on hover
+          light: '#FF9996', // Light accent variant
+          dark: '#CC5250', // Dark accent variant
         },
         background: {
-          DEFAULT: '#FFF8F5', // Warm peach - personal branding
-          cream: '#FFF8F3',
-          pink: '#FFE4E4',
+          DEFAULT: '#FFFBEE', // Warm cream background - primary brand color
+          cream: '#FFFBEE', // Same as default
+          surface: '#FFFFFF', // Pure white for cards and surfaces
           white: '#FFFFFF',
         }
       },

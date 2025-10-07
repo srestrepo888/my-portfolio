@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
+import SectionHeader from '@/components/common/SectionHeader';
 
 const AboutSection: React.FC = () => {
   const { ref, inView } = useInView({
@@ -16,9 +17,12 @@ const AboutSection: React.FC = () => {
   return (
     <section 
       id="about" 
-      className="relative py-20 lg:py-32 overflow-hidden"
+      className="relative py-16 lg:py-20 overflow-hidden"
       style={{
-        backgroundColor: '#FDF6F0'
+        backgroundColor: '#FFFBEE',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center'
       }}
     >
       {/* Personal Texture Brand Background */}
@@ -31,9 +35,9 @@ const AboutSection: React.FC = () => {
           className="absolute inset-0"
           style={{
             background: `
-              linear-gradient(135deg, #FDF6F0 0%, #F8F0E8 25%, #F5E8E0 50%, #F2E0D8 75%, #F0D8D0 100%),
-              radial-gradient(ellipse at 20% 30%, rgba(242, 107, 117, 0.08) 0%, transparent 60%),
-              radial-gradient(ellipse at 80% 70%, rgba(255, 218, 185, 0.06) 0%, transparent 60%)
+              linear-gradient(135deg, #FFFBEE 0%, #F8F0E8 25%, #F5E8E0 50%, #F2E0D8 75%, #F0D8D0 100%),
+              radial-gradient(ellipse at 20% 30%, rgba(255, 102, 99, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 70%, rgba(255, 153, 150, 0.06) 0%, transparent 60%)
             `,
             mixBlendMode: 'normal'
           }}
@@ -43,7 +47,7 @@ const AboutSection: React.FC = () => {
         <div 
           className="absolute inset-0"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23F26B75' stroke-opacity='0.12' stroke-width='0.8'%3E%3Cpath d='M50 50c0-27.614-22.386-50-50-50v50h50z'/%3E%3Cpath d='M50 50c0 27.614 22.386 50 50 50V50H50z'/%3E%3Cpath d='M350 350c0 27.614 22.386 50 50 50v-50h-50z'/%3E%3Cpath d='M350 350c0-27.614-22.386-50-50-50v50h50z'/%3E%3Cpath d='M100 100c0-16.569-13.431-30-30-30v30h30z'/%3E%3Cpath d='M300 300c0 16.569 13.431 30 30 30v-30h-30z'/%3E%3C/g%3E%3Cg stroke='%23FFDAB9' stroke-opacity='0.15' stroke-width='0.5'%3E%3Cpath d='M80 80c0-22.091-17.909-40-40-40v40h40z'/%3E%3Cpath d='M320 320c0 22.091 17.909 40 40 40v-40h-40z'/%3E%3Cpath d='M150 150c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M250 250c0 11.046 8.954 20 20 20v-20h-20z'/%3E%3C/g%3E%3Cg stroke='%23F26B75' stroke-opacity='0.08' stroke-width='0.3'%3E%3Cpath d='M120 120c0-6.627-5.373-12-12-12v12h12z'/%3E%3Cpath d='M280 280c0 6.627 5.373 12 12 12v-12h-12z'/%3E%3Cpath d='M200 200c0-33.137-26.863-60-60-60v60h60z'/%3E%3Cpath d='M200 200c0 33.137 26.863 60 60 60V200H200z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23FF6663' stroke-opacity='0.12' stroke-width='0.8'%3E%3Cpath d='M50 50c0-27.614-22.386-50-50-50v50h50z'/%3E%3Cpath d='M50 50c0 27.614 22.386 50 50 50V50H50z'/%3E%3Cpath d='M350 350c0 27.614 22.386 50 50 50v-50h-50z'/%3E%3Cpath d='M350 350c0-27.614-22.386-50-50-50v50h50z'/%3E%3Cpath d='M100 100c0-16.569-13.431-30-30-30v30h30z'/%3E%3Cpath d='M300 300c0 16.569 13.431 30 30 30v-30h-30z'/%3E%3C/g%3E%3Cg stroke='%23FF9996' stroke-opacity='0.15' stroke-width='0.5'%3E%3Cpath d='M80 80c0-22.091-17.909-40-40-40v40h40z'/%3E%3Cpath d='M320 320c0 22.091 17.909 40 40 40v-40h-40z'/%3E%3Cpath d='M150 150c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M250 250c0 11.046 8.954 20 20 20v-20h-20z'/%3E%3C/g%3E%3Cg stroke='%23FF6663' stroke-opacity='0.08' stroke-width='0.3'%3E%3Cpath d='M120 120c0-6.627-5.373-12-12-12v12h12z'/%3E%3Cpath d='M280 280c0 6.627 5.373 12 12 12v-12h-12z'/%3E%3Cpath d='M200 200c0-33.137-26.863-60-60-60v60h60z'/%3E%3Cpath d='M200 200c0 33.137 26.863 60 60 60V200H200z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             backgroundSize: '400px 400px',
             mixBlendMode: 'multiply',
             opacity: 0.6
@@ -54,7 +58,7 @@ const AboutSection: React.FC = () => {
         <div 
           className="absolute inset-0"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23F26B75' stroke-opacity='0.1' stroke-width='0.5'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M20 20c0 11.046 8.954 20 20 20V20H20z'/%3E%3Cpath d='M280 280c0 11.046 8.954 20 20 20v-20h-20z'/%3E%3Cpath d='M280 280c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M50 50c0-16.569-13.431-30-30-30v30h30z'/%3E%3Cpath d='M250 250c0 16.569 13.431 30 30 30v-30h-30z'/%3E%3Cpath d='M100 100c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M200 200c0 11.046 8.954 20 20 20v-20h-20z'/%3E%3Cpath d='M150 150c0-16.569-13.431-30-30-30v30h30z'/%3E%3Cpath d='M150 150c0 16.569 13.431 30 30 30v-30h-30z'/%3E%3C/g%3E%3Cg stroke='%23FFDAB9' stroke-opacity='0.12' stroke-width='0.3'%3E%3Cpath d='M80 80c0-22.091-17.909-40-40-40v40h40z'/%3E%3Cpath d='M220 220c0 22.091 17.909 40 40 40v-40h-40z'/%3E%3Cpath d='M120 120c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M180 180c0 11.046 8.954 20 20 20v-20h-20z'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23FF6663' stroke-opacity='0.1' stroke-width='0.5'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M20 20c0 11.046 8.954 20 20 20V20H20z'/%3E%3Cpath d='M280 280c0 11.046 8.954 20 20 20v-20h-20z'/%3E%3Cpath d='M280 280c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M50 50c0-16.569-13.431-30-30-30v30h30z'/%3E%3Cpath d='M250 250c0 16.569 13.431 30 30 30v-30h-30z'/%3E%3Cpath d='M100 100c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M200 200c0 11.046 8.954 20 20 20v-20h-20z'/%3E%3Cpath d='M150 150c0-16.569-13.431-30-30-30v30h30z'/%3E%3Cpath d='M150 150c0 16.569 13.431 30 30 30v-30h-30z'/%3E%3C/g%3E%3Cg stroke='%23FF9996' stroke-opacity='0.12' stroke-width='0.3'%3E%3Cpath d='M80 80c0-22.091-17.909-40-40-40v40h40z'/%3E%3Cpath d='M220 220c0 22.091 17.909 40 40 40v-40h-40z'/%3E%3Cpath d='M120 120c0-11.046-8.954-20-20-20v20h20z'/%3E%3Cpath d='M180 180c0 11.046 8.954 20 20 20v-20h-20z'/%3E%3C/g%3E%3C/svg%3E")`,
             backgroundSize: '300px 300px',
             mixBlendMode: 'overlay',
             opacity: 0.4
@@ -63,75 +67,32 @@ const AboutSection: React.FC = () => {
       </motion.div>
       
       {/* Content Container */}
-      <div className="container mx-auto px-8 lg:px-16 relative z-10">
+      <div className="container mx-auto px-8 lg:px-16 relative z-10 w-full">
         <div ref={ref} className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center mb-16 lg:mb-20"
-          >
-            <h2 
-              className="mb-6"
-              style={{
-                fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
-                fontFamily: 'Cormorant Garamond, serif',
-                fontWeight: 600,
-                fontStyle: 'italic',
-                letterSpacing: '0.02em',
-                lineHeight: '1.1',
-                color: '#F26B75'
-              }}
-            >
-              About Me
-            </h2>
-            
-            {/* Elegant Decorative Line */}
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={inView ? { scaleX: 1 } : {}}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="mx-auto"
-              style={{
-                width: '60px',
-                height: '1px',
-                background: 'linear-gradient(90deg, transparent, #F26B75, transparent)'
-              }}
-            />
-          </motion.div>
+          <SectionHeader 
+            number="01"
+            title="About Me"
+            subtitle="I believe the most compelling stories begin with curiosity—a spark that has carried me across continents, blending diverse perspectives from anthropology to business, from innovation to experience design."
+          />
 
           {/* Two-Column Layout - Text Left, Photo Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             {/* Left Column - Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="space-y-8"
+              className="space-y-4"
             >
               <p 
                 style={{
-                  fontSize: 'clamp(1.1rem, 1.8vw, 1.3rem)',
+                  fontSize: 'clamp(1rem, 1.6vw, 1.125rem)',
                   fontFamily: 'Lato, sans-serif',
                   fontWeight: 400,
                   letterSpacing: '0.01em',
-                  lineHeight: '1.7',
-                  color: '#4A5568'
-                }}
-              >
-                I believe the most compelling stories begin with <span style={{ color: '#F26B75', fontWeight: 500 }}>curiosity</span>—a 
-                spark that has carried me across continents, blending diverse perspectives from anthropology to business, from innovation to experience design.
-              </p>
-              
-              <p 
-                style={{
-                  fontSize: 'clamp(1.1rem, 1.8vw, 1.3rem)',
-                  fontFamily: 'Lato, sans-serif',
-                  fontWeight: 400,
-                  letterSpacing: '0.01em',
-                  lineHeight: '1.7',
+                  lineHeight: '1.6',
                   color: '#4A5568'
                 }}
               >
@@ -140,24 +101,24 @@ const AboutSection: React.FC = () => {
 
               <p 
                 style={{
-                  fontSize: 'clamp(1.1rem, 1.8vw, 1.3rem)',
+                  fontSize: 'clamp(1rem, 1.6vw, 1.125rem)',
                   fontFamily: 'Lato, sans-serif',
                   fontWeight: 400,
                   letterSpacing: '0.01em',
-                  lineHeight: '1.7',
+                  lineHeight: '1.6',
                   color: '#4A5568'
                 }}
               >
-                Each endeavour brings me closer to my mission: connecting strategic business goals with the essence of the <span style={{ color: '#F26B75', fontWeight: 500 }}>#human perspective</span>.
+                Each endeavour brings me closer to my mission: connecting strategic business goals with the essence of the <span style={{ color: '#FF6663', fontWeight: 500 }}>#human perspective</span>.
               </p>
 
               <p 
                 style={{
-                  fontSize: 'clamp(1.1rem, 1.8vw, 1.3rem)',
+                  fontSize: 'clamp(1rem, 1.6vw, 1.125rem)',
                   fontFamily: 'Lato, sans-serif',
                   fontWeight: 400,
                   letterSpacing: '0.01em',
-                  lineHeight: '1.7',
+                  lineHeight: '1.6',
                   color: '#4A5568'
                 }}
               >
@@ -169,17 +130,17 @@ const AboutSection: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="relative mt-12 pt-8"
+                className="relative mt-6 pt-4"
                 style={{
-                  borderTop: '1px solid rgba(242, 107, 117, 0.2)'
+                  borderTop: '1px solid rgba(255, 102, 99, 0.2)'
                 }}
               >
                 <span 
-                  className="absolute -top-4 left-0 opacity-30"
+                  className="absolute -top-2 left-0 opacity-30"
                   style={{
-                    fontSize: '60px',
+                    fontSize: '40px',
                     fontFamily: 'Cormorant Garamond, serif',
-                    color: '#F26B75',
+                    color: '#FF6663',
                     lineHeight: 1
                   }}
                 >
@@ -187,11 +148,11 @@ const AboutSection: React.FC = () => {
                 </span>
                 <p 
                   style={{
-                    fontSize: 'clamp(1.2rem, 2vw, 1.5rem)',
+                    fontSize: 'clamp(1.1rem, 1.8vw, 1.25rem)',
                     fontFamily: 'Cormorant Garamond, serif',
                     fontWeight: 400,
                     letterSpacing: '0.01em',
-                    lineHeight: '1.5',
+                    lineHeight: '1.4',
                     color: '#4A5568',
                     fontStyle: 'italic',
                     position: 'relative',

@@ -23,38 +23,41 @@
   --font-body: 'Lato', 'Helvetica Neue', 'Arial', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
 
-  /* Ultra-Luxurious Color System - Strict Brand Adherence */
-  --color-background: #FFF8F5; /* Warm peach - personal branding texture */
-  --color-surface: #FFFFFF;
+  /* Updated Color System - Professional & Sophisticated */
+  --color-background: #FFFBEE; /* Warm cream background - primary brand color */
+  --color-surface: #FFFFFF; /* Pure white for cards and surfaces */
   --color-primary: #1F1F1F; /* Near black for text - sophisticated */
   --color-primary-dark: #0F0F0F; /* Deep black for headings */
   --color-secondary: #4A5568; /* Readable gray */
   --color-tertiary: #718096; /* Lighter gray */
-  --color-accent: #FF5A5A; /* Vibrant coral - primary accent */
-  --color-accent-hover: #FF4040; /* Darker coral on hover */
-  --color-accent-light: #FFB3B3; /* Light pink */
-  --color-contrast: #FA706B; /* Contrast color */
-  --color-vanilla-off: #FDF6F0; /* Vanilla off background */
-  --color-gradient-start: #FFF8F3;
-  --color-gradient-end: #FFE4E4;
+  --color-accent: #FF6663; /* Primary accent color - coral red */
+  --color-accent-hover: #E55A57; /* Darker accent on hover */
+  --color-accent-light: #FF9996; /* Light accent variant */
+  --color-accent-dark: #CC5250; /* Dark accent variant */
+  --color-contrast: #FF6663; /* Same as accent for consistency */
+  --color-vanilla-off: #FFFBEE; /* Same as background */
+  --color-gradient-start: #FFFBEE;
+  --color-gradient-end: #FFF5E6;
   
   /* Sophisticated Text Colors */
   --color-text-primary: #1F1F1F;
   --color-text-secondary: #4A5568;
   --color-text-tertiary: #718096;
-  --color-text-accent: #FF5A5A;
+  --color-text-accent: #FF6663;
   --color-text-light: #9CA3AF;
 
-  /* Spacing System - 8px Grid */
+  /* Optimized Spacing System - Single Viewport Consumption */
   --space-xs: 8px;
-  --space-sm: 16px;
-  --space-md: 24px;
-  --space-lg: 32px;
-  --space-xl: 48px;
-  --space-2xl: 64px;
-  --space-3xl: 96px;
-  --space-section: clamp(64px, 10vh, 100px); /* Reduced from 120px */
-  --space-component: 32px; /* Tightened from 40-60px */
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 40px;
+  --space-3xl: 48px;
+  --space-section: clamp(40px, 6vh, 60px); /* Optimized for single viewport */
+  --space-component: 20px; /* Tightened for better density */
+  --space-content: 16px; /* Content spacing */
+  --space-header: 24px; /* Section header spacing */
 
   /* Animation Timings */
   --duration-fast: 200ms;

@@ -243,10 +243,12 @@ export const projects: Project[] = [
     practices: ["Product Strategy", "Service Design", "Prototyping"],
     location: "KSA",
     webpage: "https://qiddiya.com/",
-    heroImage: "/images/placeholder.svg",
-    secondaryImage: "/images/placeholder.svg",
+    heroImage: "/images/projects/qiddiya/hero-qiddiya.png",
+    secondaryImage: "/images/projects/qiddiya/secondary-qiddiya.png",
     galleryImages: [
-      "/images/placeholder.svg"
+      "/images/projects/qiddiya/emergency-management.png",
+      "/images/projects/qiddiya/guest-search-digital-id.png",
+      "/images/projects/qiddiya/unified-guest-interaction.png"
     ],
     context: "Saudi Arabia's flagship entertainment destination required comprehensive guest support systems navigating uncharted territory in a landmark entertainment project. Theme parks, water attractions, sports facilities, and retail centers operated through a unified digital infrastructure where both guests and operational staff would encounter these systems for the first time. Cultural complexity demanded sophisticated solutions: Saudi families, GCC visitors, and international tourists each brought different service expectations, with every touchpoint depending entirely on digital systems without analog alternatives available.",
     scope: [

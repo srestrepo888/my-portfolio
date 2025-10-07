@@ -44,7 +44,7 @@ const ProjectsSection: React.FC = () => {
   return (
     <section 
       id="projects" 
-      className="relative py-16 lg:py-20 overflow-hidden"
+      className="relative py-12 lg:py-16 overflow-hidden"
       style={{
         backgroundColor: '#FFFBEE',
         minHeight: '100vh',

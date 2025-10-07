@@ -17,9 +17,9 @@ const AboutSection: React.FC = () => {
   const opacity = useTransform(scrollY, [0, 800], [0.1, 0.05]);
 
   return (
-    <section 
-      id="about" 
-      className="relative py-16 lg:py-20 overflow-hidden"
+    <section
+      id="about"
+      className="relative py-12 lg:py-16 overflow-hidden"
       style={{
         backgroundColor: '#FFFBEE',
         minHeight: '100vh',

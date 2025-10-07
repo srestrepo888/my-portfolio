@@ -97,11 +97,11 @@ const ExperienceSection: React.FC = () => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      id="experience" 
-      className="relative py-16 lg:py-20 overflow-hidden"
-      style={{ 
+      id="experience"
+      className="relative py-8 lg:py-12 overflow-hidden"
+      style={{
         backgroundColor: '#FFFBEE',
         minHeight: '100vh',
         display: 'flex',

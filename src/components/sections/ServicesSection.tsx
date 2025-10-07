@@ -16,9 +16,9 @@ const ServicesSection: React.FC = () => {
   const y = useTransform(scrollY, [1500, 2500], [0, -80]);
 
   return (
-    <section 
-      id="services" 
-      className="relative py-16 lg:py-20 overflow-hidden"
+    <section
+      id="services"
+      className="relative py-12 lg:py-16 overflow-hidden"
       style={{
         backgroundColor: '#FFFBEE',
         minHeight: '100vh',

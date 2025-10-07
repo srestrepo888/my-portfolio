@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import UnifiedButton from './UnifiedButton';
+import TypographyAnimation from './TypographyAnimation';
 
 const Navigation: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -40,39 +41,36 @@ const Navigation: React.FC = () => {
       }}
     >
       <div className="max-w-[1200px] mx-auto px-6 flex justify-between items-center">
-        <Link 
-          href="/" 
-          className="font-serif text-heading touchable transition-all duration-300 hover:scale-105"
-          style={{ 
-            color: '#2D3748',
-            fontWeight: 400,
-            fontFamily: 'Cormorant Garamond, serif',
-            fontSize: 'clamp(1.5rem, 3vw, 2rem)',
-            letterSpacing: '0.02em'
-          }}
-        >
-          Silvana
-        </Link>
+          <TypographyAnimation
+            variant="fade-in"
+            delay={0.1}
+            duration={0.6}
+          >
+            <Link
+              href="/"
+              className="text-nav-brand touchable text-hover-lift"
+              style={{
+                color: '#2D3748'
+              }}
+            >
+              Silvana
+            </Link>
+          </TypographyAnimation>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navItems.map((item, index) => (
-            <motion.div
+            <TypographyAnimation
               key={item.label}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              variant="reveal-down"
+              delay={index * 0.1}
+              duration={0.6}
             >
               <Link
                 href={item.href}
-                className="touchable transition-all duration-300 hover:scale-105 px-2 py-1"
-                style={{ 
-                  color: '#2D3748',
-                  fontSize: 'clamp(0.9rem, 1.5vw, 1rem)',
-                  fontFamily: 'Lato, sans-serif',
-                  fontWeight: 400,
-                  letterSpacing: '0.05em',
-                  textTransform: 'none'
+                className="text-nav touchable text-hover-lift px-2 py-1"
+                style={{
+                  color: '#2D3748'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = '#FF6663';
@@ -83,7 +81,7 @@ const Navigation: React.FC = () => {
               >
                 {item.label}
               </Link>
-            </motion.div>
+            </TypographyAnimation>
           ))}
           <UnifiedButton
             variant="primary"

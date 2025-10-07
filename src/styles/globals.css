@@ -5,6 +5,9 @@
 /* Import design tokens first */
 @import './design-tokens.css';
 
+/* Import sophisticated typography system */
+@import './typography.css';
+
 /* Font loading optimization - use font-display: swap for better performance */
 @font-face {
   font-family: 'Inter';

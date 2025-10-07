@@ -3,6 +3,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import SectionHeader from '@/components/common/SectionHeader';
+import TypographyAnimation from '@/components/common/TypographyAnimation';
+import TextReveal from '@/components/common/TextReveal';
 
 const AboutSection: React.FC = () => {
   const { ref, inView } = useInView({
@@ -80,89 +82,80 @@ const AboutSection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             {/* Left Column - Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="space-y-4"
+            <TypographyAnimation
+              variant="reveal-left"
+              delay={0.3}
+              duration={0.8}
+              className="space-y-6"
             >
-              <p 
-                style={{
-                  fontSize: 'clamp(1rem, 1.6vw, 1.125rem)',
-                  fontFamily: 'Lato, sans-serif',
-                  fontWeight: 400,
-                  letterSpacing: '0.01em',
-                  lineHeight: '1.6',
-                  color: '#4A5568'
-                }}
-              >
-                I have embarked on projects ranging from wellness movements to creating AI-driven platforms that empower developers worldwide.
-              </p>
+              <TextReveal
+                text="I have embarked on projects ranging from wellness movements to creating AI-driven platforms that empower developers worldwide."
+                className="text-body"
+                direction="up"
+                delay={0.4}
+                duration={0.6}
+                stagger={0.02}
+                splitBy="word"
+              />
 
-              <p 
+              <TextReveal
+                text="Each endeavour brings me closer to my mission: connecting strategic business goals with the essence of the #human perspective."
+                className="text-body"
+                direction="up"
+                delay={0.6}
+                duration={0.6}
+                stagger={0.02}
+                splitBy="word"
                 style={{
-                  fontSize: 'clamp(1rem, 1.6vw, 1.125rem)',
-                  fontFamily: 'Lato, sans-serif',
-                  fontWeight: 400,
-                  letterSpacing: '0.01em',
-                  lineHeight: '1.6',
-                  color: '#4A5568'
-                }}
-              >
-                Each endeavour brings me closer to my mission: connecting strategic business goals with the essence of the <span style={{ color: '#FF6663', fontWeight: 500 }}>#human perspective</span>.
-              </p>
+                  '--highlight-color': '#FF6663'
+                } as React.CSSProperties}
+              />
 
-              <p 
-                style={{
-                  fontSize: 'clamp(1rem, 1.6vw, 1.125rem)',
-                  fontFamily: 'Lato, sans-serif',
-                  fontWeight: 400,
-                  letterSpacing: '0.01em',
-                  lineHeight: '1.6',
-                  color: '#4A5568'
-                }}
-              >
-                Whether leading teams in retail innovation or pioneering Experience design for global brands, my passion remains: to reveal what lies beneath and transform it into tangible expansion.
-              </p>
+              <TextReveal
+                text="Whether leading teams in retail innovation or pioneering Experience design for global brands, my passion remains: to reveal what lies beneath and transform it into tangible expansion."
+                className="text-body"
+                direction="up"
+                delay={0.8}
+                duration={0.6}
+                stagger={0.02}
+                splitBy="word"
+              />
 
               {/* Elegant Quote */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="relative mt-6 pt-4"
+              <TypographyAnimation
+                variant="reveal-up"
+                delay={1.0}
+                duration={0.8}
+                className="relative mt-8 pt-6"
                 style={{
                   borderTop: '1px solid rgba(255, 102, 99, 0.2)'
                 }}
               >
-                <span 
-                  className="absolute -top-2 left-0 opacity-30"
+                <span
+                  className="absolute -top-3 left-0 opacity-30 text-quote-large"
                   style={{
-                    fontSize: '40px',
-                    fontFamily: 'Cormorant Garamond, serif',
                     color: '#FF6663',
                     lineHeight: 1
                   }}
                 >
                   "
                 </span>
-                <p 
+                <TextReveal
+                  text="The art of my craft lies in listening to the unspoken, seeing the invisible, and touching the intangible essence of human desire."
+                  className="text-quote"
+                  direction="up"
+                  delay={1.2}
+                  duration={0.8}
+                  stagger={0.03}
+                  splitBy="word"
                   style={{
-                    fontSize: 'clamp(1.1rem, 1.8vw, 1.25rem)',
-                    fontFamily: 'Cormorant Garamond, serif',
-                    fontWeight: 400,
-                    letterSpacing: '0.01em',
-                    lineHeight: '1.4',
                     color: '#4A5568',
-                    fontStyle: 'italic',
                     position: 'relative',
                     zIndex: 1
                   }}
-                >
-                  The art of my craft lies in listening to the unspoken, seeing the invisible, and touching the intangible essence of human desire.
-                </p>
-              </motion.div>
-            </motion.div>
+                />
+              </TypographyAnimation>
+            </TypographyAnimation>
 
             {/* Right Column - Truly Floating Photo */}
             <motion.div

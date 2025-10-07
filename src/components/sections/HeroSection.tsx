@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import UnifiedButton from '@/components/common/UnifiedButton';
+import TypographyAnimation from '@/components/common/TypographyAnimation';
+import TextReveal from '@/components/common/TextReveal';
 
 const MagneticButton = dynamic(() => import('@/components/effects/MagneticButton'), { ssr: false });
 
@@ -81,78 +83,47 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 1.2, delay: 0.3 }}
           className="text-center relative z-10"
         >
-          {/* Main Typography - Matching Screenshot Exactly */}
-          <motion.h1 
+          {/* Main Typography - Sophisticated Display Typography */}
+          <TypographyAnimation
+            variant="reveal-up"
+            delay={0.4}
+            duration={1.2}
             className="mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: mounted ? 1 : 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            as="h1"
           >
-            {/* EXPERIENCE - Large Serif with Gradient Effect */}
-            <motion.div
-              className="block mb-2"
-              initial={{ 
-                opacity: 0,
-                y: 60,
-                scale: 0.9
-              }}
-              animate={mounted ? { 
-                opacity: 1,
-                y: 0,
-                scale: 1
-              } : {}}
-              transition={{
-                duration: 1.5,
-                delay: 0.6,
-                ease: [0.25, 0.46, 0.45, 0.94]
-              }}
-              style={{ 
-                fontSize: 'clamp(4.5rem, 10vw, 8rem)',
-                fontFamily: 'Cormorant Garamond, serif',
-                fontWeight: 400,
-                letterSpacing: '0.05em',
-                lineHeight: '0.85',
-                textTransform: 'uppercase',
+            {/* EXPERIENCE - Display Typography with Gradient */}
+            <TextReveal
+              text="EXPERIENCE"
+              className="text-display-1 mb-2"
+              direction="up"
+              delay={0.6}
+              duration={1.5}
+              stagger={0.1}
+              splitBy="character"
+              style={{
                 background: 'linear-gradient(90deg, #FF6663 0%, #FF6663 30%, rgba(255, 102, 99, 0.3) 70%, rgba(255, 102, 99, 0.1) 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+                backgroundClip: 'text',
+                textTransform: 'uppercase'
               }}
-            >
-              EXPERIENCE
-            </motion.div>
+            />
 
-            {/* ARCHITECT - Smaller Dark Text */}
-            <motion.div
-              className="block"
-              initial={{ 
-                opacity: 0,
-                y: 40,
-                scale: 0.95
-              }}
-              animate={mounted ? { 
-                opacity: 1,
-                y: 0,
-                scale: 1
-              } : {}}
-              transition={{
-                duration: 1.2,
-                delay: 1.0,
-                ease: [0.19, 1, 0.22, 1]
-              }}
-              style={{ 
-                fontSize: 'clamp(3rem, 7vw, 5.5rem)',
-                fontFamily: 'Cormorant Garamond, serif',
-                fontWeight: 400,
-                letterSpacing: '0.08em',
-                lineHeight: '0.9',
+            {/* ARCHITECT - Heading Typography */}
+            <TextReveal
+              text="ARCHITECT"
+              className="text-display-2"
+              direction="up"
+              delay={1.0}
+              duration={1.2}
+              stagger={0.08}
+              splitBy="character"
+              style={{
                 color: '#2D3748',
                 textTransform: 'uppercase'
               }}
-            >
-              ARCHITECT
-            </motion.div>
-          </motion.h1>
+            />
+          </TypographyAnimation>
 
           {/* Rounded CTA Buttons - Bottom System */}
           <motion.div

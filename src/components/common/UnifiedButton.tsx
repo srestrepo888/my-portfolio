@@ -22,14 +22,14 @@ const UnifiedButton: React.FC<UnifiedButtonProps> = ({
   disabled = false
 }) => {
   const baseStyles = {
-    fontFamily: 'Lato, sans-serif',
-    fontWeight: 400,
+    fontFamily: 'Inter, sans-serif',
+    fontWeight: 500,
     letterSpacing: '0.05em',
-    textTransform: 'none' as const,
+    textTransform: 'uppercase' as const,
     borderRadius: '50px', // Fully rounded for all buttons
     border: 'none',
     cursor: disabled ? 'not-allowed' : 'pointer',
-    transition: 'all 0.3s ease',
+    transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',

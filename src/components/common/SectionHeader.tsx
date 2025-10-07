@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import TypographyAnimation from './TypographyAnimation';
+import TextReveal from './TextReveal';
 
 interface SectionHeaderProps {
   number: string;
@@ -21,23 +23,21 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   });
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6 }}
-      className={`text-center ${className}`}
-      style={{ marginBottom: 'var(--space-header)' }}
-    >
+    <div ref={ref} className={`text-center ${className}`} style={{ marginBottom: 'var(--space-header)' }}>
+      <TypographyAnimation
+        variant="reveal-up"
+        delay={0.2}
+        duration={0.8}
+      >
       {/* Section Number */}
-      <motion.span
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={inView ? { opacity: 1, scale: 1 } : {}}
-        transition={{ duration: 0.5, delay: 0.1 }}
+      <TypographyAnimation
+        variant="scale-in"
+        delay={0.1}
+        duration={0.6}
         className="block"
         style={{
           fontSize: 'clamp(3rem, 6vw, 4rem)',
-          fontFamily: 'Cormorant Garamond, serif',
+          fontFamily: 'Playfair Display, serif',
           color: '#E5E7EB',
           fontWeight: 100,
           opacity: 0.3,
@@ -46,32 +46,28 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         }}
       >
         {number}
-      </motion.span>
+      </TypographyAnimation>
       
       {/* Section Title */}
-      <motion.h2
-        initial={{ opacity: 0, y: 15 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.2 }}
+      <TextReveal
+        text={title}
+        className="text-heading-1 mb-4"
+        direction="up"
+        delay={0.3}
+        duration={0.8}
+        stagger={0.05}
+        splitBy="word"
         style={{
-          fontSize: 'clamp(2rem, 4vw, 2.5rem)',
-          fontFamily: 'Cormorant Garamond, serif',
-          fontWeight: 600,
-          fontStyle: 'italic',
-          letterSpacing: '0.02em',
-          lineHeight: '1.1',
           color: '#FF6663',
-          marginBottom: 'var(--space-sm)'
+          fontStyle: 'italic'
         }}
-      >
-        {title}
-      </motion.h2>
+      />
       
       {/* Decorative Line */}
       <motion.div
         initial={{ scaleX: 0 }}
         animate={inView ? { scaleX: 1 } : {}}
-        transition={{ duration: 0.8, delay: 0.3 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
         className="mx-auto"
         style={{
           width: '60px',
@@ -83,25 +79,23 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       
       {/* Section Subtitle */}
       {subtitle && (
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
+        <TextReveal
+          text={subtitle}
+          className="text-body-large"
+          direction="up"
+          delay={0.6}
+          duration={0.8}
+          stagger={0.03}
+          splitBy="word"
           style={{
-            fontSize: 'clamp(1rem, 1.8vw, 1.125rem)',
-            fontFamily: 'Lato, sans-serif',
-            fontWeight: 400,
-            letterSpacing: '0.01em',
-            lineHeight: '1.6',
             color: '#4A5568',
             maxWidth: '600px',
             margin: '0 auto'
           }}
-        >
-          {subtitle}
-        </motion.p>
+        />
       )}
-    </motion.div>
+      </TypographyAnimation>
+    </div>
   );
 };
 

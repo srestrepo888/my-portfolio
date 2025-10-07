@@ -151,364 +151,134 @@ const ExperienceSection: React.FC = () => {
       </motion.div>
 
       <div className="container mx-auto px-8 lg:px-16 relative z-10">
-        {/* Section Title */}
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
-        >
-          <span 
-            className="block mb-8"
-            style={{
-              fontSize: '120px',
-              fontFamily: 'Georgia, serif',
-              color: '#E5E7EB',
-              fontWeight: 100,
-              opacity: 0.3
-            }}
-          >
-            03
-          </span>
-          
-          <h2 
-            className="mb-4"
-            style={{
-              fontSize: 'clamp(3.5rem, 7vw, 5rem)',
-              fontFamily: 'Cormorant Garamond, serif',
-              fontWeight: 600,
-              fontStyle: 'italic',
-              letterSpacing: '0.05em',
-              lineHeight: '1',
-              color: '#FF6663'
-            }}
-          >
-            My Experience
-          </h2>
-          
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={inView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mx-auto mb-8"
-            style={{
-              width: '80px',
-              height: '1px',
-              background: 'linear-gradient(90deg, transparent, #FF6663, transparent)'
-            }}
-          />
-          
-          <p 
-            className="max-w-3xl mx-auto"
-            style={{
-              fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
-              fontFamily: 'Lato, sans-serif',
-              fontWeight: 400,
-              letterSpacing: '0.02em',
-              lineHeight: '1.8',
-              color: '#4A5568'
-            }}
-          >
-            A journey through strategic design and business transformation
-          </p>
-          
-          {/* Interactive Instructions */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-8 flex items-center justify-center space-x-2"
-          >
-            <div 
-              className="w-2 h-2 rounded-full animate-pulse"
-              style={{ backgroundColor: '#FF5A5A' }}
-            />
-            <span 
-              style={{
-                fontSize: '14px',
-                fontFamily: 'Lato, sans-serif',
-                color: '#718096',
-                letterSpacing: '0.05em',
-                textTransform: 'uppercase'
-              }}
-            >
-              Hover to explore • Click for details
-            </span>
-            <div 
-              className="w-2 h-2 rounded-full animate-pulse"
-              style={{ 
-                backgroundColor: '#FF6663',
-                animationDelay: '0.5s'
-              }}
-            />
-          </motion.div>
-          </motion.div>
+        {/* Section Header */}
+        <SectionHeader
+          number="03"
+          title="My Experience"
+          subtitle="A journey through strategic leadership and innovation, where each role has shaped my understanding of human-centered design and business transformation."
+        />
 
-        {/* Interactive Journey Map */}
-        <div className="relative h-[600px]">
-          {/* Experience Points */}
-          {experienceData.map((exp, index) => (
-            <motion.div
-              key={exp.id}
-              className="absolute cursor-pointer"
-              style={{
-                left: `${exp.position.x}%`,
-                top: `${exp.position.y}%`,
-                transform: 'translate(-50%, -50%)'
-              }}
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              onMouseEnter={() => setSelectedExperience(exp.id)}
-              onMouseLeave={() => setSelectedExperience(null)}
-            >
-              {/* Experience Node */}
+        {/* Elegant Timeline Grid */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {experienceData.map((exp, index) => (
               <motion.div
-                className="relative"
-                animate={{
-                  scale: selectedExperience === exp.id ? 1.4 : 1,
-                  y: selectedExperience === exp.id ? -5 : 0,
-                  boxShadow: selectedExperience === exp.id 
-                    ? `0 10px 40px ${exp.color}40, 0 0 0 4px ${exp.color}20` 
-                    : `0 5px 20px ${exp.color}20`
-                }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                whileHover={{
-                  scale: 1.2,
-                  y: -3,
-                  transition: { duration: 0.2 }
-                }}
+                key={exp.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+                onClick={() => setSelectedExperience(exp.id)}
               >
-                <div
-                  className="relative flex items-center justify-center cursor-pointer"
+                {/* Experience Card */}
+                <motion.div
+                  className="relative p-8 rounded-3xl border transition-all duration-500 group-hover:scale-105"
                   style={{
-                    width: '70px',
-                    height: '70px',
-                    borderRadius: '50%',
-                    background: `linear-gradient(135deg, ${exp.color}15, white, ${exp.color}10)`,
-                    border: `3px solid ${exp.color}30`,
-                    boxShadow: `inset 0 2px 4px ${exp.color}10`
+                    borderColor: selectedExperience === exp.id ? exp.color : '#E5E7EB',
+                    backgroundColor: selectedExperience === exp.id 
+                      ? `rgba(255, 102, 99, 0.05)` 
+                      : 'rgba(255, 255, 255, 0.8)',
+                    boxShadow: selectedExperience === exp.id
+                      ? `0 20px 40px rgba(255, 102, 99, 0.15)`
+                      : '0 10px 30px rgba(0, 0, 0, 0.05)'
+                  }}
+                  whileHover={{
+                    y: -5,
+                    boxShadow: '0 20px 40px rgba(255, 102, 99, 0.1)'
                   }}
                 >
-                  {/* Year */}
-                  <span 
+                  {/* Year Badge */}
+                  <div 
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6"
                     style={{
-                      fontSize: '16px',
-                      fontFamily: 'Cormorant Garamond, serif',
-                      color: exp.color,
-                      fontWeight: 600,
-                      textShadow: `0 1px 2px ${exp.color}20`
+                      backgroundColor: exp.color,
+                      color: 'white',
+                      fontSize: '18px',
+                      fontWeight: 300,
+                      fontFamily: 'Playfair Display, serif'
                     }}
                   >
                     {exp.year}
-                  </span>
-                  
-                  {/* Pulsing ring */}
-                  <motion.div
-                    className="absolute inset-0 rounded-full"
-                    style={{
-                      border: `2px solid ${exp.color}40`,
-                      borderRadius: '50%'
-                    }}
-                    animate={{
-                      scale: [1, 1.3, 1],
-                      opacity: [0.6, 0, 0.6]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                  
-                  {/* Orbiting dot */}
-                  <motion.div
-                    className="absolute"
-                    style={{
-                      width: '8px',
-                      height: '8px',
-                      backgroundColor: exp.color,
-                      borderRadius: '50%',
-                      boxShadow: `0 0 8px ${exp.color}60`
-                    }}
-                    animate={{
-                      rotate: 360,
-                      scale: [1, 1.2, 1]
-                    }}
-                    transition={{
-                      rotate: { duration: 4, repeat: Infinity, ease: "linear" },
-                      scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-                    }}
-                    initial={{ x: 35 }}
-                  />
-                </div>
+                  </div>
 
-                {/* Company Label */}
-                <motion.div 
-                  className="absolute whitespace-nowrap"
-                  style={{
-                    top: '85px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    padding: '4px 8px',
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    borderRadius: '12px',
-                    border: `1px solid ${exp.color}20`,
-                    boxShadow: `0 2px 8px ${exp.color}10`,
-                    maxWidth: '140px'
-                  }}
-                  animate={{
-                    opacity: selectedExperience === exp.id ? 1 : 0.7,
-                    scale: selectedExperience === exp.id ? 1.05 : 1
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <p
-                    style={{
-                      fontSize: '13px',
-                      fontFamily: 'Lato, sans-serif',
-                      color: '#4A5568',
-                      textAlign: 'center',
-                      fontWeight: 500,
-                      margin: 0
+                  {/* Title */}
+                  <h3 
+                    className="text-xl font-light mb-3"
+                    style={{ 
+                      color: '#6B7280',
+                      fontFamily: 'Playfair Display, serif',
+                      fontStyle: 'italic'
+                    }}
+                  >
+                    {exp.title}
+                  </h3>
+
+                  {/* Company */}
+                  <p 
+                    className="text-lg font-light mb-2"
+                    style={{ 
+                      color: '#9CA3AF',
+                      fontFamily: 'Inter, sans-serif'
                     }}
                   >
                     {exp.company}
                   </p>
-                </motion.div>
-              </motion.div>
-            </motion.div>
-          ))}
 
-          {/* Experience Detail Panel */}
-          <AnimatePresence>
-            {selectedExperience !== null && (
-              <motion.div
-                initial={{ opacity: 0, x: 50, scale: 0.9 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                exit={{ opacity: 0, x: 50, scale: 0.9 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2"
-                style={{
-                  width: '400px',
-                  maxWidth: '90vw',
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9))',
-                  backdropFilter: 'blur(10px)',
-                  padding: '28px',
-                  borderRadius: '20px',
-                  boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.2)',
-                  border: `1px solid ${experienceData[selectedExperience].color}20`
-                }}
-              >
-                <div 
-                  className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-white border-l-2 border-t-2 rotate-45"
-                  style={{
-                    borderColor: `${experienceData[selectedExperience].color}20`
-                  }}
-                />
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 }}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    marginBottom: '12px'
-                  }}
-                >
-                  <div 
-                    style={{
-                      width: '8px',
-                      height: '8px',
-                      backgroundColor: experienceData[selectedExperience].color,
-                      borderRadius: '50%',
-                      marginRight: '8px',
-                      boxShadow: `0 0 8px ${experienceData[selectedExperience].color}40`
-                    }}
-                  />
-                  <span 
-                    style={{
-                      fontSize: '14px',
-                      fontFamily: 'Lato, sans-serif',
-                      color: experienceData[selectedExperience].color,
-                      textTransform: 'uppercase',
+                  {/* Period */}
+                  <p 
+                    className="text-sm font-light mb-4"
+                    style={{ 
+                      color: '#FF6663',
+                      fontFamily: 'Inter, sans-serif',
                       letterSpacing: '0.05em',
-                      fontWeight: 600
+                      textTransform: 'uppercase'
                     }}
                   >
-                    {experienceData[selectedExperience].period}
-                  </span>
-                </motion.div>
-                
-                <motion.h3
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="mt-2 mb-3"
-                  style={{
-                    fontSize: '26px',
-                    fontFamily: 'Cormorant Garamond, serif',
-                    color: '#1F1F1F',
-                    fontWeight: 600,
-                    lineHeight: '1.2'
-                  }}
-                >
-                  {experienceData[selectedExperience].title}
-                </motion.h3>
-                
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="mb-3"
-                  style={{
-                    fontSize: '16px',
-                    fontFamily: 'Lato, sans-serif',
-                    color: experienceData[selectedExperience].color,
-                    fontWeight: 500
-                  }}
-                >
-                  {experienceData[selectedExperience].company}
-                </motion.p>
-                
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  style={{
-                    fontSize: '15px',
-                    fontFamily: 'Lato, sans-serif',
-                    color: '#4A5568',
-                    lineHeight: '1.7',
-                    marginBottom: '20px'
-                  }}
-                >
-                  {experienceData[selectedExperience].description}
-                </motion.p>
-                
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="mt-4 inline-block px-4 py-2 rounded-full"
-                  style={{
-                    background: `linear-gradient(135deg, ${experienceData[selectedExperience].color}, ${experienceData[selectedExperience].color}dd)`,
-                    color: 'white',
-                    fontSize: '12px',
-                    fontFamily: 'Lato, sans-serif',
-                    fontWeight: 600,
-                    letterSpacing: '0.05em',
-                    textTransform: 'uppercase',
-                    boxShadow: `0 4px 12px ${experienceData[selectedExperience].color}30`
-                  }}
-                >
-                  {experienceData[selectedExperience].category}
+                    {exp.period}
+                  </p>
+
+                  {/* Description */}
+                  <p 
+                    className="text-base font-light leading-relaxed"
+                    style={{ 
+                      color: '#9CA3AF',
+                      fontFamily: 'Inter, sans-serif'
+                    }}
+                  >
+                    {exp.description}
+                  </p>
+
+                  {/* Category Tag */}
+                  <div 
+                    className="inline-block px-4 py-2 rounded-full mt-4"
+                    style={{
+                      backgroundColor: `${exp.color}15`,
+                      color: exp.color,
+                      fontSize: '12px',
+                      fontWeight: 300,
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase'
+                    }}
+                  >
+                    {exp.category}
+                  </div>
+
+                  {/* Hover Indicator */}
+                  <motion.div
+                    className="absolute top-4 right-4 w-3 h-3 rounded-full"
+                    style={{ backgroundColor: exp.color }}
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{
+                      scale: selectedExperience === exp.id ? 1 : 0,
+                      opacity: selectedExperience === exp.id ? 1 : 0
+                    }}
+                    transition={{ duration: 0.3 }}
+                  />
                 </motion.div>
               </motion.div>
-            )}
-          </AnimatePresence>
+            ))}
+          </div>
         </div>
 
       </div>

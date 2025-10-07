@@ -147,16 +147,16 @@ const HeroSection: React.FC = () => {
                 delay: 1.2,
                 ease: [0.19, 1, 0.22, 1] // Sophisticated easing
               }}
-              style={{
-                fontSize: 'clamp(3rem, 7vw, 5.5rem)',
-                fontFamily: 'Playfair Display, serif',
-                fontWeight: 400,
-                letterSpacing: '0.05em',
-                lineHeight: '0.9',
-                color: '#2D3748',
-                textTransform: 'uppercase',
-                fontStyle: 'italic'
-              }}
+                     style={{
+                       fontSize: 'clamp(3rem, 7vw, 5.5rem)',
+                       fontFamily: 'Playfair Display, serif',
+                       fontWeight: 200, /* Changed to extra light */
+                       letterSpacing: '0.05em',
+                       lineHeight: '0.9',
+                       color: '#6B7280', /* Changed to softer color */
+                       textTransform: 'uppercase',
+                       fontStyle: 'italic'
+                     }}
             >
               ARCHITECT
             </motion.div>

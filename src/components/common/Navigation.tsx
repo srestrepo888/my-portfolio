@@ -50,7 +50,7 @@ const Navigation: React.FC = () => {
               href="/"
               className="text-nav-brand touchable text-hover-lift"
               style={{
-                color: '#2D3748'
+                color: '#6B7280' // Ultra-elegant, softer color
               }}
             >
               Silvana
@@ -70,13 +70,13 @@ const Navigation: React.FC = () => {
                 href={item.href}
                 className="text-nav touchable text-hover-lift px-2 py-1"
                 style={{
-                  color: '#2D3748'
+                  color: '#6B7280' // Ultra-elegant, softer color
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = '#FF6663';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#2D3748';
+                  e.currentTarget.style.color = '#6B7280'; // Ultra-elegant, softer color
                 }}
               >
                 {item.label}
@@ -152,10 +152,10 @@ const Navigation: React.FC = () => {
                       onClick={() => setMobileMenuOpen(false)}
                       className="block py-3 transition-colors duration-300 min-h-[44px]"
                       style={{ 
-                        color: '#1F1F1F',
+                        color: '#6B7280', // Ultra-elegant, softer color
                         fontSize: 'clamp(0.9rem, 1.5vw, 1rem)',
-                        fontFamily: 'Lato, sans-serif',
-                        fontWeight: 400,
+                        fontFamily: 'Inter, sans-serif', // Updated to Inter
+                        fontWeight: 300, // Changed to light
                         letterSpacing: '0.05em',
                         textTransform: 'none'
                       }}
@@ -163,7 +163,7 @@ const Navigation: React.FC = () => {
                         e.currentTarget.style.color = '#FF6663';
                       }}
                       onTouchEnd={(e) => {
-                        e.currentTarget.style.color = '#1F1F1F';
+                        e.currentTarget.style.color = '#6B7280'; // Ultra-elegant, softer color
                       }}
                     >
                       {item.label}

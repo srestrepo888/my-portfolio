@@ -23,7 +23,7 @@ const UnifiedButton: React.FC<UnifiedButtonProps> = ({
 }) => {
   const baseStyles = {
     fontFamily: 'Inter, sans-serif',
-    fontWeight: 500,
+    fontWeight: 300, // Ultra-elegant, light font weight
     letterSpacing: '0.05em',
     textTransform: 'uppercase' as const,
     borderRadius: '50px', // Fully rounded for all buttons

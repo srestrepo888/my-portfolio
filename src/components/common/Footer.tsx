@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import UnifiedButton from './UnifiedButton';
 
 const Footer: React.FC = () => {
   const navigationLinks = [
@@ -86,14 +87,15 @@ const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="mt-6"
-            >
-              <button className="btn-primary w-full">
+            <div className="mt-6">
+              <UnifiedButton
+                variant="primary"
+                size="md"
+                className="w-full"
+              >
                 Let's Work Together
-              </button>
-            </motion.div>
+              </UnifiedButton>
+            </div>
           </div>
         </div>
 

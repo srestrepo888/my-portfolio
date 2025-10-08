@@ -5,6 +5,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { projects } from '@/data/projects';
 import SectionHeader from '@/components/common/SectionHeader';
+import UnifiedButton from '@/components/common/UnifiedButton';
 
 const MagneticButton = dynamic(() => import('@/components/effects/MagneticButton'), { ssr: false });
 const ProgressiveImage = dynamic(() => import('@/components/ui/ProgressiveImage'), { ssr: false });
@@ -258,27 +259,13 @@ const ProjectsSection: React.FC = () => {
 
                       {/* View Project Button */}
                       <MagneticButton>
-                        <Link href={`/projects/${projects[currentProject].id}`}>
-                          <motion.button 
-                            className="px-10 py-4"
-                        style={{
-                          backgroundColor: '#FF6663',
-                          color: 'white',
-                          fontFamily: 'Inter, sans-serif',
-                          fontSize: '13px',
-                          letterSpacing: '0.15em',
-                          textTransform: 'uppercase',
-                          fontWeight: 600,
-                          borderRadius: '2px'
-                        }}
-                        whileHover={{ 
-                          backgroundColor: '#E55A57',
-                          y: -2
-                        }}
-                          >
-                            View Case Study
-                          </motion.button>
-                        </Link>
+                        <UnifiedButton
+                          href={`/projects/${projects[currentProject].id}`}
+                          variant="primary"
+                          size="md"
+                        >
+                          View Case Study
+                        </UnifiedButton>
                       </MagneticButton>
                     </motion.div>
                   </div>

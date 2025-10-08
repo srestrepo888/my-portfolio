@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import UnifiedButton from '@/components/common/UnifiedButton';
 
 interface ExpertiseItem {
   id: string;
@@ -162,9 +163,12 @@ const ExpertiseSection: React.FC = () => {
               "Transforming business vision into human experiences—where strategic design 
               meets operational excellence and technological possibility."
             </p>
-            <button className="btn-primary">
+            <UnifiedButton
+              variant="primary"
+              size="md"
+            >
               Let's Work Together →
-            </button>
+            </UnifiedButton>
           </div>
         </motion.div>
       </div>

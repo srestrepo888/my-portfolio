@@ -132,46 +132,7 @@
     background-clip: text;
   }
 
-  /* Button styles */
-  .btn-primary {
-    padding: var(--space-sm) var(--space-lg);
-    background-color: var(--color-accent);
-    color: white;
-    border-radius: var(--radius-full);
-    font-weight: var(--weight-medium);
-    font-size: var(--font-body);
-    transition: all var(--duration-base) var(--easing-smooth);
-    cursor: pointer;
-    border: none;
-    display: inline-block;
-    min-height: 44px; /* Touch target minimum */
-  }
-
-  .btn-primary:hover {
-    background-color: var(--color-accent-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .btn-secondary {
-    padding: var(--space-sm) var(--space-lg);
-    background-color: transparent;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    border-radius: var(--radius-full);
-    font-weight: var(--weight-medium);
-    font-size: var(--font-body);
-    transition: all var(--duration-base) var(--easing-smooth);
-    cursor: pointer;
-    display: inline-block;
-    min-height: 44px;
-  }
-
-  .btn-secondary:hover {
-    background-color: var(--color-primary);
-    color: white;
-    transform: translateY(-2px);
-  }
+  /* Legacy button styles removed - now using UnifiedButton component */
 
   /* Card styles with proper shadow */
   .card {

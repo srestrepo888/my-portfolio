@@ -19,7 +19,7 @@ const AboutSection: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative py-12 lg:py-16 overflow-hidden"
+      className="relative py-8 lg:py-12 overflow-hidden"
       style={{
         backgroundColor: '#FFFBEE',
         minHeight: '100vh',

@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <motion.section 
-      className="min-h-screen relative overflow-hidden"
+      className="h-screen relative overflow-hidden flex items-center justify-center"
       style={{ 
         backgroundColor: '#FFFBEE',
         opacity

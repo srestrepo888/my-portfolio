@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic'
 import UltraLuxuryCursor from '@/components/effects/UltraLuxuryCursor'
 import ScrollProgress from '@/components/common/ScrollProgress'
 import WebVitals from '@/components/common/WebVitals'
+import LoadingScreen from '@/components/common/LoadingScreen'
 import { AnimatePresence } from 'framer-motion'
 
 const SmoothScroll = dynamic(() => import('@/components/effects/SmoothScroll'), { 
@@ -30,6 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <WebVitals />
+      <LoadingScreen />
       {mounted && (
         <>
           <UltraLuxuryCursor />

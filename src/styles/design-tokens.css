@@ -27,12 +27,12 @@
 --color-background: #FFFBEE; /* Warm cream background - primary brand color */
 --color-surface: #FFFFFF; /* Pure white for cards and surfaces */
 
-/* PRIMARY BRAND COLORS - Sophisticated Foundation */
---color-primary-coral: #FF6663; /* Primary accent - energetic, confident */
---color-accent-sage: #8FBC8F; /* Sage green - wisdom, growth, balance */
---color-accent-lavender: #B19CD9; /* Lavender - creativity, luxury, calm */
---color-accent-amber: #FFB347; /* Amber - warmth, optimism, energy */
---color-accent-slate: #708090; /* Slate blue - sophistication, trust */
+  /* PRIMARY BRAND COLORS - Ultra-Luxurious Foundation */
+  --color-primary-coral: #FF6663; /* Primary accent - energetic, confident */
+  --color-accent-stone: #8B9DC3; /* Stone blue - calm, professional, sophisticated */
+  --color-accent-charcoal: #2C3E50; /* Deep charcoal - authority, elegance */
+  --color-accent-pearl: #F8F9FA; /* Pearl white - purity, clarity */
+  --color-accent-mist: #E8F4F8; /* Mist blue - serenity, openness */
 
 /* SOPHISTICATED NEUTRAL SYSTEM */
 --color-neutral-charcoal: #2C3E50; /* Deep charcoal - authority, elegance */

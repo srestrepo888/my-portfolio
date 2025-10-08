@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import dynamic from 'next/dynamic';
 import SectionHeader from '@/components/common/SectionHeader';
 
-const ObsidianNeuralNetwork = dynamic(() => import('@/components/effects/ObsidianNeuralNetwork'), { ssr: false });
+const UltraLuxuryNeuralNetwork = dynamic(() => import('@/components/effects/UltraLuxuryNeuralNetwork'), { ssr: false });
 
 const ServicesSection: React.FC = () => {
   const { ref, inView } = useInView({
@@ -60,7 +60,7 @@ const ServicesSection: React.FC = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <ObsidianNeuralNetwork />
+            <UltraLuxuryNeuralNetwork />
           </motion.div>
         </div>
       </div>

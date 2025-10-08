@@ -8,36 +8,36 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // PRIMARY BRAND COLORS - Sophisticated Foundation
+        // PRIMARY BRAND COLORS - Ultra-Luxurious Foundation
         coral: {
           DEFAULT: '#FF6663', // Primary accent - energetic, confident
           hover: '#E55A57', // Darker on hover
           light: '#FF9996', // Light variant
           dark: '#CC5250', // Dark variant
         },
-        sage: {
-          DEFAULT: '#8FBC8F', // Sage green - wisdom, growth, balance
-          hover: '#7BA67B', // Darker on hover
-          light: '#A8D8A8', // Light variant
-          dark: '#6B9B6B', // Dark variant
+        stone: {
+          DEFAULT: '#8B9DC3', // Stone blue - calm, professional, sophisticated
+          hover: '#7A8BB3', // Darker on hover
+          light: '#A8B8D8', // Light variant
+          dark: '#6B7A93', // Dark variant
         },
-        lavender: {
-          DEFAULT: '#B19CD9', // Lavender - creativity, luxury, calm
-          hover: '#9F8BC7', // Darker on hover
-          light: '#C7B8E0', // Light variant
-          dark: '#9B7BC7', // Dark variant
+        charcoal: {
+          DEFAULT: '#2C3E50', // Deep charcoal - authority, elegance
+          hover: '#1A2A3A', // Darker on hover
+          light: '#4A5A6B', // Light variant
+          dark: '#1A2A3A', // Dark variant
         },
-        amber: {
-          DEFAULT: '#FFB347', // Amber - warmth, optimism, energy
-          hover: '#FFA726', // Darker on hover
-          light: '#FFC966', // Light variant
-          dark: '#FF8F00', // Dark variant
+        pearl: {
+          DEFAULT: '#F8F9FA', // Pearl white - purity, clarity
+          hover: '#E8F4F8', // Slightly darker on hover
+          light: '#FFFFFF', // Light variant
+          dark: '#E8F4F8', // Dark variant
         },
-        slate: {
-          DEFAULT: '#708090', // Slate blue - sophistication, trust
-          hover: '#5A6B7D', // Darker on hover
-          light: '#8B9DC3', // Light variant
-          dark: '#4A5A6B', // Dark variant
+        mist: {
+          DEFAULT: '#E8F4F8', // Mist blue - serenity, openness
+          hover: '#D8E4E8', // Darker on hover
+          light: '#F0F8FF', // Light variant
+          dark: '#D8E4E8', // Dark variant
         },
         
         // SOPHISTICATED NEUTRAL SYSTEM

@@ -105,7 +105,7 @@ const ProjectsSection: React.FC = () => {
               style={{ perspective: '1000px' }}
             >
               {/* Main Project Display - Cinematic View */}
-              <div className="relative rounded-lg overflow-hidden" style={{ height: '70vh', minHeight: '500px' }}>
+              <div className="relative rounded-lg overflow-hidden bg-background-cream" style={{ height: '70vh', minHeight: '500px' }}>
                 {/* Video/Image Background */}
                 <div className="absolute inset-0">
                   <motion.div
@@ -138,8 +138,12 @@ const ProjectsSection: React.FC = () => {
                       <ProgressiveImage
                         src={projects[currentProject].heroImage}
                         alt={projects[currentProject].title}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        style={{ filter: 'brightness(0.7)' }}
+                        className="absolute inset-0 w-full h-full"
+                        style={{ 
+                          filter: 'brightness(0.7)',
+                          objectFit: 'contain',
+                          objectPosition: 'center'
+                        }}
                         placeholderColor="#FDF6F0"
                       />
                     )}
@@ -349,7 +353,7 @@ const ProjectsSection: React.FC = () => {
               onClick={() => handleProjectChange(index)}
             >
               <div 
-                className="relative overflow-hidden"
+                className="relative overflow-hidden bg-background-cream"
                 style={{
                   borderRadius: '2px',
                   aspectRatio: '4/3'
@@ -358,7 +362,11 @@ const ProjectsSection: React.FC = () => {
                 <ProgressiveImage
                   src={project.heroImage}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full"
+                  style={{
+                    objectFit: 'contain',
+                    objectPosition: 'center'
+                  }}
                   placeholderColor="#FDF6F0"
                 />
                 <div 

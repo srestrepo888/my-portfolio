@@ -27,7 +27,7 @@ const ImageOptimizer: React.FC<ImageOptimizerProps> = ({
   priority = false,
   className = '',
   style,
-  objectFit = 'cover',
+  objectFit = 'contain',
   placeholder = 'blur',
   blurDataURL,
   sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',

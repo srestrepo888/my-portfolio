@@ -220,7 +220,7 @@ export default function ProjectPage({ project }: ProjectPageProps) {
                 priority
                 quality={95}
                 sizes="(max-width: 768px) 100vw, 50vw"
-                objectFit="cover"
+                objectFit="contain"
                 style={{
                   filter: 'contrast(1.05) saturate(0.9) brightness(1.02)'
                 }}
@@ -546,7 +546,7 @@ export default function ProjectPage({ project }: ProjectPageProps) {
                       aspectRatio="4/3"
                       quality={90}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      objectFit="cover"
+                      objectFit="contain"
                       className="transition-transform duration-700 group-hover:scale-110"
                     />
                     

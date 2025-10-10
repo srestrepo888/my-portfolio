@@ -100,7 +100,7 @@ const ExperienceSection: React.FC = () => {
     <section
       ref={containerRef}
       id="experience"
-      className="relative py-8 lg:py-12 overflow-hidden"
+      className="relative py-6 lg:py-8 overflow-hidden"
       style={{
         backgroundColor: '#FFFBEE',
         minHeight: '100vh',
@@ -150,7 +150,7 @@ const ExperienceSection: React.FC = () => {
         </svg>
       </motion.div>
 
-      <div className="container mx-auto px-8 lg:px-16 relative z-10">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <SectionHeader
           number="03"
@@ -160,7 +160,7 @@ const ExperienceSection: React.FC = () => {
 
         {/* Elegant Timeline Grid */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {experienceData.map((exp, index) => (
               <motion.div
                 key={exp.id}

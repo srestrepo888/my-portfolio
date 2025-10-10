@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <motion.section 
-      className="h-screen relative overflow-hidden flex items-center justify-center"
+      className="h-screen relative overflow-hidden flex items-center justify-center px-4"
       style={{ 
         backgroundColor: '#FFFBEE',
         opacity
@@ -76,7 +76,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Main Content - Clean, Centered, Typography-Focused */}
-      <div className="relative min-h-screen flex items-center justify-center px-8">
+      <div className="relative min-h-screen flex items-center justify-center px-4">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 40 }}
@@ -85,7 +85,7 @@ const HeroSection: React.FC = () => {
         >
           {/* Main Typography - Ultra-Luxurious Display Typography */}
           <motion.div
-            className="mb-8"
+            className="mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: mounted ? 1 : 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -163,7 +163,7 @@ const HeroSection: React.FC = () => {
 
             {/* Subtle Decorative Line */}
             <motion.div
-              className="mx-auto mt-6"
+              className="mx-auto mt-4"
               initial={{ scaleX: 0, opacity: 0 }}
               animate={mounted ? { scaleX: 1, opacity: 1 } : {}}
               transition={{
@@ -185,7 +185,7 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="flex flex-wrap gap-6 justify-center"
+            className="flex flex-wrap gap-4 justify-center"
           >
             {mounted && (
               <>

@@ -43,9 +43,9 @@ const ProjectsSection: React.FC = () => {
   };
 
   return (
-    <section 
-      id="projects" 
-      className="relative py-8 lg:py-12 overflow-hidden"
+    <section
+      id="projects"
+      className="relative py-6 lg:py-8 overflow-hidden"
       style={{
         backgroundColor: '#FFFBEE',
         minHeight: '100vh',
@@ -69,7 +69,7 @@ const ProjectsSection: React.FC = () => {
         />
       </motion.div>
 
-      <div className="container mx-auto px-8 lg:px-16 relative z-10 w-full">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 w-full">
         {/* Section Header */}
         <SectionHeader 
           number="02"

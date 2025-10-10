@@ -19,7 +19,7 @@ const AboutSection: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative py-8 lg:py-12 overflow-hidden"
+      className="relative py-6 lg:py-8 overflow-hidden"
       style={{
         backgroundColor: '#FFFBEE',
         minHeight: '100vh',
@@ -69,7 +69,7 @@ const AboutSection: React.FC = () => {
       </motion.div>
       
       {/* Content Container */}
-      <div className="container mx-auto px-8 lg:px-16 relative z-10 w-full">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 w-full">
         <div ref={ref} className="max-w-7xl mx-auto">
           {/* Section Header */}
           <SectionHeader 
@@ -79,7 +79,7 @@ const AboutSection: React.FC = () => {
           />
 
           {/* Two-Column Layout - Text Left, Photo Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
             
             {/* Left Column - Text Content */}
             <TypographyAnimation

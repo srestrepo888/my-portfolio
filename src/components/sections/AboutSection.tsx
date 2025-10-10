@@ -75,87 +75,19 @@ const AboutSection: React.FC = () => {
           <SectionHeader 
             number="01"
             title="About Me"
-            subtitle="I believe the most compelling stories begin with curiosity—a spark that has carried me across continents, blending diverse perspectives from anthropology to business, from innovation to experience design."
+            subtitle=""
           />
 
           {/* Two-Column Layout - Text Left, Photo Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
             
             {/* Left Column - Text Content */}
-            <TypographyAnimation
-              variant="reveal-left"
-              delay={0.3}
-              duration={0.8}
-              className="space-y-6"
-            >
-              <TextReveal
-                text="I have embarked on projects ranging from wellness movements to creating AI-driven platforms that empower developers worldwide."
-                className="text-body"
-                direction="up"
-                delay={0.4}
-                duration={0.6}
-                stagger={0.02}
-                splitBy="word"
-              />
-
-              <TextReveal
-                text="Each endeavour brings me closer to my mission: connecting strategic business goals with the essence of the #human perspective."
-                className="text-body"
-                direction="up"
-                delay={0.6}
-                duration={0.6}
-                stagger={0.02}
-                splitBy="word"
-                style={{
-                  '--highlight-color': '#FF6663'
-                } as React.CSSProperties}
-              />
-
-              <TextReveal
-                text="Whether leading teams in retail innovation or pioneering Experience design for global brands, my passion remains: to reveal what lies beneath and transform it into tangible expansion."
-                className="text-body"
-                direction="up"
-                delay={0.8}
-                duration={0.6}
-                stagger={0.02}
-                splitBy="word"
-              />
-
-              {/* Elegant Quote */}
-              <TypographyAnimation
-                variant="reveal-up"
-                delay={1.0}
-                duration={0.8}
-                className="relative mt-8 pt-6"
-                style={{
-                  borderTop: '1px solid rgba(255, 102, 99, 0.2)'
-                }}
-              >
-                <span
-                  className="absolute -top-3 left-0 opacity-30 text-quote-large"
-                  style={{
-                    color: '#FF6663',
-                    lineHeight: 1
-                  }}
-                >
-                  "
-                </span>
-                <TextReveal
-                  text="The art of my craft lies in listening to the unspoken, seeing the invisible, and touching the intangible essence of human desire."
-                  className="text-quote"
-                  direction="up"
-                  delay={1.2}
-                  duration={0.8}
-                  stagger={0.03}
-                  splitBy="word"
-                  style={{
-                    color: '#4A5568',
-                    position: 'relative',
-                    zIndex: 1
-                  }}
-                />
-              </TypographyAnimation>
-            </TypographyAnimation>
+            {/* Text content will be provided by approved copy document */}
+            <div className="space-y-6">
+              <p className="text-body" style={{ color: '#6B7280' }}>
+                Content will be provided from approved copy document.
+              </p>
+            </div>
 
             {/* Right Column - Truly Floating Photo */}
             <motion.div

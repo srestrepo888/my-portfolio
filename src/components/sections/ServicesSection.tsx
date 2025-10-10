@@ -66,7 +66,7 @@ const ServicesSection: React.FC = () => {
                 fontStyle: 'italic'
               }}
             >
-              Architectural Expertise
+              Services
             </h2>
             <p 
               className="text-base font-light max-w-2xl mx-auto"
@@ -75,21 +75,23 @@ const ServicesSection: React.FC = () => {
                 fontFamily: 'Inter, sans-serif'
               }}
             >
-              My services are designed to transform complex challenges into elegant, human-centered solutions.
+              Content will be provided from approved copy document.
             </p>
           </motion.div>
         </div>
 
-        {/* Organic Neural Network Visualization - Single Viewport */}
+        {/* Services content will be provided by approved copy document */}
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative text-center py-16"
           >
-            <OrganicNeuralNetwork />
+            <p className="text-lg" style={{ color: '#9CA3AF' }}>
+              Services content will be provided from approved copy document.
+            </p>
           </motion.div>
         </div>
       </div>

@@ -74,7 +74,7 @@ const ProjectsSection: React.FC = () => {
         <SectionHeader 
           number="02"
           title="Selected Work"
-          subtitle="A curated collection of projects that showcase the intersection of strategic thinking, human-centered design, and innovative solutions across diverse industries."
+          subtitle=""
         />
 
         {/* Cinematic Carousel */}

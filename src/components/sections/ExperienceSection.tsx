@@ -20,74 +20,8 @@ const ExperienceSection: React.FC = () => {
 
   const pathY = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
-  const experienceData = [
-    {
-      id: 0,
-      title: "Experience Architect",
-      period: "2020—Present",
-      company: "Globant",
-      description: "Leading digital transformation initiatives for global enterprises",
-      year: 2020,
-      category: "Leadership",
-      color: "#FF6663",
-      position: { x: 85, y: 20 }
-    },
-    {
-      id: 1,
-      title: "Strategic Design Director",
-      period: "2019—2020",
-      company: "Centre for Fourth Industrial Revolution",
-      description: "Developing frameworks for technology governance",
-      year: 2019,
-      category: "Strategy",
-      color: "#FF6663",
-      position: { x: 70, y: 35 }
-    },
-    {
-      id: 2,
-      title: "Strategic Design Director",
-      period: "2018—2019",
-      company: "Designit (WIPRO)",
-      description: "Scaling regional operations and market presence",
-      year: 2018,
-      category: "Strategy",
-      color: "#FF6663",
-      position: { x: 55, y: 45 }
-    },
-    {
-      id: 3,
-      title: "Marketing Director",
-      period: "2016—2018",
-      company: "Grupo Éxito",
-      description: "Transforming retail through experiential design",
-      year: 2016,
-      category: "Marketing",
-      color: "#FF6663",
-      position: { x: 40, y: 55 }
-    },
-    {
-      id: 4,
-      title: "Business Intelligence Manager",
-      period: "2013—2016",
-      company: "Industrias HACEB",
-      description: "Optimizing market segmentation strategies",
-      year: 2013,
-      category: "Analytics",
-      color: "#FF6663",
-      position: { x: 30, y: 70 }
-    },
-    {
-      id: 5,
-      title: "Senior Marketing Analyst",
-      period: "2002—2011",
-      company: "TIGO-Millicom",
-      description: "Supporting corporate expansion and M&A activities",
-      year: 2002,
-      category: "Analytics",
-      color: "#FF6663",
-      position: { x: 15, y: 85 }
-    }
-  ];
+  // Experience data will be provided by approved copy document
+  const experienceData = [];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -155,129 +89,15 @@ const ExperienceSection: React.FC = () => {
         <SectionHeader
           number="03"
           title="My Experience"
-          subtitle="A journey through strategic leadership and innovation, where each role has shaped my understanding of human-centered design and business transformation."
+          subtitle=""
         />
 
-        {/* Elegant Timeline Grid */}
+        {/* Experience content will be provided by approved copy document */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {experienceData.map((exp, index) => (
-              <motion.div
-                key={exp.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group cursor-pointer"
-                onClick={() => setSelectedExperience(exp.id)}
-              >
-                {/* Experience Card */}
-                <motion.div
-                  className="relative p-8 rounded-3xl border transition-all duration-500 group-hover:scale-105"
-                  style={{
-                    borderColor: selectedExperience === exp.id ? exp.color : '#E5E7EB',
-                    backgroundColor: selectedExperience === exp.id 
-                      ? `rgba(255, 102, 99, 0.05)` 
-                      : 'rgba(255, 255, 255, 0.8)',
-                    boxShadow: selectedExperience === exp.id
-                      ? `0 20px 40px rgba(255, 102, 99, 0.15)`
-                      : '0 10px 30px rgba(0, 0, 0, 0.05)'
-                  }}
-                  whileHover={{
-                    y: -5,
-                    boxShadow: '0 20px 40px rgba(255, 102, 99, 0.1)'
-                  }}
-                >
-                  {/* Year Badge */}
-                  <div 
-                    className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6"
-                    style={{
-                      backgroundColor: exp.color,
-                      color: 'white',
-                      fontSize: '18px',
-                      fontWeight: 300,
-                      fontFamily: 'Playfair Display, serif'
-                    }}
-                  >
-                    {exp.year}
-                  </div>
-
-                  {/* Title */}
-                  <h3 
-                    className="text-xl font-light mb-3"
-                    style={{ 
-                      color: '#6B7280',
-                      fontFamily: 'Playfair Display, serif',
-                      fontStyle: 'italic'
-                    }}
-                  >
-                    {exp.title}
-                  </h3>
-
-                  {/* Company */}
-                  <p 
-                    className="text-lg font-light mb-2"
-                    style={{ 
-                      color: '#9CA3AF',
-                      fontFamily: 'Inter, sans-serif'
-                    }}
-                  >
-                    {exp.company}
-                  </p>
-
-                  {/* Period */}
-                  <p 
-                    className="text-sm font-light mb-4"
-                    style={{ 
-                      color: '#FF6663',
-                      fontFamily: 'Inter, sans-serif',
-                      letterSpacing: '0.05em',
-                      textTransform: 'uppercase'
-                    }}
-                  >
-                    {exp.period}
-                  </p>
-
-                  {/* Description */}
-                  <p 
-                    className="text-base font-light leading-relaxed"
-                    style={{ 
-                      color: '#9CA3AF',
-                      fontFamily: 'Inter, sans-serif'
-                    }}
-                  >
-                    {exp.description}
-                  </p>
-
-                  {/* Category Tag */}
-                  <div 
-                    className="inline-block px-4 py-2 rounded-full mt-4"
-                    style={{
-                      backgroundColor: `${exp.color}15`,
-                      color: exp.color,
-                      fontSize: '12px',
-                      fontWeight: 300,
-                      letterSpacing: '0.05em',
-                      textTransform: 'uppercase'
-                    }}
-                  >
-                    {exp.category}
-                  </div>
-
-                  {/* Hover Indicator */}
-                  <motion.div
-                    className="absolute top-4 right-4 w-3 h-3 rounded-full"
-                    style={{ backgroundColor: exp.color }}
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{
-                      scale: selectedExperience === exp.id ? 1 : 0,
-                      opacity: selectedExperience === exp.id ? 1 : 0
-                    }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </motion.div>
-              </motion.div>
-            ))}
+          <div className="text-center py-16">
+            <p className="text-lg" style={{ color: '#9CA3AF' }}>
+              Experience content will be provided from approved copy document.
+            </p>
           </div>
         </div>
 

@@ -18,7 +18,7 @@ const ServicesSection: React.FC = () => {
   return (
     <section
       id="services"
-      className="relative py-6 lg:py-8 overflow-hidden"
+      className="relative py-6 lg:py-8"
       style={{
         backgroundColor: '#FFFBEE',
         minHeight: '100vh',
@@ -80,18 +80,21 @@ const ServicesSection: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Services content will be provided by approved copy document */}
+        {/* Clean Services Grid - No Double Containers */}
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="relative text-center py-16"
+            className="relative"
           >
-            <p className="text-lg" style={{ color: '#9CA3AF' }}>
-              Services content will be provided from approved copy document.
-            </p>
+            {/* Services will be provided from approved copy document */}
+            <div className="text-center py-16">
+              <p className="text-lg" style={{ color: '#9CA3AF' }}>
+                Services content will be provided from approved copy document.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>

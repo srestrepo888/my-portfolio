@@ -237,21 +237,15 @@ const ProjectsSection: React.FC = () => {
                         {projects[currentProject].subtitle}
                       </p>
 
-                      {/* Timeline Info */}
+                      {/* Project Details - Clean Display */}
                       <div className="flex gap-8 mb-10">
                         <div>
-                          <p style={{ fontSize: '12px', color: 'white', opacity: 0.6, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                            Timeline
-                          </p>
-                          <p style={{ fontSize: '16px', color: 'white', fontWeight: 400 }}>
+                          <p style={{ fontSize: '16px', color: 'white', fontWeight: 400, opacity: 0.9 }}>
                             {projects[currentProject].duration}
                           </p>
                         </div>
                         <div>
-                          <p style={{ fontSize: '12px', color: 'white', opacity: 0.6, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                            Role
-                          </p>
-                          <p style={{ fontSize: '16px', color: 'white', fontWeight: 400 }}>
+                          <p style={{ fontSize: '16px', color: 'white', fontWeight: 400, opacity: 0.9 }}>
                             {projects[currentProject].role}
                           </p>
                         </div>

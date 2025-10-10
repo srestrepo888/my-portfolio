@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import dynamic from 'next/dynamic';
 import SectionHeader from '@/components/common/SectionHeader';
 
-const OrganicNeuralNetwork = dynamic(() => import('@/components/effects/OrganicNeuralNetwork'), { ssr: false });
+// Neural network components removed - will be replaced with approved copy content
 
 const ServicesSection: React.FC = () => {
   const { ref, inView } = useInView({
